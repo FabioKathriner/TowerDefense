@@ -57,6 +57,8 @@ sysinfo.txt
 *.apk
 *.unitypackage
 
+# Pro Builder
+ProBuilderSettings.json
 
 #########################################
 # Standard ignores for all git projects #
