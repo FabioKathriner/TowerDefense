@@ -1,5 +1,8 @@
-﻿public interface IHealth
+﻿namespace Assets.Scripts
 {
-    int CurrentHealth { get; set; }
-    int MaxHealth { get; set; }
+    public interface IHealth
+    {
+        int CurrentHealth { get; set; }
+        int MaxHealth { get; set; }
+    }
 }

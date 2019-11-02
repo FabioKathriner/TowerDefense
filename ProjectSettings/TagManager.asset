@@ -13,12 +13,12 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Normal Enemy
+  - Flying Enemy
+  - Anti Ground Tower
+  - Anti Air Tower
+  - Anti All Tower
+  - Projectile
   - 
   - 
   - 

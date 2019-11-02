@@ -1,3 +1,6 @@
-﻿public interface IDamagable
+﻿namespace Assets.Scripts
 {
+    public interface IDamagable
+    {
+    }
 }

@@ -2,21 +2,23 @@
 
 namespace Assets.Scripts
 {
-    public class Base : MonoBehaviour, IHealth, IDamagable
+    public class Projectile : MonoBehaviour
     {
         // Start is called before the first frame update
         void Start()
         {
-
+        
         }
 
         // Update is called once per frame
         void Update()
         {
-
+        
         }
 
-        public int CurrentHealth { get; set; }
-        public int MaxHealth { get; set; }
+        void OnCollisionEnter(Collision collision)
+        {
+            Destroy(gameObject);
+        }
     }
 }

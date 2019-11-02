@@ -1,5 +1,8 @@
-﻿public interface IUpgradable
+﻿namespace Assets.Scripts
 {
-    int Level { get; set; }
-    void Upgrade();
+    public interface IUpgradable
+    {
+        int Level { get; set; }
+        void Upgrade();
+    }
 }

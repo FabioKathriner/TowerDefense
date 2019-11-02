@@ -1,33 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public abstract class Tower : MonoBehaviour, IHealth, IDamagable, IUpgradable
+namespace Assets.Scripts
 {
-    // Start is called before the first frame update
-    void Start()
+    public abstract class Tower : MonoBehaviour, IHealth, IDamagable, IUpgradable
     {
-        
-    }
+        public int CurrentHealth { get; set; }
+        public int MaxHealth { get; set; }
+        public IWeapon Weapon { get; set; }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public int CurrentHealth { get; set; }
-    public int MaxHealth { get; set; }
-    public IFireBehavior FireBehavior { get; set; }
-
-    public void Fire()
-    {
-        FireBehavior.Fire();
-    }
-
-    public int Level { get; set; }
-    public void Upgrade()
-    {
-        throw new System.NotImplementedException();
+        public int Level { get; set; }
+        public abstract void Upgrade();
     }
 }
