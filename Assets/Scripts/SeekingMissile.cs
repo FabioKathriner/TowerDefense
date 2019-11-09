@@ -36,7 +36,9 @@ namespace Assets.Scripts
         private void OnCollisionEnter(Collision collision)
         {
             var health = collision.gameObject.GetComponent<Health>();
-            health.TakeDamage(_damage);
+            if (health != null)
+                health.TakeDamage(_damage);
+
             Destroy(gameObject);
         }
     }
