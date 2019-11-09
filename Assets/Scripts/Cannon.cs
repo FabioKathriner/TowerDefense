@@ -23,7 +23,9 @@ namespace Assets.Scripts
         {
             transform.LookAt(target.transform);
             var projectile = Instantiate(_projectilePrefab, transform.position + Vector3.forward * 0.5f, transform.rotation);
-            projectile.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * 20f, ForceMode.Impulse);
+            var script = projectile.GetComponent<SeekingMissile>();
+            if (script != null)
+                script.Target = target;
         }
     }
 }
