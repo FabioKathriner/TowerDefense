@@ -31,7 +31,8 @@ namespace Assets.Scripts
         {
             Debug.Log("Object left tower range");
             var collisionObjectId = other.gameObject.GetInstanceID();
-            _targets.Remove(_targets.First(x => x.Enemy.GetInstanceID() == collisionObjectId));
+            var target = _targets.First(x => x.Enemy.GetInstanceID() == collisionObjectId);
+            _targets.Remove(target);
         }
 
         public GameObject GetNextTarget()
