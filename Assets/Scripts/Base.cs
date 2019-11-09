@@ -2,7 +2,7 @@
 
 namespace Assets.Scripts
 {
-    public class Base : MonoBehaviour, IHealth, IDamagable
+    public class Base : MonoBehaviour
     {
         // Start is called before the first frame update
         void Start()
@@ -15,8 +15,5 @@ namespace Assets.Scripts
         {
 
         }
-
-        public int CurrentHealth { get; set; }
-        public int MaxHealth { get; set; }
     }
 }

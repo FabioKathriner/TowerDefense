@@ -2,10 +2,8 @@
 
 namespace Assets.Scripts
 {
-    public abstract class Tower : MonoBehaviour, IHealth, IDamagable, IUpgradable
+    public abstract class Tower : MonoBehaviour, IUpgradable
     {
-        public int CurrentHealth { get; set; }
-        public int MaxHealth { get; set; }
         public IWeapon Weapon { get; set; }
 
         public int Level { get; set; }

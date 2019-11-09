@@ -8,7 +8,8 @@ namespace Assets.Scripts
         [SerializeField]
         private readonly float _speed = 5f;
 
-        private Rigidbody _rigidbody;
+        [SerializeField]
+        private int _damage = 10;
 
 
         public GameObject Target { get; set; }
@@ -16,7 +17,6 @@ namespace Assets.Scripts
         // Start is called before the first frame update
         private void Start()
         {
-            _rigidbody = GetComponent<Rigidbody>();
             Destroy(gameObject, 5f);
         }
 
@@ -27,15 +27,16 @@ namespace Assets.Scripts
 
         private void FixedUpdate()
         {
-            if (Target == null)
-                return;
+            if (Target != null)
+                transform.LookAt(Target.transform);
 
-            transform.LookAt(Target.transform);
             transform.Translate(Vector3.forward * _speed * Time.deltaTime);
         }
 
         private void OnCollisionEnter(Collision collision)
         {
+            var health = collision.gameObject.GetComponent<Health>();
+            health.TakeDamage(_damage);
             Destroy(gameObject);
         }
     }
