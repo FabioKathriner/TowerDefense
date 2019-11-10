@@ -2,7 +2,7 @@
 
 namespace Assets.Scripts
 {
-    public class Cannon : MonoBehaviour, IWeapon
+    public class RocketLauncher : MonoBehaviour, IWeapon
     {
         [SerializeField]
         private GameObject _projectilePrefab;
@@ -14,7 +14,7 @@ namespace Assets.Scripts
         {
             transform.LookAt(target.transform);
             var projectile = Instantiate(_projectilePrefab, transform.position + Vector3.forward * _forwardOffset, transform.rotation);
-            var script = projectile.GetComponent<SeekingMissile>();
+            var script = projectile.GetComponent<Rocket>();
             if (script != null)
                 script.Target = target;
         }

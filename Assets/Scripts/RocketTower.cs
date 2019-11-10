@@ -1,18 +1,19 @@
-﻿namespace Assets.Scripts
-{
-    public class BallisticTower : Tower
-    {
+﻿using UnityEngine;
 
+namespace Assets.Scripts
+{
+    public class RocketTower : Tower
+    {
         // Start is called before the first frame update
         protected override void Start()
         {
             base.Start();
-            Weapon = GetComponentInChildren<Cannon>();
+            Weapon = GetComponentInChildren<RocketLauncher>();
         }
 
         public override void Upgrade()
         {
-            throw new System.NotImplementedException(); 
+            throw new System.NotImplementedException();
         }
     }
 }

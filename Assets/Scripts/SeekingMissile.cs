@@ -2,42 +2,21 @@
 
 namespace Assets.Scripts
 {
-    [RequireComponent(typeof(Rigidbody))]
-    public class SeekingMissile : MonoBehaviour
+    public class SeekingMissile : Projectile
     {
-        [SerializeField]
-        private float _speed = 10f;
-
-        [SerializeField]
-        private int _damage = 10;
-
-
-        public GameObject Target { get; set; }
-
-        // Start is called before the first frame update
-        private void Start()
-        {
-            Destroy(gameObject, 5f);
-        }
-
-        // Update is called once per frame
-        private void Update()
-        {
-        }
-
         private void FixedUpdate()
         {
             if (Target != null)
                 transform.LookAt(Target.transform);
 
-            transform.Translate(Vector3.forward * _speed * Time.deltaTime);
+            transform.Translate(Vector3.forward * Speed * Time.fixedDeltaTime);
         }
 
         private void OnCollisionEnter(Collision collision)
         {
             var health = collision.gameObject.GetComponent<Health>();
             if (health != null)
-                health.TakeDamage(_damage);
+                health.TakeDamage(Damage);
 
             Destroy(gameObject);
         }

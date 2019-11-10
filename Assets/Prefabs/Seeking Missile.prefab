@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 565733628744716288}
   - component: {fileID: 7850270255201389283}
   m_Layer: 13
-  m_Name: Arrow
+  m_Name: Seeking Missile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -138,6 +138,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e868ca9dc6572c488fcf7d5ad68b23b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Speed: 10
+  Damage: 10
 --- !u!54 &7850270255201389283
 Rigidbody:
   m_ObjectHideFlags: 0
