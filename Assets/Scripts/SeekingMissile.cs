@@ -6,7 +6,7 @@ namespace Assets.Scripts
     public class SeekingMissile : MonoBehaviour
     {
         [SerializeField]
-        private readonly float _speed = 5f;
+        private float _speed = 10f;
 
         [SerializeField]
         private int _damage = 10;

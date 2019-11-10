@@ -5,9 +5,11 @@ namespace Assets.Scripts
 {
     public class BallisticTower : Tower
     {
+        [SerializeField]
+        private float _rateOfFire = 0.8f;
+
         private TargetFinder _targetFinder;
         private float _time = 0.0f;
-        private float _nextActionTime = 1f;
 
         // Start is called before the first frame update
         void Start()
@@ -24,9 +26,8 @@ namespace Assets.Scripts
             {
                 _time += Time.deltaTime;
 
-                if (_time >= _nextActionTime)
+                if (_time >= _rateOfFire)
                 {
-                    Debug.Log("Fire weapon");
                     _time = 0;
                     Weapon.Fire(nearestTarget);
                 }

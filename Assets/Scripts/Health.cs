@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 namespace Assets.Scripts
 {
@@ -38,8 +39,17 @@ namespace Assets.Scripts
             CurrentHealth -= damage;
             if (CurrentHealth <= 0)
             {
-                Destroy(gameObject);
+                StartCoroutine(Die());
             }
+        }
+
+        // HACK: Moves the object far away so that the TargetFinder onTriggerExit triggers.
+        // The Target will then be removed from the tracked objects list. Is there a better solution for this problem?
+        private IEnumerator Die()
+        {
+            transform.Translate(Vector3.up * 5000);
+            yield return new WaitForSeconds(1f);
+            Destroy(gameObject);
         }
     }
 }

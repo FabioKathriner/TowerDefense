@@ -17,7 +17,6 @@ namespace Assets.Scripts
         // Update is called once per frame
         void Update()
         {
-        
         }
 
         // Collision only with Layers "Normal Enemy" and "Flying Enemy"
