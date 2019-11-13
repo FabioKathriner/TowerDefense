@@ -802,6 +802,8 @@ GameObject:
   - component: {fileID: 8864333768579407964}
   - component: {fileID: -8534919739063431126}
   - component: {fileID: -9117505077829966330}
+  - component: {fileID: 505511001512550472}
+  - component: {fileID: -507204973605838575}
   m_Layer: 8
   m_Name: Runner Enemy
   m_TagString: enemy
@@ -856,6 +858,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 80
   _currentHealth: 80
+--- !u!114 &505511001512550472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8864333768579407967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d0d51bf4032504ebd19e29f40d4f1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!195 &-507204973605838575
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8864333768579407967}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 20
+  m_Acceleration: 1000
+  avoidancePriority: 50
+  m_AngularSpeed: 1800
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &8864333768737350873
 GameObject:
   m_ObjectHideFlags: 0

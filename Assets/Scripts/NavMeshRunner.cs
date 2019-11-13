@@ -3,6 +3,7 @@ using UnityEngine.AI;
 
 namespace Assets.Scripts
 {
+    //Use the EnemeyMovements Script instead of this one.
     public class NavMeshRunner : MonoBehaviour
     {
 

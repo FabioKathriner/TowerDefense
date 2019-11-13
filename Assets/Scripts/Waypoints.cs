@@ -2,26 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WaypointsClass : MonoBehaviour
-    //Work in Progress
+public class Waypoints : MonoBehaviour
 {
 
-    public static Transform[] Waypoints;
+    public static Transform[] points;
 
 
     void Awake()
     {
-        Waypoints = new Transform[transform.childCount];
+        points = new Transform[transform.childCount];
         //Always get the next Waypoint.
-        for (int i = 0; i < Waypoints.Length; i++)
+        for (int i = 0; i < points.Length; i++)
         {
-            Waypoints[i] = transform.GetChild(i);
+            points[i] = transform.GetChild(i);
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
