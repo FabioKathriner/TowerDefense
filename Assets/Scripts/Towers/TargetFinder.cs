@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Towers
 {
-    public class TargetFinder : MonoBehaviour
+    public class TargetFinder : MonoBehaviour, ITargetFinder
     {
         private readonly IList<Target> _targets = new List<Target>();
 
@@ -36,6 +36,11 @@ namespace Assets.Scripts.Towers
         public GameObject GetNextTarget()
         {
             return _targets.OrderBy(x => x.Priority).Select(x => x.Enemy).FirstOrDefault();
+        }
+
+        public List<GameObject> GetTargets()
+        {
+            return _targets.Select(x => x.Enemy).ToList();
         }
     }
 

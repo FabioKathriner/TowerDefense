@@ -2,7 +2,7 @@
 
 namespace Assets.Scripts.Towers
 {
-    public class RocketTower : Tower
+    public class RocketTower : Tower<IWeapon>
     {
         // Start is called before the first frame update
         protected override void Start()

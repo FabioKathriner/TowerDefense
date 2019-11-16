@@ -1,9 +1,8 @@
-﻿using Assets.Scripts.Weapons.Projectiles;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Assets.Scripts.Weapons
 {
-    public class Ballista : MonoBehaviour, IWeapon
+    public class Ballista : MonoBehaviour, ISimpleWeapon
     {
         [SerializeField]
         private GameObject _projectilePrefab;
@@ -14,10 +13,16 @@ namespace Assets.Scripts.Weapons
         [SerializeField]
         private float _initialForce = 5f;
 
-        public void Fire(GameObject target)
+        public void Fire()
         {
             var projectile = Instantiate(_projectilePrefab, transform.position + _spawnOffset, transform.rotation);
             projectile.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * _initialForce, ForceMode.Impulse);
+        }
+
+        public void Fire(GameObject target)
+        {
+            // not used
+            throw new System.NotImplementedException();
         }
     }
 }

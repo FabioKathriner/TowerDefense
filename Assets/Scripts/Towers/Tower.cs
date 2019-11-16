@@ -3,9 +3,9 @@ using UnityEngine;
 
 namespace Assets.Scripts.Towers
 {
-    [RequireComponent(typeof(TargetFinder))]
     [RequireComponent(typeof(IWeapon))]
-    public abstract class Tower : MonoBehaviour, IUpgradable
+    public abstract class Tower<TWeapon> : MonoBehaviour, IUpgradable
+        where TWeapon : IWeapon
     {
         private float _time;
 
@@ -14,13 +14,14 @@ namespace Assets.Scripts.Towers
 
         protected TargetFinder TargetFinder;
 
-        public IWeapon Weapon { get; set; }
+        public TWeapon Weapon { get; set; }
 
         public int Level { get; set; }
         public abstract void Upgrade();
         // Start is called before the first frame update
         protected virtual void Start()
         {
+            // TODO: Can this be required without the editor adding the script on the parent object?
             TargetFinder = GetComponentInChildren<TargetFinder>();
         }
 

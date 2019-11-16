@@ -2,7 +2,7 @@
 
 namespace Assets.Scripts.Towers
 {
-    public class GuidedMissileTower : Tower
+    public class GuidedMissileTower : Tower<IWeapon>
     {
 
         // Start is called before the first frame update
