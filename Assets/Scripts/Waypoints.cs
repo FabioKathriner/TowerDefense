@@ -1,20 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Waypoints : MonoBehaviour
+namespace Assets.Scripts
 {
-
-    public static Transform[] points;
-
-
-    void Awake()
+    public class Waypoints : MonoBehaviour
     {
-        points = new Transform[transform.childCount];
-        //Always get the next Waypoint.
-        for (int i = 0; i < points.Length; i++)
+        // TODO: Do not use public static fields if possible
+        public static Transform[] Points;
+
+
+        void Awake()
         {
-            points[i] = transform.GetChild(i);
+            Points = new Transform[transform.childCount];
+            //Always get the next Waypoint.
+            for (int i = 0; i < Points.Length; i++)
+            {
+                Points[i] = transform.GetChild(i);
+            }
         }
     }
 }

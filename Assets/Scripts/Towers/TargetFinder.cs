@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace Assets.Scripts
+namespace Assets.Scripts.Towers
 {
     public class TargetFinder : MonoBehaviour
     {

@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace Assets.Scripts
+namespace Assets.Scripts.Health
 {
     public class Health : MonoBehaviour, IHealth
     {

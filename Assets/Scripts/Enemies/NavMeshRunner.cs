@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
 
-namespace Assets.Scripts
+namespace Assets.Scripts.Enemies
 {
     //Use the EnemeyMovements Script instead of this one.
     public class NavMeshRunner : MonoBehaviour

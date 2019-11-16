@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Weapons;
+using UnityEngine;
 
-namespace Assets.Scripts
+namespace Assets.Scripts.Towers
 {
     [RequireComponent(typeof(TargetFinder))]
     [RequireComponent(typeof(IWeapon))]

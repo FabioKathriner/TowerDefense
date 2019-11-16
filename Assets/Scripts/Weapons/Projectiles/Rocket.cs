@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.Scripts
+namespace Assets.Scripts.Weapons.Projectiles
 {
     public class Rocket : Projectile
     {
@@ -21,7 +21,7 @@ namespace Assets.Scripts
                 if (enemyDistance > _explosionRadius)
                     continue;
 
-                var health = enemy.GetComponent<Health>();
+                var health = enemy.GetComponent<Health.Health>();
                 if (health != null)
                     health.TakeDamage(Damage);
 

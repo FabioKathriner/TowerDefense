@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.Scripts
+namespace Assets.Scripts.Weapons.Projectiles
 {
     public class SeekingMissile : Projectile
     {
@@ -14,7 +14,7 @@ namespace Assets.Scripts
 
         private void OnCollisionEnter(Collision collision)
         {
-            var health = collision.gameObject.GetComponent<Health>();
+            var health = collision.gameObject.GetComponent<Health.Health>();
             if (health != null)
                 health.TakeDamage(Damage);
 

@@ -1,4 +1,6 @@
-﻿namespace Assets.Scripts
+﻿using Assets.Scripts.Weapons;
+
+namespace Assets.Scripts.Towers
 {
     public class BallisticTower : Tower
     {

@@ -1,6 +1,6 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Weapons;
 
-namespace Assets.Scripts
+namespace Assets.Scripts.Towers
 {
     public class RocketTower : Tower
     {
