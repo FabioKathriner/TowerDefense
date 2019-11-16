@@ -2,7 +2,7 @@
 
 namespace Assets.Scripts.Weapons.Projectiles
 {
-    public class SeekingMissile : Projectile
+    public class GuidedMissile : Projectile
     {
         private void FixedUpdate()
         {

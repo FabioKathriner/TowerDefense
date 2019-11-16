@@ -15,7 +15,7 @@ namespace Assets.Scripts.Weapons
         {
             transform.LookAt(target.transform);
             var projectile = Instantiate(_projectilePrefab, transform.position + Vector3.forward * _forwardOffset, transform.rotation);
-            var script = projectile.GetComponent<SeekingMissile>();
+            var script = projectile.GetComponent<GuidedMissile>();
             if (script != null)
                 script.Target = target;
         }
