@@ -29,17 +29,20 @@ namespace Assets.Scripts.Towers
         // Update is called once per frame
         protected virtual void Update()
         {
+            _time += Time.deltaTime;
+
+            if (_time >= RateOfFire)
+            {
+                _time = 0;
+                Fire();
+            }
+        }
+
+        protected virtual void Fire()
+        {
             var nearestTarget = TargetFinder.GetNextTarget();
             if (nearestTarget != null)
-            {
-                _time += Time.deltaTime;
-
-                if (_time >= RateOfFire)
-                {
-                    _time = 0;
-                    Weapon.Fire(nearestTarget);
-                }
-            }
+                Weapon.Fire(nearestTarget);
         }
     }
 }

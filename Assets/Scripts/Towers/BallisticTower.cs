@@ -1,33 +1,25 @@
-﻿using Assets.Scripts.Weapons;
-using UnityEngine;
+﻿using System;
+using Assets.Scripts.Weapons;
 
 namespace Assets.Scripts.Towers
 {
     public class BallisticTower : Tower<ISimpleWeapon>
     {
-        private float _time;
-        // Start is called before the first frame update
         public override void Upgrade()
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
+        // Start is called before the first frame update
         protected override void Start()
         {
             base.Start();
             Weapon = GetComponentInChildren<Ballista>();
         }
 
-        protected override void Update()
+        protected override void Fire()
         {
-            // TODO: Refactor Towers, add aiming behavior
-            _time += Time.deltaTime;
-
-            if (_time >= RateOfFire)
-            {
-                _time = 0;
-                Weapon.Fire();
-            }
+            Weapon.Fire();
         }
     }
 }
