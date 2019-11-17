@@ -11,17 +11,6 @@ namespace Assets.Scripts.Health
         [SerializeField]
         private int _currentHealth;
 
-        // Start is called before the first frame update
-        void Start()
-        {
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-        
-        }
-
         public int CurrentHealth
         {
             get => _currentHealth;
@@ -39,13 +28,18 @@ namespace Assets.Scripts.Health
             CurrentHealth -= damage;
             if (CurrentHealth <= 0)
             {
-                StartCoroutine(Die());
+                StartCoroutine(ActivateTriggerExitAndDie());
             }
+        }
+
+        public void Die()
+        {
+            StartCoroutine(ActivateTriggerExitAndDie());
         }
 
         // HACK: Moves the object far away so that the TargetFinder onTriggerExit triggers.
         // The Target will then be removed from the tracked objects list. Is there a better solution for this problem?
-        private IEnumerator Die()
+        private IEnumerator ActivateTriggerExitAndDie()
         {
             transform.Translate(Vector3.up * 5000);
             yield return new WaitForSeconds(1f);
