@@ -256,24 +256,24 @@ MonoBehaviour:
   m_Positions:
   - {x: 0, y: 0, z: 0}
   - {x: 1, y: 0, z: 0}
-  - {x: 0, y: 5, z: 0}
-  - {x: 1, y: 5, z: 0}
+  - {x: 0, y: 3.007267, z: 0}
+  - {x: 1, y: 3.007267, z: 0}
   - {x: 1, y: 0, z: 0}
   - {x: 1, y: 0, z: -1}
-  - {x: 1, y: 5, z: 0}
-  - {x: 1, y: 5, z: -1}
+  - {x: 1, y: 3.007267, z: 0}
+  - {x: 1, y: 3.007267, z: -1}
   - {x: 1, y: 0, z: -1}
   - {x: 0, y: 0, z: -1}
-  - {x: 1, y: 5, z: -1}
-  - {x: 0, y: 5, z: -1}
+  - {x: 1, y: 3.007267, z: -1}
+  - {x: 0, y: 3.007267, z: -1}
   - {x: 0, y: 0, z: -1}
   - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 5, z: -1}
-  - {x: 0, y: 5, z: 0}
-  - {x: 0, y: 5, z: 0}
-  - {x: 1, y: 5, z: 0}
-  - {x: 0, y: 5, z: -1}
-  - {x: 1, y: 5, z: -1}
+  - {x: 0, y: 3.007267, z: -1}
+  - {x: 0, y: 3.007267, z: 0}
+  - {x: 0, y: 3.007267, z: 0}
+  - {x: 1, y: 3.007267, z: 0}
+  - {x: 0, y: 3.007267, z: -1}
+  - {x: 1, y: 3.007267, z: -1}
   - {x: 0, y: 0, z: -1}
   - {x: 1, y: 0, z: -1}
   - {x: 0, y: 0, z: 0}
@@ -281,20 +281,20 @@ MonoBehaviour:
   m_Textures0:
   - {x: 0, y: 0}
   - {x: -1, y: 0}
-  - {x: 0, y: 5}
-  - {x: -1, y: 5}
+  - {x: 0, y: 3.007267}
+  - {x: -1, y: 3.007267}
   - {x: 0, y: 0}
   - {x: -1, y: 0}
-  - {x: 0, y: 5}
-  - {x: -1, y: 5}
+  - {x: 0, y: 3.007267}
+  - {x: -1, y: 3.007267}
   - {x: 1, y: 0}
   - {x: 0, y: 0}
-  - {x: 1, y: 5}
-  - {x: 0, y: 5}
+  - {x: 1, y: 3.007267}
+  - {x: 0, y: 3.007267}
   - {x: 1, y: 0}
   - {x: 0, y: 0}
-  - {x: 1, y: 5}
-  - {x: 0, y: 5}
+  - {x: 1, y: 3.007267}
+  - {x: 0, y: 3.007267}
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 0, y: -1}
@@ -339,9 +339,17 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_IsSelectable: 1
-  m_SelectedFaces: 
-  m_SelectedEdges: []
-  m_SelectedVertices: 
+  m_SelectedFaces: 04000000
+  m_SelectedEdges:
+  - a: 16
+    b: 17
+  - a: 18
+    b: 16
+  - a: 17
+    b: 19
+  - a: 19
+    b: 18
+  m_SelectedVertices: 10000000110000001200000013000000
 --- !u!64 &5458607686835447653
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -447,7 +455,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8251546854663928136}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 5.5, z: -1.25}
+  m_LocalPosition: {x: 0.5, y: 2.998, z: -0.493}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4328068414793272226}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8863311807982871318}
   - component: {fileID: 669968095638424303}
   - component: {fileID: 109877767962799933}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Blast Tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 7783810901089472881}
   - component: {fileID: 2266778562486869361}
   - component: {fileID: 8679191920864768695}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
