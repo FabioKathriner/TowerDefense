@@ -4,6 +4,7 @@ using UnityEngine;
 namespace Assets.Scripts.Towers
 {
     [RequireComponent(typeof(IWeapon))]
+    [RequireComponent(typeof(Health.Health))]
     public abstract class Tower<TWeapon> : MonoBehaviour, IUpgradable
         where TWeapon : IWeapon
     {
@@ -43,6 +44,11 @@ namespace Assets.Scripts.Towers
             var nearestTarget = TargetFinder.GetNextTarget();
             if (nearestTarget != null)
                 Weapon.Fire(nearestTarget);
+        }
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            Debug.Log("Tower was hit!");
         }
     }
 }

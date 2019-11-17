@@ -18,16 +18,17 @@ namespace Assets.Scripts.Towers
         {
         }
 
-        // Collision only with Layers "Normal Enemy" and "Flying Enemy"
+        // Collision only with Layers defined on the Trigger
         void OnTriggerEnter(Collider other)
         {
-            Debug.Log("Object entered tower range");
+            // TODO: Fix layer bug where enemy arrows trigger the range-trigger of the tank enemy
+            Debug.Log("Object entered range");
             _targets.Add(new Target(other.gameObject, _targets.Count + 1));
         }
 
         void OnTriggerExit(Collider other)
         {
-            Debug.Log("Object left tower range");
+            Debug.Log("Object left range");
             var collisionObjectId = other.gameObject.GetInstanceID();
             var target = _targets.First(x => x.Enemy.GetInstanceID() == collisionObjectId);
             _targets.Remove(target);

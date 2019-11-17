@@ -19,10 +19,10 @@ TagManager:
   - Anti Ground Tower
   - Anti Air Tower
   - Anti All Tower
-  - Projectile
+  - Player Projectiles
   - Base
-  - 
-  - 
+  - Targets of attacking enemy
+  - Enemy Projectiles
   - 
   - 
   - 

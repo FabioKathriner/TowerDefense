@@ -2,7 +2,7 @@
 
 namespace Assets.Scripts.Enemies
 {
-    public class Enemy : MonoBehaviour
+    public abstract class Enemy : MonoBehaviour
     {
         [SerializeField]
         private int _attackPower = 10;
@@ -16,7 +16,7 @@ namespace Assets.Scripts.Enemies
         }
 
         // Start is called before the first frame update
-        private void Start()
+        protected virtual void Start()
         {
             _hp = GetComponent<Health.Health>();
         }
