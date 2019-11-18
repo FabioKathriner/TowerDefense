@@ -24,9 +24,9 @@ namespace Assets.Scripts.Weapons.Projectiles
                 var health = enemy.GetComponent<Health.Health>();
                 if (health != null)
                     health.TakeDamage(Damage);
-
-                Destroy(gameObject);
             }
+
+            Destroy(gameObject);
         }
     }
 }
