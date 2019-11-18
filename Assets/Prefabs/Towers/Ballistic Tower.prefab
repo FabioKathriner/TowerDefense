@@ -309,4 +309,4 @@ MonoBehaviour:
   _projectilePrefab: {fileID: 7041471227579193664, guid: 7a1ca5af35ebbd44bac67f40605d2213,
     type: 3}
   _spawnOffset: {x: 0, y: 0.5, z: 0}
-  _initialForce: 5
+  _initialForce: 30
