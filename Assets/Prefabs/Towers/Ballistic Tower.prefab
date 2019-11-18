@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 2894480746705683181}
   m_Layer: 10
   m_Name: Ballistic Tower
-  m_TagString: Untagged
+  m_TagString: tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

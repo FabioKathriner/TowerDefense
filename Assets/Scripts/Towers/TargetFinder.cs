@@ -7,32 +7,7 @@ namespace Assets.Scripts.Towers
     public class TargetFinder : MonoBehaviour, ITargetFinder
     {
         private readonly IList<Target> _targets = new List<Target>();
-
-        // Start is called before the first frame update
-        void Start()
-        {
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-        }
-
-        // Collision only with Layers defined on the Trigger
-        void OnTriggerEnter(Collider other)
-        {
-            // TODO: Fix layer bug where enemy arrows trigger the range-trigger of the tank enemy
-            Debug.Log("Object entered range");
-            _targets.Add(new Target(other.gameObject, _targets.Count + 1));
-        }
-
-        void OnTriggerExit(Collider other)
-        {
-            Debug.Log("Object left range");
-            var collisionObjectId = other.gameObject.GetInstanceID();
-            var target = _targets.First(x => x.Enemy.GetInstanceID() == collisionObjectId);
-            _targets.Remove(target);
-        }
+        public List<string> TargetTags { get; } = new List<string>();
 
         public GameObject GetNextTarget()
         {
@@ -42,6 +17,28 @@ namespace Assets.Scripts.Towers
         public List<GameObject> GetTargets()
         {
             return _targets.Select(x => x.Enemy).ToList();
+        }
+
+        // Collision only with Layers defined on the Trigger
+        private void OnTriggerEnter(Collider other)
+        {
+            if (TargetTags.Contains(other.attachedRigidbody.tag))
+            {
+                // TODO: Fix layer bug where enemy arrows trigger the range-trigger of the tank enemy
+                Debug.Log($"{other.attachedRigidbody.name} entered range");
+                _targets.Add(new Target(other.gameObject, _targets.Count + 1));
+            }
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (TargetTags.Contains(other.attachedRigidbody.tag))
+            {
+                Debug.Log($"{other.attachedRigidbody.name} left range");
+                var collisionObjectId = other.gameObject.GetInstanceID();
+                var target = _targets.First(x => x.Enemy.GetInstanceID() == collisionObjectId);
+                _targets.Remove(target);
+            }
         }
     }
 

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 488559009871832508}
   m_Layer: 12
   m_Name: Blast Tower
-  m_TagString: Untagged
+  m_TagString: tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

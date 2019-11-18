@@ -24,6 +24,7 @@ namespace Assets.Scripts.Towers
         {
             // TODO: Can this be required without the editor adding the script on the parent object?
             TargetFinder = GetComponentInChildren<TargetFinder>();
+            TargetFinder.TargetTags.AddRange(new []{ Tags.Enemy });
         }
 
 

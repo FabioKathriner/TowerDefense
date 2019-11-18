@@ -18,6 +18,7 @@ namespace Assets.Scripts.Enemies
         {
             base.Start();
             _targetFinder = GetComponentInChildren<TargetFinder>();
+            _targetFinder.TargetTags.AddRange(new []{ Tags.Tower });
             _weapon = GetComponentInChildren<Bow>();
         }
 

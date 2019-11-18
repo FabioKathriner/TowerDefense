@@ -13,7 +13,6 @@ namespace Assets.Scripts.Towers
         // Start is called before the first frame update
         protected override void Start()
         {
-            base.Start();
             Weapon = GetComponentInChildren<Ballista>();
         }
 
