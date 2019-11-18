@@ -5,18 +5,11 @@ using Assets.Scripts.Weapons;
 using UnityEngine;
 
 [RequireComponent(typeof(ElectroShocker))]
-public class BlastTower : Tower<IAoeWeapon>
+public class BlastTower : Tower<ElectroShocker>
 {
     public override void Upgrade()
     {
         throw new NotImplementedException();
-    }
-
-    // Start is called before the first frame update
-    protected override void Start()
-    {
-        base.Start();
-        Weapon = GetComponent<ElectroShocker>();
     }
 
     protected override void Fire()
