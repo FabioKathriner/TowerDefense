@@ -1174,6 +1174,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cea9cc84ab8248408cbef219c40edaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Mask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!43 &924085611
 Mesh:
   m_ObjectHideFlags: 0
