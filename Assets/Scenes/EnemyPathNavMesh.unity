@@ -207,6 +207,7 @@ GameObject:
   - component: {fileID: 253373486}
   - component: {fileID: 253373485}
   - component: {fileID: 253373488}
+  - component: {fileID: 253373489}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -293,6 +294,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panSpeed: 30
   panBoarderThickness: 10
+  scrollSpeed: 5
+  minY: 10
+  maxY: 80
+--- !u!114 &253373489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253373484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cea9cc84ab8248408cbef219c40edaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Mask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &270647972
 GameObject:
   m_ObjectHideFlags: 0
@@ -1095,7 +1114,6 @@ GameObject:
   - component: {fileID: 849950947}
   - component: {fileID: 849950946}
   - component: {fileID: 849950945}
-  - component: {fileID: 849950949}
   m_Layer: 0
   m_Name: GroundPlane
   m_TagString: ground
@@ -1177,21 +1195,6 @@ Transform:
   m_Father: {fileID: 1670261726}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &849950949
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 849950944}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cea9cc84ab8248408cbef219c40edaa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Mask:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!43 &924085611
 Mesh:
   m_ObjectHideFlags: 0
