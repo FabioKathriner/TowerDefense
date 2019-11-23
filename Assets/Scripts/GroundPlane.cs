@@ -1,8 +1,7 @@
-﻿using System.Runtime.InteropServices.WindowsRuntime;
-using UnityEngine;
-using UnityEngine.UIElements;
+﻿using UnityEngine;
+using UnityEngine.EventSystems;
 using Quaternion = UnityEngine.Quaternion;
-using Vector3 = UnityEngine.Vector3;
+
 
 public class GroundPlane : MonoBehaviour
 {
@@ -10,6 +9,13 @@ public class GroundPlane : MonoBehaviour
     private GameObject _turret;
     public LayerMask HitMask;
     public LayerMask IgnoreTowerMask;
+
+    private BuildManager buildManager;
+
+    void Start()
+    {
+        buildManager = BuildManager.instance;
+    }
 
     void FixedUpdate()
     {
@@ -22,12 +28,18 @@ public class GroundPlane : MonoBehaviour
         
         if (Input.GetMouseButtonDown(0))
         {
+            if (EventSystem.current.IsPointerOverGameObject())
+                return;
+
+            if (buildManager.GetTurretToBuild() == null)
+                return;
+
             if (Physics.Raycast(ray, out nonhit, 1000, IgnoreTowerMask))
             {
                 Debug.LogWarning("Can't place turret on top of another turret!'");
                 return;
             }
-            GameObject _turretToBuild = BuildManager.instance.GetTurretToBuild();
+            GameObject _turretToBuild = buildManager.GetTurretToBuild();
             _turret = (GameObject)Instantiate(_turretToBuild, hit.point, Quaternion.identity);
             Debug.LogWarning("Turret Placed successfully");
         }
