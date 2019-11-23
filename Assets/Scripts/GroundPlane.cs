@@ -39,6 +39,7 @@ public class GroundPlane : MonoBehaviour
                 Debug.LogWarning("Can't place turret on top of another turret!'");
                 return;
             }
+
             GameObject _turretToBuild = buildManager.GetTurretToBuild();
             _turret = (GameObject)Instantiate(_turretToBuild, hit.point, Quaternion.identity);
             Debug.LogWarning("Turret Placed successfully");

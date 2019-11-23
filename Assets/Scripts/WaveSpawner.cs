@@ -35,7 +35,7 @@ namespace Assets.Scripts
             for (int i = 0; i < waveIndex; i++)
             {
                 SpawnEnemy();
-                yield return new WaitForSeconds(0.5f);
+               yield return new WaitForSeconds(0.5f);
             }
         
             Debug.Log("Wave Incoming!");
