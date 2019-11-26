@@ -2,6 +2,12 @@
 
 public class Shop : MonoBehaviour
 {
+
+    public TurretBlueprint RocketTower;
+    public TurretBlueprint BallisticTower;
+    public TurretBlueprint GuidedMissileTower;
+    public TurretBlueprint BlastTower;
+
     private BuildManager buildManager;
 
     void Start()
@@ -9,28 +15,28 @@ public class Shop : MonoBehaviour
         buildManager = BuildManager.instance;
     }
 
-    public void PurchaseRocketTower()
+    public void SelectRocketTower()
     {
         Debug.Log("Rocket Tower selected.");
-        buildManager.SetTurretToBuild(buildManager.RocketTowerPrefab);
+        buildManager.SelectTurretToBuild(RocketTower);
     }
 
-    public void PurchaseBallisticTower()
+    public void SelectBallisticTower()
     {
         Debug.Log("Ballistic Tower selected.");
-        buildManager.SetTurretToBuild(buildManager.BallisticTowerPrefab);
+        buildManager.SelectTurretToBuild(BallisticTower);
     }
 
-    public void PurchaseGuidedMissileTower()
+    public void SelectGuidedMissileTower()
     {
         Debug.Log("Guided Missle Tower selected.");
-        buildManager.SetTurretToBuild(buildManager.GuidedMissileTowerPrefab);
+        buildManager.SelectTurretToBuild(GuidedMissileTower);
     }
 
-    public void PurchaseBlastTower()
+    public void SelectBlastTower()
     {
         Debug.Log("Blast Tower selected.");
-        buildManager.SetTurretToBuild(buildManager.BlastTowerPrefab);
+        buildManager.SelectTurretToBuild(BlastTower);
     }
 
 } 
