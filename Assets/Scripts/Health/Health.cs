@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Assets.Scripts.Health
 {
@@ -10,6 +11,9 @@ namespace Assets.Scripts.Health
 
         [SerializeField]
         private int _currentHealth;
+
+        [SerializeField]
+        private Image _healthBar;
 
         public int CurrentHealth
         {
@@ -26,6 +30,7 @@ namespace Assets.Scripts.Health
         public void TakeDamage(int damage)
         {
             CurrentHealth -= damage;
+            _healthBar.fillAmount = (float)_currentHealth / _maxHealth;
             if (CurrentHealth <= 0)
             {
                 StartCoroutine(ActivateTriggerExitAndDie());
