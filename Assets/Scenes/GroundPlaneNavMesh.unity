@@ -924,7 +924,7 @@ PrefabInstance:
     - target: {fileID: 7771724964413010971, guid: dfb842b52b57bc84d963bfc3eccd7322,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7771724964413010971, guid: dfb842b52b57bc84d963bfc3eccd7322,
         type: 3}
@@ -1014,17 +1014,29 @@ PrefabInstance:
     - target: {fileID: 7771724964413010968, guid: dfb842b52b57bc84d963bfc3eccd7322,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PurchaseBallisticTower
+      value: SelectBallisticTower
       objectReference: {fileID: 0}
     - target: {fileID: 7771724964413010968, guid: dfb842b52b57bc84d963bfc3eccd7322,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 7771724964413010968, guid: dfb842b52b57bc84d963bfc3eccd7322,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7771724964413010968, guid: dfb842b52b57bc84d963bfc3eccd7322,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7771724965247029893, guid: dfb842b52b57bc84d963bfc3eccd7322,
         type: 3}
       propertyPath: m_Text
-      value: Ballistic Tower
+      value: 'Ballistic Tower
+
+        10$'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfb842b52b57bc84d963bfc3eccd7322, type: 3}
@@ -1034,7 +1046,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15168
+  m_Name: pb_Mesh18330
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1247,7 +1259,7 @@ PrefabInstance:
     - target: {fileID: 7771724964413010971, guid: dfb842b52b57bc84d963bfc3eccd7322,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7771724964413010971, guid: dfb842b52b57bc84d963bfc3eccd7322,
         type: 3}
@@ -1337,7 +1349,7 @@ PrefabInstance:
     - target: {fileID: 7771724964413010968, guid: dfb842b52b57bc84d963bfc3eccd7322,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PurchaseBlastTower
+      value: SelectBlastTower
       objectReference: {fileID: 0}
     - target: {fileID: 7771724964413010968, guid: dfb842b52b57bc84d963bfc3eccd7322,
         type: 3}
@@ -1347,7 +1359,9 @@ PrefabInstance:
     - target: {fileID: 7771724965247029893, guid: dfb842b52b57bc84d963bfc3eccd7322,
         type: 3}
       propertyPath: m_Text
-      value: Blast Tower
+      value: 'Blast Tower
+
+        250$'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfb842b52b57bc84d963bfc3eccd7322, type: 3}
@@ -1457,10 +1471,10 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1769768581}
   - {fileID: 1187395518}
-  - {fileID: 722925383}
+  - {fileID: 1769768581}
   - {fileID: 104204941}
+  - {fileID: 722925383}
   m_Father: {fileID: 1509976764}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1542,6 +1556,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 175762cba821cd4458cd33112df7d7c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RocketTower:
+    prefab: {fileID: 2439471149367952929, guid: bef85e6af24c17c4eabab8fa3db9aeb8,
+      type: 3}
+    turretCost: 100
+  BallisticTower:
+    prefab: {fileID: 2869298745103565431, guid: 55aaa649b502bba45ab050a56bf2eac9,
+      type: 3}
+    turretCost: 10
+  GuidedMissileTower:
+    prefab: {fileID: 4932611405737507254, guid: 162823a89f7ebe14999105f375c804c4,
+      type: 3}
+    turretCost: 500
+  BlastTower:
+    prefab: {fileID: 2595892129209389196, guid: 4454e4ea1badab045b183e0b5afa5ecf,
+      type: 3}
+    turretCost: 250
 --- !u!1 &849950944
 GameObject:
   m_ObjectHideFlags: 0
@@ -1554,7 +1584,6 @@ GameObject:
   - component: {fileID: 849950947}
   - component: {fileID: 849950946}
   - component: {fileID: 849950945}
-  - component: {fileID: 849950949}
   m_Layer: 0
   m_Name: GroundPlane
   m_TagString: ground
@@ -1636,31 +1665,13 @@ Transform:
   m_Father: {fileID: 1670261726}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &849950949
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 849950944}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cea9cc84ab8248408cbef219c40edaa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HitMask:
-    serializedVersion: 2
-    m_Bits: 1
-  IgnoreTowerMask:
-    serializedVersion: 2
-    m_Bits: 32768
 --- !u!43 &924085611
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15300
+  m_Name: pb_Mesh18474
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2487,7 +2498,7 @@ PrefabInstance:
     - target: {fileID: 7771724964413010971, guid: dfb842b52b57bc84d963bfc3eccd7322,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7771724964413010971, guid: dfb842b52b57bc84d963bfc3eccd7322,
         type: 3}
@@ -2577,7 +2588,7 @@ PrefabInstance:
     - target: {fileID: 7771724964413010968, guid: dfb842b52b57bc84d963bfc3eccd7322,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PurchaseGuidedMissileTower
+      value: SelectGuidedMissileTower
       objectReference: {fileID: 0}
     - target: {fileID: 7771724964413010968, guid: dfb842b52b57bc84d963bfc3eccd7322,
         type: 3}
@@ -2587,7 +2598,9 @@ PrefabInstance:
     - target: {fileID: 7771724965247029893, guid: dfb842b52b57bc84d963bfc3eccd7322,
         type: 3}
       propertyPath: m_Text
-      value: Guided Missile Tower
+      value: 'Guided Missile Tower
+
+        500$'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfb842b52b57bc84d963bfc3eccd7322, type: 3}
@@ -12694,6 +12707,7 @@ GameObject:
   - component: {fileID: 1762251086}
   - component: {fileID: 1762251087}
   - component: {fileID: 1762251088}
+  - component: {fileID: 1762251089}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -12744,6 +12758,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5c4278e8c9c2b747b52f78a2056ddb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HitMask:
+    serializedVersion: 2
+    m_Bits: 1
+  IgnoreTowerMask:
+    serializedVersion: 2
+    m_Bits: 32768
   RocketTowerPrefab: {fileID: 2439471149367952929, guid: bef85e6af24c17c4eabab8fa3db9aeb8,
     type: 3}
   BallisticTowerPrefab: {fileID: 2869298745103565431, guid: 55aaa649b502bba45ab050a56bf2eac9,
@@ -12752,6 +12772,19 @@ MonoBehaviour:
     type: 3}
   BlastTowerPrefab: {fileID: 2595892129209389196, guid: 4454e4ea1badab045b183e0b5afa5ecf,
     type: 3}
+--- !u!114 &1762251089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1762251085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02ae7929d519b0446a0db0423fb33b9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startMoney: 1000
 --- !u!224 &1769768581 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7771724964413010971, guid: dfb842b52b57bc84d963bfc3eccd7322,
@@ -13033,7 +13066,7 @@ PrefabInstance:
     - target: {fileID: 7771724964413010971, guid: dfb842b52b57bc84d963bfc3eccd7322,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7771724964413010971, guid: dfb842b52b57bc84d963bfc3eccd7322,
         type: 3}
@@ -13123,12 +13156,19 @@ PrefabInstance:
     - target: {fileID: 7771724964413010968, guid: dfb842b52b57bc84d963bfc3eccd7322,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PurchaseRocketTower
+      value: SelectRocketTower
       objectReference: {fileID: 0}
     - target: {fileID: 7771724964413010968, guid: dfb842b52b57bc84d963bfc3eccd7322,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7771724965247029893, guid: dfb842b52b57bc84d963bfc3eccd7322,
+        type: 3}
+      propertyPath: m_Text
+      value: 'Rocket Tower
+
+        100$'
       objectReference: {fileID: 0}
     - target: {fileID: 7771724964413010966, guid: dfb842b52b57bc84d963bfc3eccd7322,
         type: 3}
