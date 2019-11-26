@@ -10,6 +10,8 @@ namespace Assets.Scripts.Weapons
 
         public void Fire(GameObject target)
         {
+            if (target == null)
+                return;
             var health = target.GetComponentInParent<Health.Health>();
             if (health != null)
                 health.TakeDamage(Damage);

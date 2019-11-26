@@ -13,6 +13,9 @@ namespace Assets.Scripts.Weapons
 
         public void Fire(GameObject target)
         {
+            if (target == null)
+                return;
+
             transform.LookAt(target.transform);
             var projectile = Instantiate(_projectilePrefab, transform.position + _spawnOffset, transform.rotation);
             var arrow = projectile.GetComponent<Arrow>();
