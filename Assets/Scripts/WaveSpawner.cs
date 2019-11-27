@@ -6,6 +6,7 @@ namespace Assets.Scripts
 {
     public class WaveSpawner : MonoBehaviour
     {
+        public static int EnemyAliveCount = 0;
         public Transform enemyPrefab;
         public Transform spawnPoint;
 
@@ -18,14 +19,22 @@ namespace Assets.Scripts
 
         void Update()
         {
+            if (EnemyAliveCount > 0)
+            {
+                return;
+            }
+
             if (countdown <= 0f)
             {
                 StartCoroutine(SpawnWave());
                 countdown = timeBetweenWaves;
+                return;
             }
             countdown -= Time.deltaTime;
 
-            waveCountDownText.text = Mathf.Round(countdown).ToString();
+            countdown = Mathf.Clamp(countdown, 0f, Mathf.Infinity);
+
+            waveCountDownText.text = $"{countdown:00.00}";
         }
 
         IEnumerator SpawnWave()
@@ -44,6 +53,7 @@ namespace Assets.Scripts
         void SpawnEnemy()
         {
             Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
+            EnemyAliveCount++;
         }
     }
 }

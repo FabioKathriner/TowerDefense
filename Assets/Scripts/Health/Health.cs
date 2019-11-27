@@ -33,13 +33,14 @@ namespace Assets.Scripts.Health
             _healthBar.fillAmount = (float)_currentHealth / _maxHealth;
             if (CurrentHealth <= 0)
             {
-                StartCoroutine(ActivateTriggerExitAndDie());
+                Die();
             }
         }
 
         public void Die()
         {
             StartCoroutine(ActivateTriggerExitAndDie());
+            WaveSpawner.EnemyAliveCount--;
         }
 
         // HACK: Moves the object far away so that the TargetFinder onTriggerExit triggers.
@@ -48,6 +49,7 @@ namespace Assets.Scripts.Health
         {
             transform.Translate(Vector3.up * 5000);
             yield return new WaitForSeconds(1f);
+            
             Destroy(gameObject);
         }
     }

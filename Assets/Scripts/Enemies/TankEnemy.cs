@@ -14,9 +14,8 @@ namespace Assets.Scripts.Enemies
         private IWeapon _weapon;
 
         // Start is called before the first frame update
-        protected override void Start()
+        private void Start()
         {
-            base.Start();
             _targetFinder = GetComponentInChildren<TargetFinder>();
             _targetFinder.TargetTags.AddRange(new []{ Tags.Tower });
             _weapon = GetComponentInChildren<Bow>();
