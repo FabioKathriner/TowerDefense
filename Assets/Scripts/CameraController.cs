@@ -14,7 +14,7 @@ public class CameraController : MonoBehaviour
     //TODO Camera Rotation
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
             moveCamera = !moveCamera;

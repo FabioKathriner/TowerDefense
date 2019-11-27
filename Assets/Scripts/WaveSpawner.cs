@@ -7,7 +7,10 @@ namespace Assets.Scripts
     public class WaveSpawner : MonoBehaviour
     {
         public static int EnemyAliveCount = 0;
-        public Transform enemyPrefab;
+
+        public Wave[] waves;
+
+        //public Transform enemyPrefab;
         public Transform spawnPoint;
 
         public float timeBetweenWaves = 5.5f;
@@ -39,20 +42,27 @@ namespace Assets.Scripts
 
         IEnumerator SpawnWave()
         {
+            Wave wave = waves[waveIndex];
+           
+            for (int i = 0; i < wave.Count; i++)
+            { 
+                SpawnEnemy(wave.Enemy);
+                yield return new WaitForSeconds(1f / wave.Rate);
+            }
 
             waveIndex++;
-            for (int i = 0; i < waveIndex; i++)
-            {
-                SpawnEnemy();
-               yield return new WaitForSeconds(0.5f);
-            }
-        
             Debug.Log("Wave Incoming!");
+
+            if (waveIndex == waves.Length)
+            {
+                Debug.Log("Level Over!");
+                this.enabled = false;
+            }
         }
 
-        void SpawnEnemy()
+        void SpawnEnemy(GameObject Enemy)
         {
-            Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
+            Instantiate(Enemy, spawnPoint.position, spawnPoint.rotation);
             EnemyAliveCount++;
         }
     }
