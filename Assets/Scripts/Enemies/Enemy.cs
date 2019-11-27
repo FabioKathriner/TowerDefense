@@ -7,6 +7,7 @@ namespace Assets.Scripts.Enemies
     {
         [SerializeField]
         private int _attackPower = 10;
+        public int LootValue;
 
         protected virtual void Start()
         {
@@ -16,6 +17,7 @@ namespace Assets.Scripts.Enemies
 
         private void OnEnemyDied(object sender, EventArgs args)
         {
+            PlayerStats.Money += LootValue;
             WaveSpawner.EnemyAliveCount--;
         }
 

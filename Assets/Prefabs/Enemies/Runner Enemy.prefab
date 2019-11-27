@@ -908,6 +908,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _attackPower: 10
+  LootValue: 100
 --- !u!1 &8864333768737350873
 GameObject:
   m_ObjectHideFlags: 0
