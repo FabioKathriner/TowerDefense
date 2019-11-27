@@ -3,25 +3,73 @@ using UnityEngine;
 
 namespace Assets.Scripts.Towers
 {
-    [RequireComponent(typeof(IWeapon))]
+    [RequireComponent(typeof(Weapon))]
     [RequireComponent(typeof(Health.Health))]
     public abstract class Tower<TWeapon> : MonoBehaviour, IUpgradable
-        where TWeapon : IWeapon
+        where TWeapon : Weapon
     {
         private float _time;
+
+        [SerializeField]
+        protected TextUpdater LevelText;
 
         [SerializeField]
         protected float RateOfFire = 0.8f;
 
         protected TargetFinder TargetFinder;
 
+        [SerializeField]
+        private int _level = 1;
+
+        [SerializeField]
+        private float _rateOfFireUpgradeIncrement;
+        [SerializeField]
+        private int _healthUpgradeIncrement;
+        [SerializeField]
+        private int _damageUpgradeIncrement;
+
+        protected float RateOfFireUpgradeIncrement
+        {
+            get => _rateOfFireUpgradeIncrement;
+            set => _rateOfFireUpgradeIncrement = value;
+        }
+
+        protected int HealthUpgradeIncrement
+        {
+            get => _healthUpgradeIncrement;
+            set => _healthUpgradeIncrement = value;
+        }
+
+        protected int DamageUpgradeIncrement
+        {
+            get => _damageUpgradeIncrement;
+            set => _damageUpgradeIncrement = value;
+        }
+
+        protected Health.Health Health;
+
         public TWeapon Weapon { get; set; }
 
-        public int Level { get; set; }
-        public abstract void Upgrade();
+        public int Level
+        {
+            get => _level;
+            set
+            {
+                _level = value;
+                LevelText.UpdateText(_level.ToString());
+            }
+        }
+
+        public virtual void Upgrade()
+        {
+            Level++;
+        }
+
         // Start is called before the first frame update
         protected virtual void Start()
         {
+            LevelText.UpdateText(_level.ToString());
+            Health = GetComponent<Health.Health>();
             // TODO: Can this be required without the editor adding the script on the parent object?
             Weapon = GetComponentInChildren<TWeapon>();
             TargetFinder = GetComponentInChildren<TargetFinder>();
@@ -42,12 +90,7 @@ namespace Assets.Scripts.Towers
             }
         }
 
-        protected virtual void Fire()
-        {
-            var nearestTarget = TargetFinder.GetNextTarget();
-            if (nearestTarget != null)
-                Weapon.Fire(nearestTarget);
-        }
+        protected abstract void Fire();
 
         private void OnCollisionEnter(Collision collision)
         {

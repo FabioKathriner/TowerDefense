@@ -140,7 +140,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6ec2d9478f08d24bb8d0e257deb4ef2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LevelText: {fileID: 4264719664177350326}
   RateOfFire: 0.8
+  _level: 0
+  _rateOfFireUpgradeIncrement: 0
+  _healthUpgradeIncrement: 0
+  _damageUpgradeIncrement: 0
 --- !u!114 &-1235534474826079785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,7 +330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f048abb6c712e4409ca386996fc1888, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _projectilePrefab: {fileID: 7041471227579193664, guid: 7a1ca5af35ebbd44bac67f40605d2213,
+  ProjectilePrefab: {fileID: 7041471227579193664, guid: 7a1ca5af35ebbd44bac67f40605d2213,
     type: 3}
   _spawnOffset: {x: 0, y: 0.5, z: 0}
   _initialForce: 30
@@ -464,5 +469,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4264719664177350326 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3543173377101330221, guid: bd243328be03bf54191c9b70b3453395,
+    type: 3}
+  m_PrefabInstance: {fileID: 721898213142229403}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ee9bd2bc8c2e68469af6aaf6770c271, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

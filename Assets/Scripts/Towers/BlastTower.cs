@@ -9,7 +9,10 @@ public class BlastTower : Tower<ElectroShocker>
 {
     public override void Upgrade()
     {
-        throw new NotImplementedException();
+        RateOfFire += RateOfFireUpgradeIncrement;
+        Health.MaxHealth += HealthUpgradeIncrement;
+        Health.CurrentHealth = Health.MaxHealth;
+        Weapon.AttackDamage += DamageUpgradeIncrement;
     }
 
     protected override void Fire()

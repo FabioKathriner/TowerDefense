@@ -1,5 +1,6 @@
 ﻿using System;
 using Assets.Scripts.Weapons;
+using UnityEngine;
 
 namespace Assets.Scripts.Towers
 {
@@ -7,12 +8,15 @@ namespace Assets.Scripts.Towers
     {
         public override void Upgrade()
         {
-            throw new NotImplementedException();
+            RateOfFire += RateOfFireUpgradeIncrement;
+            Health.MaxHealth += HealthUpgradeIncrement;
+            Health.CurrentHealth = Health.MaxHealth;
+            Weapon.AttackDamage += DamageUpgradeIncrement;
         }
 
         protected override void Fire()
         {
-            Weapon.Fire();
+            Weapon.Fire(null);
         }
     }
 }

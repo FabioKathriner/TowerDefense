@@ -3,10 +3,10 @@ using UnityEngine;
 
 namespace Assets.Scripts.Weapons
 {
-    public class ElectroShocker : MonoBehaviour, IAoeWeapon
+    public class ElectroShocker : Weapon, IAoeWeapon
     {
         [SerializeField]
-        protected int Damage = 10;
+        private int _attackDamage = 10;
 
         public void Fire(GameObject target)
         {
@@ -14,7 +14,7 @@ namespace Assets.Scripts.Weapons
                 return;
             var health = target.GetComponentInParent<Health.Health>();
             if (health != null)
-                health.TakeDamage(Damage);
+                health.TakeDamage(AttackDamage);
         }
 
         public void Fire(List<GameObject> targets)
@@ -24,6 +24,12 @@ namespace Assets.Scripts.Weapons
             {
                 Fire(target);
             }
+        }
+
+        public override int AttackDamage
+        {
+            get => _attackDamage;
+            set => _attackDamage = value;
         }
     }
 }

@@ -11,7 +11,7 @@ namespace Assets.Scripts.Enemies
 
         [SerializeField]
         protected float RateOfFire = 1.2f;
-        private IWeapon _weapon;
+        private ProjectileWeapon _weapon;
 
         // Start is called before the first frame update
         protected override void Start()

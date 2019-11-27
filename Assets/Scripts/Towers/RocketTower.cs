@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Weapons;
+using UnityEngine;
 
 namespace Assets.Scripts.Towers
 {
@@ -6,7 +7,17 @@ namespace Assets.Scripts.Towers
     {
         public override void Upgrade()
         {
-            throw new System.NotImplementedException();
+            RateOfFire += RateOfFireUpgradeIncrement;
+            Health.MaxHealth += HealthUpgradeIncrement;
+            Health.CurrentHealth = Health.MaxHealth;
+            Weapon.AttackDamage += DamageUpgradeIncrement;
+        }
+
+        protected override void Fire()
+        {
+            var nearestTarget = TargetFinder.GetNextTarget();
+            if (nearestTarget != null)
+                Weapon.Fire(nearestTarget);
         }
     }
 }

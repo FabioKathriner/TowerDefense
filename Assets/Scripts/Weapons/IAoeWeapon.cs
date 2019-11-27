@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Weapons
 {
-    public interface IAoeWeapon : IWeapon
+    public interface IAoeWeapon
     {
         void Fire(List<GameObject> targets);
     }

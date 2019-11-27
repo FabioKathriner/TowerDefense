@@ -10,9 +10,15 @@ namespace Assets.Scripts.Weapons.Projectiles
         protected float Speed = 10f;
 
         [SerializeField]
-        protected int Damage = 10;
+        private int _damage = 10;
 
         public GameObject Target { get; set; }
+
+        public int Damage
+        {
+            get => _damage;
+            set => _damage = value;
+        }
 
         // Start is called before the first frame update
         protected virtual void Start()
