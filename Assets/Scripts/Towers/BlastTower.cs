@@ -9,7 +9,8 @@ public class BlastTower : Tower<ElectroShocker>
 {
     public override void Upgrade()
     {
-        RateOfFire += RateOfFireUpgradeIncrement;
+        base.Upgrade();
+        RateOfFire -= RateOfFireUpgradeIncrement;
         Health.MaxHealth += HealthUpgradeIncrement;
         Health.CurrentHealth = Health.MaxHealth;
         Weapon.AttackDamage += DamageUpgradeIncrement;

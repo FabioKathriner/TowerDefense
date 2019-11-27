@@ -3,52 +3,25 @@ using UnityEngine;
 
 namespace Assets.Scripts.Towers
 {
-    [RequireComponent(typeof(Weapon))]
-    [RequireComponent(typeof(Health.Health))]
-    public abstract class Tower<TWeapon> : MonoBehaviour, IUpgradable
-        where TWeapon : Weapon
+    public abstract class Tower : MonoBehaviour, IUpgradable
     {
-        private float _time;
+        [SerializeField]
+        private int _level = 1;
+
+        [SerializeField]
+        private int _upgradePrice = 50;
 
         [SerializeField]
         protected TextUpdater LevelText;
 
         [SerializeField]
-        protected float RateOfFire = 0.8f;
-
-        protected TargetFinder TargetFinder;
-
-        [SerializeField]
-        private int _level = 1;
-
-        [SerializeField]
-        private float _rateOfFireUpgradeIncrement;
-        [SerializeField]
         private int _healthUpgradeIncrement;
-        [SerializeField]
-        private int _damageUpgradeIncrement;
-
-        protected float RateOfFireUpgradeIncrement
-        {
-            get => _rateOfFireUpgradeIncrement;
-            set => _rateOfFireUpgradeIncrement = value;
-        }
 
         protected int HealthUpgradeIncrement
         {
             get => _healthUpgradeIncrement;
             set => _healthUpgradeIncrement = value;
         }
-
-        protected int DamageUpgradeIncrement
-        {
-            get => _damageUpgradeIncrement;
-            set => _damageUpgradeIncrement = value;
-        }
-
-        protected Health.Health Health;
-
-        public TWeapon Weapon { get; set; }
 
         public int Level
         {
@@ -60,16 +33,64 @@ namespace Assets.Scripts.Towers
             }
         }
 
-        public virtual void Upgrade()
+        public int UpgradePrice
         {
-            Level++;
+            get => _upgradePrice;
+            private set => _upgradePrice = value;
         }
 
-        // Start is called before the first frame update
+        protected Health.Health Health;
+
         protected virtual void Start()
         {
             LevelText.UpdateText(_level.ToString());
             Health = GetComponent<Health.Health>();
+        }
+
+        public virtual void Upgrade()
+        {
+            Level++;
+            UpgradePrice *= 2;
+        }
+    }
+
+    [RequireComponent(typeof(Weapon))]
+    [RequireComponent(typeof(Health.Health))]
+    public abstract class Tower<TWeapon> : Tower
+        where TWeapon : Weapon
+    {
+        private float _time;
+
+        [SerializeField]
+        protected float RateOfFire = 0.8f;
+
+        protected TargetFinder TargetFinder;
+
+        [SerializeField]
+        private float _rateOfFireUpgradeIncrement;
+
+        [SerializeField]
+        private int _damageUpgradeIncrement;
+
+        protected float RateOfFireUpgradeIncrement
+        {
+            get => _rateOfFireUpgradeIncrement;
+            set => _rateOfFireUpgradeIncrement = value;
+        }
+
+        protected int DamageUpgradeIncrement
+        {
+            get => _damageUpgradeIncrement;
+            set => _damageUpgradeIncrement = value;
+        }
+
+        public TWeapon Weapon { get; set; }
+
+
+        // Start is called before the first frame update
+        protected override void Start()
+        {
+            base.Start();
             // TODO: Can this be required without the editor adding the script on the parent object?
             Weapon = GetComponentInChildren<TWeapon>();
             TargetFinder = GetComponentInChildren<TargetFinder>();

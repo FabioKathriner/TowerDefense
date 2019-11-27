@@ -20,7 +20,11 @@ namespace Assets.Scripts.Health
         public int CurrentHealth
         {
             get => _currentHealth;
-            set => _currentHealth = value;
+            set
+            {
+                _currentHealth = value;
+                _healthBar.fillAmount = (float)_currentHealth / _maxHealth;
+            }
         }
 
         public int MaxHealth
@@ -32,7 +36,6 @@ namespace Assets.Scripts.Health
         public void TakeDamage(int damage)
         {
             CurrentHealth -= damage;
-            _healthBar.fillAmount = (float)_currentHealth / _maxHealth;
             if (CurrentHealth <= 0)
             {
                 Die();

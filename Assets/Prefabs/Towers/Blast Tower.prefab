@@ -49,12 +49,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb3217222d6bda44abf2393658d1faba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelText: {fileID: 221264781790965849}
-  RateOfFire: 2
   _level: 0
-  _rateOfFireUpgradeIncrement: 0
-  _healthUpgradeIncrement: 0
-  _damageUpgradeIncrement: 0
+  _upgradePrice: 50
+  LevelText: {fileID: 221264781790965849}
+  _healthUpgradeIncrement: 20
+  RateOfFire: 2
+  _rateOfFireUpgradeIncrement: 0.1
+  _damageUpgradeIncrement: 5
 --- !u!114 &109877767962799933
 MonoBehaviour:
   m_ObjectHideFlags: 0

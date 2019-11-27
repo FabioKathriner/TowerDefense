@@ -1,9 +1,8 @@
-﻿using UnityEditor;
-using UnityEngine;
-using UnityEngine.UIElements;
+﻿using UnityEngine;
 
 namespace Assets.Scripts
 {
+
     public class TowerSelector : MonoBehaviour
     {
         [SerializeField]
@@ -12,6 +11,10 @@ namespace Assets.Scripts
         private GameObject _selectedTower;
         private Renderer _selectedRenderer;
         private Color _previousColor;
+        public event TowerSelected OnTowerSelected;
+        public event TowerDeselected OnTowerDeselected;
+        public delegate void TowerSelected(object sender, TowerSelectedArgs args);
+        public delegate void TowerDeselected(object sender);
 
         private void FixedUpdate()
         {
@@ -30,6 +33,12 @@ namespace Assets.Scripts
                 _selectedRenderer = _selectedTower.GetComponentInChildren<Renderer>();
                 _previousColor = _selectedRenderer.material.color;
                 _selectedRenderer.material.SetColor("_Color", Color.blue);
+                OnTowerSelected?.Invoke(this, new TowerSelectedArgs(_selectedTower));
+            }
+            else
+            {
+                ResetPreviousSelection();
+                OnTowerDeselected?.Invoke(this);
             }
         }
 
@@ -40,5 +49,15 @@ namespace Assets.Scripts
                 _selectedRenderer.material.SetColor("_Color", _previousColor);
             }
         }
+    }
+
+    public class TowerSelectedArgs
+    {
+        public TowerSelectedArgs(GameObject selectedTower)
+        {
+            SelectedTower = selectedTower;
+        }
+
+        public GameObject SelectedTower { get; set; }
     }
 }
