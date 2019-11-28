@@ -14,7 +14,8 @@ namespace Assets.Scripts
 
         public void UpdateText(string text)
         {
-            _textObject.text = text;
+            if (_textObject != null) 
+                _textObject.text = text;
         }
     }
 }

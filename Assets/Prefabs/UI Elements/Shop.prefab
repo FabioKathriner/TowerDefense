@@ -745,6 +745,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7771724964413010966, guid: dfb842b52b57bc84d963bfc3eccd7322,
+        type: 3}
+      propertyPath: m_CullTransparentMesh
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7771724964413010969, guid: dfb842b52b57bc84d963bfc3eccd7322,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7771724964413010968, guid: dfb842b52b57bc84d963bfc3eccd7322,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -781,16 +791,6 @@ PrefabInstance:
       value: 'Rocket Tower
 
         100$'
-      objectReference: {fileID: 0}
-    - target: {fileID: 7771724964413010966, guid: dfb842b52b57bc84d963bfc3eccd7322,
-        type: 3}
-      propertyPath: m_CullTransparentMesh
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7771724964413010969, guid: dfb842b52b57bc84d963bfc3eccd7322,
-        type: 3}
-      propertyPath: m_RaycastTarget
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfb842b52b57bc84d963bfc3eccd7322, type: 3}

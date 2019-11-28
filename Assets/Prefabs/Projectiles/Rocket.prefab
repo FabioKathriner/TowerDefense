@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 30
-  Damage: 30
+  _damage: 50
   _explosionRadius: 2
 --- !u!1 &5714852369821114035
 GameObject:

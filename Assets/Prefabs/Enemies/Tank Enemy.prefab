@@ -25427,8 +25427,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87ed5cad8bdcfbd4580c9a72ed575d34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 100
-  _currentHealth: 100
+  _maxHealth: 150
+  _currentHealth: 150
   _healthBar: {fileID: 4307761928750337934}
 --- !u!114 &3215381073598440641
 MonoBehaviour:
@@ -25452,7 +25452,7 @@ NavMeshAgent:
   m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 5
+  m_Speed: 1
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -25477,7 +25477,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _attackPower: 10
-  LootValue: 100
+  LootValue: 30
+  _playerStats: {fileID: 4491740265283107866, guid: e332ff92c790d9340a4475ec0440d6bb,
+    type: 3}
   RateOfFire: 1.2
 --- !u!1 &2317368896369946260
 GameObject:
@@ -63644,6 +63646,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2317368896312824662}
     m_Modifications:
+    - target: {fileID: 8720842720333726076, guid: 35b97f5b82c035d41970636fc4298c41,
+        type: 3}
+      propertyPath: m_Name
+      value: EnemyUnitCanvas
+      objectReference: {fileID: 0}
     - target: {fileID: 8720842720333726048, guid: 35b97f5b82c035d41970636fc4298c41,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -63748,11 +63755,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8720842720333726076, guid: 35b97f5b82c035d41970636fc4298c41,
-        type: 3}
-      propertyPath: m_Name
-      value: EnemyUnitCanvas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35b97f5b82c035d41970636fc4298c41, type: 3}
