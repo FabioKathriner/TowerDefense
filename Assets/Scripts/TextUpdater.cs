@@ -16,6 +16,10 @@ namespace Assets.Scripts
         {
             if (_textObject != null)
                 _textObject.text = text;
+            else
+            {
+                Debug.Log("TextComponent is null!");
+            }
         }
     }
 }
