@@ -9,7 +9,7 @@ public class PlayerStats : MonoBehaviour
     private TextUpdater _moneyText;
 
     // Start is called before the first frame update
-    public static int Money
+    public int Money
     {
         get => _money;
         set
@@ -20,7 +20,7 @@ public class PlayerStats : MonoBehaviour
     }
 
     public int startMoney = 1000;
-    private static int _money;
+    private int _money;
 
     void Start()
     {

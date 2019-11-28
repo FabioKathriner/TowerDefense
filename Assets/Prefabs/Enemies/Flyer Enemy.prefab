@@ -910,11 +910,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8355096478231934016}
     m_Modifications:
-    - target: {fileID: 8720842720333726076, guid: 35b97f5b82c035d41970636fc4298c41,
-        type: 3}
-      propertyPath: m_Name
-      value: EnemyUnitCanvas
-      objectReference: {fileID: 0}
     - target: {fileID: 8720842720333726048, guid: 35b97f5b82c035d41970636fc4298c41,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1019,6 +1014,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8720842720333726076, guid: 35b97f5b82c035d41970636fc4298c41,
+        type: 3}
+      propertyPath: m_Name
+      value: EnemyUnitCanvas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35b97f5b82c035d41970636fc4298c41, type: 3}

@@ -8,15 +8,13 @@ namespace Assets.Scripts.Enemies
         [SerializeField]
         private int _attackPower = 10;
         public int LootValue;
-        [SerializeField]
-        private GameObject _gameManager;
 
+        [SerializeField]
         private PlayerStats _playerStats;
 
         protected virtual void Start()
         {
             var health = GetComponent<Health.Health>();
-            _playerStats = _gameManager.GetComponent<PlayerStats>();
             health.OnDie += OnEnemyDied ;
         }
 
