@@ -68,6 +68,9 @@ namespace Assets.Scripts
 
             if (_selectedTowerPreview != null)
                 _selectedTowerPreview.transform.position = hit.point;
+            if (Input.GetKeyDown("r") && _selectedTowerPreview != null)
+                _selectedTowerPreview.transform.Rotate(0f, 90f, 0f, Space.Self);
+
 
             if (Input.GetMouseButtonDown(0))
             {
@@ -78,8 +81,13 @@ namespace Assets.Scripts
                 }
 
                 _playerStats.Money -= _turretToBuild.turretCost;
-                Destroy(_selectedTowerPreview);
-                GameObject turret = Instantiate(_selectedTowerPrefab, hit.point, Quaternion.identity);
+                if (_selectedTowerPreview != null)
+                {
+                    _selectedTowerPrefab.transform.rotation = _selectedTowerPreview.transform.rotation;
+                    Destroy(_selectedTowerPreview);
+                }
+
+                GameObject turret = Instantiate(_selectedTowerPrefab, hit.point, _selectedTowerPrefab.transform.rotation);
                 Debug.LogWarning("Turret Placed successfully");
                 Debug.Log("Turret built! Money left: " + _playerStats.Money);
             }
