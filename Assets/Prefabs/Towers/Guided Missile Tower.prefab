@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5879958882272899272}
   - component: {fileID: 1249566347074713845}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Cannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 908894533118843429}
   - component: {fileID: 1359298002366943352}
   - component: {fileID: 644670895169640530}
-  m_Layer: 12
+  m_Layer: 15
   m_Name: Guided Missile Tower
   m_TagString: tower
   m_Icon: {fileID: 0}
@@ -1732,7 +1732,7 @@ GameObject:
   - component: {fileID: 5721777427442382690}
   - component: {fileID: 9169931993044222052}
   - component: {fileID: 4773830480319026314}
-  m_Layer: 12
+  m_Layer: 15
   m_Name: Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}

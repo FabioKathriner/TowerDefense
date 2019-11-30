@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2951423568318052429}
   - component: {fileID: 8111491088524498344}
   - component: {fileID: 2760421449037920890}
-  m_Layer: 10
+  m_Layer: 15
   m_Name: Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 2959143058768520645}
   - component: {fileID: -1235534474826079785}
   - component: {fileID: 2894480746705683181}
-  m_Layer: 10
+  m_Layer: 15
   m_Name: Ballistic Tower
   m_TagString: tower
   m_Icon: {fileID: 0}
@@ -297,7 +297,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6890802344810917291}
   - component: {fileID: 5993808820786744545}
-  m_Layer: 10
+  m_Layer: 15
   m_Name: Ballista
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -346,6 +346,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UnitCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 2261782069940029047, guid: bd243328be03bf54191c9b70b3453395,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2261782069940029035, guid: bd243328be03bf54191c9b70b3453395,
         type: 3}
@@ -451,6 +456,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1164496852180896878, guid: bd243328be03bf54191c9b70b3453395,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2261782070137468464, guid: bd243328be03bf54191c9b70b3453395,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4573745243014652642, guid: bd243328be03bf54191c9b70b3453395,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2261782071441639832, guid: bd243328be03bf54191c9b70b3453395,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9023307929455073859, guid: bd243328be03bf54191c9b70b3453395,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3543173377101330221, guid: bd243328be03bf54191c9b70b3453395, type: 3}

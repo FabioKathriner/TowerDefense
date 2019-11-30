@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 781216930756461645}
   - component: {fileID: 8877067048122164034}
   - component: {fileID: 7194960228725094584}
-  m_Layer: 10
+  m_Layer: 15
   m_Name: Rocket Tower
   m_TagString: tower
   m_Icon: {fileID: 0}
@@ -447,7 +447,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1299962848015144943}
   - component: {fileID: 2695752780151542697}
-  m_Layer: 10
+  m_Layer: 15
   m_Name: Rocket Launcher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -496,7 +496,7 @@ GameObject:
   - component: {fileID: 1378459397403728681}
   - component: {fileID: 52202209097692239}
   - component: {fileID: 7518269843005376934}
-  m_Layer: 10
+  m_Layer: 15
   m_Name: Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}

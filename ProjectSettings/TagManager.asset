@@ -6,6 +6,7 @@ TagManager:
   tags:
   - enemy
   - tower
+  - ground
   layers:
   - Default
   - TransparentFX
@@ -17,12 +18,12 @@ TagManager:
   - 
   - Normal Enemy
   - Flying Enemy
-  - Anti Ground Tower
-  - Anti Air Tower
-  - Anti All Tower
+  - 
+  - 
+  - 
   - Player Projectiles
   - Base
-  - Targets of attacking enemy
+  - Tower
   - Enemy Projectiles
   - 
   - 

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -8225741278730024665}
   - component: {fileID: 488559009871832508}
   - component: {fileID: 8069414376378768726}
-  m_Layer: 12
+  m_Layer: 15
   m_Name: Blast Tower
   m_TagString: tower
   m_Icon: {fileID: 0}
