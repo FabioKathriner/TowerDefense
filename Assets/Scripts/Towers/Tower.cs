@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.Weapons;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Assets.Scripts.Towers
 {
@@ -12,7 +13,7 @@ namespace Assets.Scripts.Towers
         private int _upgradePrice = 50;
 
         [SerializeField]
-        protected TextUpdater LevelText;
+        protected Text LevelText;
 
         [SerializeField]
         private int _healthUpgradeIncrement;
@@ -29,7 +30,7 @@ namespace Assets.Scripts.Towers
             set
             {
                 _level = value;
-                LevelText.UpdateText(_level.ToString());
+                LevelText.text = _level.ToString();
             }
         }
 
@@ -43,7 +44,7 @@ namespace Assets.Scripts.Towers
 
         protected virtual void Start()
         {
-            LevelText.UpdateText(_level.ToString());
+            LevelText.text = _level.ToString();
             Health = GetComponent<Health.Health>();
         }
 
@@ -93,7 +94,7 @@ namespace Assets.Scripts.Towers
             base.Start();
             // TODO: Can this be required without the editor adding the script on the parent object?
             Weapon = GetComponentInChildren<TWeapon>();
-            TargetFinder = GetComponentInChildren<TargetFinder>();
+            TargetFinder = GetComponent<TargetFinder>();
             if (TargetFinder != null)
                 TargetFinder.TargetTags.AddRange(new[] {Tags.Enemy});
         }

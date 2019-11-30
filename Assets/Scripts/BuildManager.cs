@@ -20,7 +20,6 @@ namespace Assets.Scripts
         private BuildManager buildManager;
         private GameObject _turret;
 
-        [SerializeField]
         private PlayerStats _playerStats;
 
         void Awake()
@@ -34,6 +33,7 @@ namespace Assets.Scripts
 
         void Start()
         {
+            _playerStats = GetComponent<PlayerStats>();
             buildManager = BuildManager.instance;
         }
     

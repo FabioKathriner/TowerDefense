@@ -1,12 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Assets.Scripts;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
     [SerializeField]
-    private TextUpdater _moneyText;
+    private Text _moneyText;
 
     // Start is called before the first frame update
     public int Money
@@ -15,7 +13,7 @@ public class PlayerStats : MonoBehaviour
         set
         {
             _money = value;
-            _moneyText.UpdateText(_money.ToString());
+            _moneyText.text =_money.ToString();
         }
     }
 

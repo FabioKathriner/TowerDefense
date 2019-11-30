@@ -1,0 +1,140 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8515071155832134593
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8515071155832134594}
+  - component: {fileID: 8515071155832134595}
+  - component: {fileID: 8515071155832134620}
+  - component: {fileID: 8515071155832134622}
+  - component: {fileID: 7321790370323833604}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8515071155832134594
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8515071155832134593}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8515071155832134595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8515071155832134593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de37cbd6db2e01d4c9497d34232fcd03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waves:
+  - Enemy: {fileID: 2317368896312824663, guid: 21362314394137b44b4e7e7dd87a412d, type: 3}
+    Count: 4
+    Rate: 0.5
+  - Enemy: {fileID: 8864333768579407967, guid: b2e45d992ac722c48bd5fb9eae757342, type: 3}
+    Count: 6
+    Rate: 0.5
+  - Enemy: {fileID: 8355096478231934017, guid: 38a0720e67ce05842a42668628f7ba92, type: 3}
+    Count: 5
+    Rate: 0.5
+  - Enemy: {fileID: 8355096478231934017, guid: 38a0720e67ce05842a42668628f7ba92, type: 3}
+    Count: 8
+    Rate: 1
+  - Enemy: {fileID: 2317368896312824663, guid: 21362314394137b44b4e7e7dd87a412d, type: 3}
+    Count: 10
+    Rate: 0.8
+  - Enemy: {fileID: 8355096478231934017, guid: 38a0720e67ce05842a42668628f7ba92, type: 3}
+    Count: 20
+    Rate: 1
+  - Enemy: {fileID: 2317368896312824663, guid: 21362314394137b44b4e7e7dd87a412d, type: 3}
+    Count: 15
+    Rate: 1
+  - Enemy: {fileID: 8864333768579407967, guid: b2e45d992ac722c48bd5fb9eae757342, type: 3}
+    Count: 40
+    Rate: 1
+  - Enemy: {fileID: 2317368896312824663, guid: 21362314394137b44b4e7e7dd87a412d, type: 3}
+    Count: 20
+    Rate: 2
+  - Enemy: {fileID: 8355096478231934017, guid: 38a0720e67ce05842a42668628f7ba92, type: 3}
+    Count: 100
+    Rate: 10
+  spawnPoint: {fileID: 0}
+  timeBetweenWaves: 10
+  waveCountDownText: {fileID: 0}
+--- !u!114 &8515071155832134620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8515071155832134593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5c4278e8c9c2b747b52f78a2056ddb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HitMask:
+    serializedVersion: 2
+    m_Bits: 1
+  IgnoreTowerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  RocketTowerPrefab: {fileID: 2439471149367952929, guid: bef85e6af24c17c4eabab8fa3db9aeb8,
+    type: 3}
+  BallisticTowerPrefab: {fileID: 2869298745103565431, guid: 55aaa649b502bba45ab050a56bf2eac9,
+    type: 3}
+  GuidedMissileTowerPrefab: {fileID: 4932611405737507254, guid: 162823a89f7ebe14999105f375c804c4,
+    type: 3}
+  BlastTowerPrefab: {fileID: 2595892129209389196, guid: 4454e4ea1badab045b183e0b5afa5ecf,
+    type: 3}
+  _playerStats: {fileID: 2701834200808880952, guid: 273f8dd71b21e3246944cfb7c21e1817,
+    type: 3}
+--- !u!114 &8515071155832134622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8515071155832134593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bed04703d9f5aab488a57bbdeb95d9fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 32768
+--- !u!114 &7321790370323833604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8515071155832134593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02ae7929d519b0446a0db0423fb33b9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _moneyText: {fileID: 3985984322672649054, guid: 5eaca5e1bb087004ba36074b44dfd484,
+    type: 3}
+  startMoney: 5000

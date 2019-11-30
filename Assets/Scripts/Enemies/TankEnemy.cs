@@ -17,7 +17,7 @@ namespace Assets.Scripts.Enemies
         protected override void Start()
         {
             base.Start();
-            _targetFinder = GetComponentInChildren<TargetFinder>();
+            _targetFinder = GetComponent<TargetFinder>();
             _targetFinder.TargetTags.AddRange(new []{ Tags.Tower });
             _weapon = GetComponentInChildren<Bow>();
         }

@@ -9,7 +9,7 @@ namespace Assets.Scripts
         [SerializeField]
         private TowerSelector _towerSelector;
         [SerializeField]
-        private TextUpdater _priceText;
+        private Text _priceText;
 
         private Button _button;
         private Tower _selectedTower;
@@ -27,7 +27,7 @@ namespace Assets.Scripts
         {
             _button.enabled = true;
             _selectedTower = args.SelectedTower.GetComponent<Tower>();
-            _priceText.UpdateText(_selectedTower.UpgradePrice.ToString());
+            _priceText.text = _selectedTower.UpgradePrice.ToString();
         }
 
         private void OnTowerDeselected(object sender)
@@ -41,7 +41,7 @@ namespace Assets.Scripts
             if (_selectedTower != null)
             {
                 _selectedTower.Upgrade();
-                _priceText.UpdateText(_selectedTower.UpgradePrice.ToString());
+                _priceText.text = _selectedTower.UpgradePrice.ToString();
             }
         }
     }
