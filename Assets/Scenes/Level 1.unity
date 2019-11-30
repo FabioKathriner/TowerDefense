@@ -996,7 +996,6 @@ GameObject:
   - component: {fileID: 938674144}
   - component: {fileID: 938674146}
   - component: {fileID: 938674145}
-  - component: {fileID: 938674147}
   m_Layer: 5
   m_Name: Price
   m_TagString: Untagged
@@ -1063,18 +1062,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 938674143}
   m_CullTransparentMesh: 0
---- !u!114 &938674147
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 938674143}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ee9bd2bc8c2e68469af6aaf6770c271, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &945953169
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11419,7 +11406,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _towerSelector: {fileID: 1655429235}
-  _priceText: {fileID: 938674147}
+  _priceText: {fileID: 938674145}
 --- !u!1001 &1345550495
 PrefabInstance:
   m_ObjectHideFlags: 0

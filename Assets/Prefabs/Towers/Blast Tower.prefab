@@ -51,7 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _level: 0
   _upgradePrice: 50
-  LevelText: {fileID: 221264781790965849}
+  LevelText: {fileID: 6821852161081130179}
   _healthUpgradeIncrement: 20
   RateOfFire: 2
   _rateOfFireUpgradeIncrement: 0.1
@@ -2499,7 +2499,8 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3543173377101330221, guid: bd243328be03bf54191c9b70b3453395, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bd243328be03bf54191c9b70b3453395, type: 3}
 --- !u!224 &3268065781322416415 stripped
 RectTransform:
@@ -2519,15 +2520,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &221264781790965849 stripped
+--- !u!114 &6821852161081130179 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3543173377101330221, guid: bd243328be03bf54191c9b70b3453395,
+  m_CorrespondingSourceObject: {fileID: 7824406398270323639, guid: bd243328be03bf54191c9b70b3453395,
     type: 3}
   m_PrefabInstance: {fileID: 3619194583865001844}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ee9bd2bc8c2e68469af6aaf6770c271, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
