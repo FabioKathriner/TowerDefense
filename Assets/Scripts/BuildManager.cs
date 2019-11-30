@@ -12,7 +12,7 @@ namespace Assets.Scripts
         public LayerMask IgnoreTowerMask;
 
         private TurretBlueprint _turretToBuild;
-        private BuildManager buildManager;
+        private BuildManager _buildManager;
 
         private PlayerStats _playerStats;
         private bool _IsInBuildMode;
@@ -29,7 +29,7 @@ namespace Assets.Scripts
         private void Start()
         {
             _playerStats = GetComponent<PlayerStats>();
-            buildManager = BuildManager.instance;
+            _buildManager = BuildManager.instance;
         }
 
         public void SelectTurretToBuild (TurretBlueprint turretBlueprint)
@@ -62,7 +62,7 @@ namespace Assets.Scripts
             // TODO: second raycast needed?
             if (Physics.Raycast(ray, out nonhit, 1000, IgnoreTowerMask))
             {
-                Debug.LogWarning("Can't place a Turret on top of another Turret!'");
+                Debug.LogWarning("Can't place a Turret t this location!");
                 return;
             }
 

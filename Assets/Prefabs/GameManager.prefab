@@ -98,15 +98,7 @@ MonoBehaviour:
     m_Bits: 1
   IgnoreTowerMask:
     serializedVersion: 2
-    m_Bits: 0
-  RocketTowerPrefab: {fileID: 2439471149367952929, guid: bef85e6af24c17c4eabab8fa3db9aeb8,
-    type: 3}
-  BallisticTowerPrefab: {fileID: 2869298745103565431, guid: 55aaa649b502bba45ab050a56bf2eac9,
-    type: 3}
-  GuidedMissileTowerPrefab: {fileID: 4932611405737507254, guid: 162823a89f7ebe14999105f375c804c4,
-    type: 3}
-  BlastTowerPrefab: {fileID: 2595892129209389196, guid: 4454e4ea1badab045b183e0b5afa5ecf,
-    type: 3}
+    m_Bits: 1024
 --- !u!114 &8515071155832134622
 MonoBehaviour:
   m_ObjectHideFlags: 0

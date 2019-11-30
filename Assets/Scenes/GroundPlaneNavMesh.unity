@@ -12013,7 +12013,7 @@ PrefabInstance:
     - target: {fileID: 8515071155832134620, guid: 7d0914cb4b08db44e8c2cd141479fc16,
         type: 3}
       propertyPath: IgnoreTowerMask.m_Bits
-      value: 33792
+      value: 1024
       objectReference: {fileID: 0}
     - target: {fileID: 7321790370323833604, guid: 7d0914cb4b08db44e8c2cd141479fc16,
         type: 3}
