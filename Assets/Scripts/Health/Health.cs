@@ -45,16 +45,6 @@ namespace Assets.Scripts.Health
         public void Die()
         {
             OnDie?.Invoke(this, null);
-            StartCoroutine(ActivateTriggerExitAndDie());
-        }
-
-        // HACK: Moves the object far away so that the TargetFinder onTriggerExit triggers.
-        // The Target will then be removed from the tracked objects list. Is there a better solution for this problem?
-        private IEnumerator ActivateTriggerExitAndDie()
-        {
-            transform.Translate(Vector3.forward * 5000);
-            yield return new WaitForSeconds(1f);
-            
             Destroy(gameObject);
         }
     }

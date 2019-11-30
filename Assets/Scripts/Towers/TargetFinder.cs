@@ -6,51 +6,53 @@ namespace Assets.Scripts.Towers
 {
     public class TargetFinder : MonoBehaviour, ITargetFinder
     {
-        private readonly IList<Target> _targets = new List<Target>();
+        [SerializeField]
+        private int _radius;
+
+        [SerializeField]
+        private LayerMask _layerMask;
+
         public List<string> TargetTags { get; } = new List<string>();
 
         public GameObject GetNextTarget()
         {
-            return _targets.OrderBy(x => x.Priority).Select(x => x.Enemy).FirstOrDefault();
+            Collider[] hitColliders = Physics.OverlapSphere(transform.position, _radius, _layerMask);
+            Target min = null;
+            bool first = true;
+            foreach (var hitCollider in hitColliders)
+            {
+                var targetDistance = Vector3.Distance(transform.position, hitCollider.transform.position);
+                if (first)
+                {
+                    first = false;
+                    min = new Target(hitCollider.gameObject, targetDistance);
+                    continue;
+                }
+
+
+                if (!(min.Distance < targetDistance))
+                    min = new Target(hitCollider.gameObject, targetDistance);
+            }
+
+            return min?.Enemy;
         }
 
         public List<GameObject> GetTargets()
         {
-            return _targets.Select(x => x.Enemy).ToList();
-        }
-
-        // Collision only with Layers defined on the Trigger
-        private void OnTriggerEnter(Collider other)
-        {
-            if (TargetTags.Contains(other.attachedRigidbody.tag))
-            {
-                // TODO: Fix layer bug where enemy arrows trigger the range-trigger of the tank enemy
-                Debug.Log($"{other.attachedRigidbody.name} entered range");
-                _targets.Add(new Target(other.gameObject, _targets.Count + 1));
-            }
-        }
-
-        private void OnTriggerExit(Collider other)
-        {
-            if (TargetTags.Contains(other.attachedRigidbody.tag))
-            {
-                Debug.Log($"{other.attachedRigidbody.name} left range");
-                var collisionObjectId = other.gameObject.GetInstanceID();
-                var target = _targets.First(x => x.Enemy.GetInstanceID() == collisionObjectId);
-                _targets.Remove(target);
-            }
+            Collider[] hitColliders = Physics.OverlapSphere(transform.position, _radius, _layerMask);
+            return hitColliders.Select(x => x.gameObject).ToList();
         }
     }
 
     internal class Target
     {
-        public Target(GameObject enemy, int priority)
+        public Target(GameObject enemy, float distance)
         {
             Enemy = enemy;
-            Priority = priority;
+            Distance = distance;
         }
 
         public GameObject Enemy { get; }
-        public int Priority { get; set; }
+        public float Distance { get; set; }
     }
 }

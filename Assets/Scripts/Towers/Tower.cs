@@ -93,7 +93,7 @@ namespace Assets.Scripts.Towers
             base.Start();
             // TODO: Can this be required without the editor adding the script on the parent object?
             Weapon = GetComponentInChildren<TWeapon>();
-            TargetFinder = GetComponentInChildren<TargetFinder>();
+            TargetFinder = GetComponent<TargetFinder>();
             if (TargetFinder != null)
                 TargetFinder.TargetTags.AddRange(new[] {Tags.Enemy});
         }
