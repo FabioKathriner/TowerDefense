@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Assets.Scripts.Enemies;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
@@ -20,6 +21,9 @@ namespace Assets.Scripts
         public Text waveCountDownText;
 
         private int waveIndex = 0;
+
+        [SerializeField]
+        private PlayerStats _playerStats;
 
         void Update()
         {
@@ -63,7 +67,9 @@ namespace Assets.Scripts
 
         void SpawnEnemy(GameObject Enemy)
         {
-            Instantiate(Enemy, spawnPoint.position, spawnPoint.rotation);
+            var instantiated = Instantiate(Enemy, spawnPoint.position, spawnPoint.rotation);
+            var script = instantiated.GetComponent<Enemy>();
+            script.PlayerStats = _playerStats;
             EnemyAliveCount++;
         }
     }

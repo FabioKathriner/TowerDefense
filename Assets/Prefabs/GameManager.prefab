@@ -80,6 +80,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 0}
   timeBetweenWaves: 10
   waveCountDownText: {fileID: 0}
+  _playerStats: {fileID: 0}
 --- !u!114 &8515071155832134620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,8 +106,6 @@ MonoBehaviour:
   GuidedMissileTowerPrefab: {fileID: 4932611405737507254, guid: 162823a89f7ebe14999105f375c804c4,
     type: 3}
   BlastTowerPrefab: {fileID: 2595892129209389196, guid: 4454e4ea1badab045b183e0b5afa5ecf,
-    type: 3}
-  _playerStats: {fileID: 2701834200808880952, guid: 273f8dd71b21e3246944cfb7c21e1817,
     type: 3}
 --- !u!114 &8515071155832134622
 MonoBehaviour:
@@ -135,6 +134,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02ae7929d519b0446a0db0423fb33b9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moneyText: {fileID: 3985984322672649054, guid: 5eaca5e1bb087004ba36074b44dfd484,
-    type: 3}
+  _moneyText: {fileID: 0}
   startMoney: 5000
