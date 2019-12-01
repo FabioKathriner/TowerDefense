@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Security.Cryptography;
+using UnityEngine;
 using UnityEngine.EventSystems;
 using Quaternion = UnityEngine.Quaternion;
 
@@ -94,6 +95,8 @@ namespace Assets.Scripts
 
         public void EnterBuildMode(GameObject previewPrefab, GameObject actualPrefab)
         {
+            if (_selectedTowerPreview != null)
+                Destroy(_selectedTowerPreview);
             _selectedTowerPreview = Instantiate(previewPrefab);
             _selectedTowerPrefab = actualPrefab;
             _IsInBuildMode = true;
