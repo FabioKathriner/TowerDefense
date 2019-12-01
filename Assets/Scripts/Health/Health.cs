@@ -44,8 +44,35 @@ namespace Assets.Scripts.Health
 
         public void Die()
         {
+            Dismantle();
             OnDie?.Invoke(this, null);
             Destroy(gameObject);
+        }
+
+        private void Dismantle()
+        {
+            foreach (Transform child in transform)
+            {
+                if (child.gameObject.transform.childCount > 0)
+                {
+                    foreach (Transform child2 in child.transform)
+                    {
+                        child2.gameObject.AddComponent<BoxCollider>();
+                        child2.gameObject.AddComponent<Rigidbody>();
+                        child2.gameObject.layer = Layers.Default;
+                        Destroy(child2.gameObject, 5f);
+                    }
+
+                    child.gameObject.transform.DetachChildren();
+                }
+
+                child.gameObject.AddComponent<BoxCollider>();
+                child.gameObject.AddComponent<Rigidbody>();
+                child.gameObject.layer = Layers.Default;
+                Destroy(child.gameObject, 5f);
+            }
+
+            transform.DetachChildren();
         }
     }
 }

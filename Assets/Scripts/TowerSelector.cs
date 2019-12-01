@@ -18,7 +18,14 @@ namespace Assets.Scripts
 
         private void FixedUpdate()
         {
-            if (!Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButton(1) && _selectedTower != null)
+            { 
+                ResetPreviousSelection();
+                OnTowerDeselected?.Invoke(this);
+                return;
+            }
+
+            if (!Input.GetMouseButton(0))
                 return;
 
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -47,6 +54,7 @@ namespace Assets.Scripts
             if (_selectedTower != null)
             {
                 _selectedRenderer.material.SetColor("_Color", _previousColor);
+                _selectedTower = null;
             }
         }
     }
