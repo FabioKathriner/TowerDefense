@@ -16,7 +16,7 @@ namespace Assets.Scripts.Health
         [SerializeField]
         private Image _healthBar;
 
-        public event DeathHandler OnDie;
+        public event EventHandler<EventArgs> OnDie;
         public int CurrentHealth
         {
             get => _currentHealth;
@@ -48,6 +48,4 @@ namespace Assets.Scripts.Health
             Destroy(gameObject);
         }
     }
-
-    public delegate void DeathHandler(object sender, EventArgs args);
 }

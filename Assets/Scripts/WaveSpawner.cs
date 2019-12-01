@@ -1,6 +1,6 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Assets.Scripts.Enemies;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,69 +8,77 @@ namespace Assets.Scripts
 {
     public class WaveSpawner : MonoBehaviour
     {
-        public static int EnemyAliveCount = 0;
+        private int _enemyAliveCount;
+        private float _countdown = 2f;
+        private int _waveIndex = 0;
 
-        public Wave[] waves;
+        [SerializeField]
+        private Wave[] _waves;
 
-        //public Transform enemyPrefab;
-        public Transform spawnPoint;
+        [SerializeField]
+        private Transform _spawnPoint;
 
-        public float timeBetweenWaves = 5.5f;
-        private float countdown = 2f;
+        [SerializeField]
+        private float _timeBetweenWaves = 5.5f;
 
-        public Text waveCountDownText;
-
-        private int waveIndex = 0;
+        [SerializeField]
+        private Text _waveCountDownText;
 
         [SerializeField]
         private PlayerStats _playerStats;
 
-        void Update()
+        private void Update()
         {
-            if (EnemyAliveCount > 0)
-            {
+            if (_enemyAliveCount > 0)
                 return;
-            }
 
-            if (countdown <= 0f)
+            if (_countdown <= 0f)
             {
                 StartCoroutine(SpawnWave());
-                countdown = timeBetweenWaves;
+                _countdown = _timeBetweenWaves;
                 return;
             }
-            countdown -= Time.deltaTime;
+            _countdown -= Time.deltaTime;
 
-            countdown = Mathf.Clamp(countdown, 0f, Mathf.Infinity);
+            _countdown = Mathf.Clamp(_countdown, 0f, Mathf.Infinity);
 
-            waveCountDownText.text = $"{countdown:00.00}";
+            _waveCountDownText.text = $"{_countdown:00.00}";
         }
 
-        IEnumerator SpawnWave()
+        private IEnumerator SpawnWave()
         {
-            Wave wave = waves[waveIndex];
+            Wave wave = _waves[_waveIndex];
            
             for (int i = 0; i < wave.Count; i++)
             { 
-                SpawnEnemy(wave.Enemy);
+                SpawnEnemy(wave.EnemyPrefab);
                 yield return new WaitForSeconds(1f / wave.Rate);
             }
 
-            waveIndex++;
+            _waveIndex++;
             Debug.Log("Wave Incoming!");
 
-            if (waveIndex == waves.Length)
+            if (_waveIndex == _waves.Length)
             {
                 Debug.Log("Level Over!");
                 this.enabled = false;
             }
         }
 
-        void SpawnEnemy(GameObject Enemy)
+        private void SpawnEnemy(GameObject enemyPrefab)
         {
-            var instantiated = Instantiate(Enemy, spawnPoint.position, spawnPoint.rotation);
-            var script = instantiated.GetComponent<Enemy>();
-            script.PlayerStats = _playerStats;
-            EnemyAliveCount++;
+            var instantiated = Instantiate(enemyPrefab, _spawnPoint.position, _spawnPoint.rotation);
+            var enemy = instantiated.GetComponent<Enemy>();
+            enemy.OnDie += OnEnemyDied;
+            _enemyAliveCount++;
+        }
+
+        private void OnEnemyDied(object sender, EventArgs args)
+        {
+            _enemyAliveCount--;
+            var enemy = ((Enemy) sender);
+            _playerStats.Money += enemy.LootValue;
+            enemy.OnDie -= OnEnemyDied;
         }
     }
 }

@@ -7,20 +7,24 @@ namespace Assets.Scripts.Enemies
     {
         [SerializeField]
         private int _attackPower = 10;
-        public int LootValue;
+
+        [SerializeField]
+        private int _lootValue;
+
+        private Health.Health _health;
 
         public PlayerStats PlayerStats { get; set; }
 
-        protected virtual void Start()
+        private void Awake()
         {
-            var health = GetComponent<Health.Health>();
-            health.OnDie += OnEnemyDied ;
+            _health = GetComponent<Health.Health>();
+            _health.OnDie += OnDied;
         }
 
-        private void OnEnemyDied(object sender, EventArgs args)
+        private void OnDied(object sender, EventArgs e)
         {
-            PlayerStats.Money += LootValue;
-            WaveSpawner.EnemyAliveCount--;
+            OnDie?.Invoke(this, e);
+            _health.OnDie -= OnDied;
         }
 
         public int AttackPower
@@ -28,5 +32,8 @@ namespace Assets.Scripts.Enemies
             get => _attackPower;
             set => _attackPower = value;
         }
+
+        public int LootValue => _lootValue;
+        public event EventHandler<EventArgs> OnDie;
     }
 }
