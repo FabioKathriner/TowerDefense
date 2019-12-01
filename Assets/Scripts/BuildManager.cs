@@ -42,12 +42,10 @@ namespace Assets.Scripts
             if (!_IsInBuildMode)
                 return;
 
-            if (Input.GetMouseButtonDown(1))
+            if (Input.GetMouseButton(1))
             {
-                _IsInBuildMode = false;
                 Destroy(_selectedTowerPreview);
-                _selectedTowerPrefab = null;
-                _selectedTowerPreview = null;
+                LeaveBuildMode();
                 return;
             }
 
@@ -62,7 +60,7 @@ namespace Assets.Scripts
             // TODO: second raycast needed?
             if (Physics.Raycast(ray, out nonhit, 1000, IgnoreTowerMask))
             {
-                Debug.LogWarning("Can't place a Turret t this location!");
+                Debug.LogWarning("Can't place a Turret  this location!");
                 return;
             }
 
@@ -72,7 +70,7 @@ namespace Assets.Scripts
                 _selectedTowerPreview.transform.Rotate(0f, 90f, 0f, Space.Self);
 
 
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButton(0))
             {
                 if (_playerStats.Money < _turretToBuild.turretCost)
                 {
@@ -90,6 +88,7 @@ namespace Assets.Scripts
                 GameObject turret = Instantiate(_selectedTowerPrefab, hit.point, _selectedTowerPrefab.transform.rotation);
                 Debug.LogWarning("Turret Placed successfully");
                 Debug.Log("Turret built! Money left: " + _playerStats.Money);
+                LeaveBuildMode();
             }
         }
 
@@ -98,6 +97,13 @@ namespace Assets.Scripts
             _selectedTowerPreview = Instantiate(previewPrefab);
             _selectedTowerPrefab = actualPrefab;
             _IsInBuildMode = true;
+        }
+
+        private void LeaveBuildMode()
+        {
+            _IsInBuildMode = false;
+            _selectedTowerPrefab = null;
+            _selectedTowerPreview = null;
         }
     }
 }
