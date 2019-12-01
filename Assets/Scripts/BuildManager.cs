@@ -38,6 +38,12 @@ namespace Assets.Scripts
             _turretToBuild = turretBlueprint;
         }
 
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.R) && _selectedTowerPreview != null)
+                _selectedTowerPreview.transform.Rotate(Vector3.up, 90f);
+        }
+
         private void FixedUpdate()
         {
             if (!_IsInBuildMode)
@@ -66,9 +72,9 @@ namespace Assets.Scripts
             }
 
             if (_selectedTowerPreview != null)
+            {
                 _selectedTowerPreview.transform.position = hit.point;
-            if (Input.GetKeyDown("r") && _selectedTowerPreview != null)
-                _selectedTowerPreview.transform.Rotate(0f, 90f, 0f, Space.Self);
+            }
 
 
             if (Input.GetMouseButton(0))
