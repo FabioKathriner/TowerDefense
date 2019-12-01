@@ -44,6 +44,26 @@ namespace Assets.Scripts.Health
 
         public void Die()
         {
+            foreach (Transform child in transform)
+            {
+                // TODO: refactor
+                if (child.gameObject.transform.childCount > 0)
+                {
+                    foreach (Transform child2 in child.transform)
+                    {
+                        child2.gameObject.AddComponent<BoxCollider>();
+                        child2.gameObject.AddComponent<Rigidbody>();
+                        child2.gameObject.layer = 0;
+                        Destroy(child2.gameObject, 5f);
+                    }
+                    child.gameObject.transform.DetachChildren();
+                }
+                child.gameObject.AddComponent<BoxCollider>();
+                child.gameObject.AddComponent<Rigidbody>();
+                child.gameObject.layer = 0;
+                Destroy(child.gameObject, 5f);
+            }
+            transform.DetachChildren();
             OnDie?.Invoke(this, null);
             Destroy(gameObject);
         }
