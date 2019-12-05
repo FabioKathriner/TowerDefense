@@ -26,9 +26,12 @@ namespace Assets.Scripts
         {
             Debug.Log("Enemy reached the base");
             var enemy = other.GetComponentInParent<Enemy>();
-            _hp.TakeDamage(enemy.AttackPower);
-            var enemyHp = enemy.GetComponent<Health.Health>();
-            enemyHp.Die();
+            if (enemy != null)
+            {
+                _hp.TakeDamage(enemy.AttackPower);
+                var enemyHp = enemy.GetComponent<Health.Health>();
+                enemyHp.Die();
+            }
         }
     }
 }
