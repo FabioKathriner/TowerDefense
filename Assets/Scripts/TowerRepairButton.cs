@@ -1,13 +1,12 @@
 ﻿using Assets.Scripts.Towers;
-using UnityEngine;
-using UnityEngine.UI;
 
 namespace Assets.Scripts
 {
-    public class TowerUpgradeButton : TowerButton
+    public class TowerRepairButton : TowerButton
     {
         protected override string GetNewPrice(Tower selectedTower)
         {
+            //TODO: create repair price on Tower, remove inheritance
             return selectedTower.UpgradePrice.ToString();
         }
     }
