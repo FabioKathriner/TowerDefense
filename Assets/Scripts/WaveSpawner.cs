@@ -27,6 +27,13 @@ namespace Assets.Scripts
         [SerializeField]
         private PlayerStats _playerStats;
 
+        private GameObject _enemiesParent;
+
+        private void Start()
+        {
+            _enemiesParent = new GameObject("Enemies");
+        }
+
         private void Update()
         {
             if (_enemyAliveCount > 0)
@@ -67,7 +74,7 @@ namespace Assets.Scripts
 
         private void SpawnEnemy(GameObject enemyPrefab)
         {
-            var instantiated = Instantiate(enemyPrefab, _spawnPoint.position, _spawnPoint.rotation);
+            var instantiated = Instantiate(enemyPrefab, _spawnPoint.position, _spawnPoint.rotation, _enemiesParent.transform);
             var enemy = instantiated.GetComponent<Enemy>();
             enemy.OnDie += OnEnemyDied;
             _enemyAliveCount++;
