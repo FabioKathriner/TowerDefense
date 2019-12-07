@@ -4,10 +4,15 @@ namespace Assets.Scripts
 {
     public class TowerRepairButton : TowerButton
     {
-        protected override string GetNewPrice(Tower selectedTower)
+        protected override void OnClick(Tower tower)
+        {
+            tower.Upgrade();
+        }
+
+        protected override string GetNewPrice(Tower tower)
         {
             //TODO: create repair price on Tower, remove inheritance
-            return selectedTower.UpgradePrice.ToString();
+            return tower.UpgradePrice.ToString();
         }
     }
 }

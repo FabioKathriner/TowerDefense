@@ -287,5 +287,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _priceText: {fileID: 232386422827586280}
-  _towerSelector: {fileID: -8196040520626117255, guid: 7d0914cb4b08db44e8c2cd141479fc16,
-    type: 3}
+  _towerSelector: {fileID: 0}

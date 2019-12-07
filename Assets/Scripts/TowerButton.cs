@@ -10,56 +10,30 @@ namespace Assets.Scripts
         private Text _priceText;
 
         [SerializeField]
-        private TowerSelector _towerSelector;
+        private Tower _tower;
 
         private Button _button;
-        private Tower _selectedTower;
-
-        public TowerSelector TowerSelector
-        {
-            get => _towerSelector;
-            set
-            {
-                _towerSelector = value;
-                _towerSelector.OnTowerSelected += OnTowerSelected;
-                _towerSelector.OnTowerDeselected += OnTowerDeselected;
-            }
-        }
 
         private void Start()
         {
             _button = GetComponent<Button>();
             gameObject.SetActive(false);
             _button.onClick.AddListener(OnClick);
-        }
-
-        private void OnDestroy()
-        {
-            TowerSelector.OnTowerSelected -= OnTowerSelected;
-            TowerSelector.OnTowerDeselected -= OnTowerDeselected;
-        }
-        private void OnTowerSelected(object sender, TowerSelectedArgs args)
-        {
-            gameObject.SetActive(true);
-            _selectedTower = args.SelectedTower.GetComponent<Tower>();
-            _priceText.text = _selectedTower.UpgradePrice.ToString();
-        }
-
-        private void OnTowerDeselected(object sender)
-        {
-            gameObject.SetActive(false);
-            _selectedTower = null;
+            if (_tower != null)
+                _priceText.text = GetNewPrice(_tower);
         }
 
         private void OnClick()
         {
-            if (_selectedTower != null)
+            if (_tower != null)
             {
-                _selectedTower.Upgrade();
-                _priceText.text = GetNewPrice(_selectedTower);
+                OnClick(_tower);
+                _priceText.text = GetNewPrice(_tower);
             }
         }
 
-        protected abstract string GetNewPrice(Tower selectedTower);
+        protected abstract void OnClick(Tower tower);
+
+        protected abstract string GetNewPrice(Tower tower);
     }
 }

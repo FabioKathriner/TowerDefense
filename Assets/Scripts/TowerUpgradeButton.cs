@@ -1,14 +1,17 @@
 ﻿using Assets.Scripts.Towers;
-using UnityEngine;
-using UnityEngine.UI;
 
 namespace Assets.Scripts
 {
     public class TowerUpgradeButton : TowerButton
     {
-        protected override string GetNewPrice(Tower selectedTower)
+        protected override void OnClick(Tower tower)
         {
-            return selectedTower.UpgradePrice.ToString();
+            tower.Upgrade();
+        }
+
+        protected override string GetNewPrice(Tower tower)
+        {
+            return tower.UpgradePrice.ToString();
         }
     }
 }

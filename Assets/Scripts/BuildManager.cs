@@ -92,13 +92,6 @@ namespace Assets.Scripts
                 }
 
                 GameObject turret = Instantiate(_selectedTowerPrefab, hit.point, _selectedTowerPrefab.transform.rotation);
-                var upgradeButton = turret.GetComponentInChildren<TowerUpgradeButton>();
-                var repairButton = turret.GetComponentInChildren<TowerRepairButton>();
-                var sellButton = turret.GetComponentInChildren<TowerSellButton>();
-                var towerSelector = GetComponent<TowerSelector>();
-                upgradeButton.TowerSelector = towerSelector;
-                repairButton.TowerSelector = towerSelector;
-                sellButton.TowerSelector = towerSelector;
                 Debug.LogWarning("Turret Placed successfully");
                 Debug.Log("Turret built! Money left: " + _playerStats.Money);
                 LeaveBuildMode();

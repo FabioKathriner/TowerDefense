@@ -777,8 +777,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _priceText: {fileID: 1927225093759567091}
-  _towerSelector: {fileID: -8196040520626117255, guid: 7d0914cb4b08db44e8c2cd141479fc16,
-    type: 3}
+  _towerSelector: {fileID: 0}
 --- !u!1 &5582999387200476629
 GameObject:
   m_ObjectHideFlags: 0
@@ -912,8 +911,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _priceText: {fileID: 419838882401578979}
-  _towerSelector: {fileID: -8196040520626117255, guid: 7d0914cb4b08db44e8c2cd141479fc16,
-    type: 3}
+  _towerSelector: {fileID: 0}
 --- !u!1 &8611665634434597892
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,9 +4,14 @@ namespace Assets.Scripts
 {
     public class TowerSellButton : TowerButton
     {
-        protected override string GetNewPrice(Tower selectedTower)
+        protected override void OnClick(Tower tower)
         {
-            return selectedTower.UpgradePrice.ToString();
+            tower.Upgrade();
+        }
+
+        protected override string GetNewPrice(Tower tower)
+        {
+            return tower.UpgradePrice.ToString();
         }
     }
 }
