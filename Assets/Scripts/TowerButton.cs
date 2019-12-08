@@ -28,7 +28,5 @@ namespace Assets.Scripts
         }
 
         protected abstract void OnClick(Tower tower);
-
-        protected abstract string GetNewPrice(Tower tower);
     }
 }

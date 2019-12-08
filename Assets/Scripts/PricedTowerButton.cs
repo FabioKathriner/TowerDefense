@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Towers;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Assets.Scripts
@@ -25,5 +26,7 @@ namespace Assets.Scripts
                 PriceText.text = GetNewPrice(Tower);
             }
         }
+
+        protected abstract string GetNewPrice(Tower tower);
     }
 }

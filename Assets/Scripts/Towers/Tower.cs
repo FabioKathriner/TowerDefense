@@ -57,14 +57,17 @@ namespace Assets.Scripts.Towers
             }
         }
 
+        public int TotalValue { get; private set; }
         public int BuildPrice => _buildPrice;
 
         public event EventHandler OnRepairPriceChanged;
 
-        protected Health.Health Health;
+        public Health.Health Health;
+
 
         protected virtual void Start()
         {
+            TotalValue = BuildPrice;
             LevelText.text = _level.ToString();
             Health = GetComponent<Health.Health>();
             Health.OnDamage += OnDamage;
@@ -73,6 +76,7 @@ namespace Assets.Scripts.Towers
         public virtual void Upgrade()
         {
             Level++;
+            TotalValue += UpgradePrice;
             UpgradePrice *= 2;
         }
 
