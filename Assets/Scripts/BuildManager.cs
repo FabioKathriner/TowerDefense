@@ -10,7 +10,7 @@ namespace Assets.Scripts
         public LayerMask HitMask;
         public LayerMask IgnoreTowerMask;
 
-        private TurretBlueprint _turretToBuild;
+        private GameObject _towerToBuild;
 
         private bool _isInBuildMode;
         private GameObject _selectedTowerPreview;
@@ -25,9 +25,9 @@ namespace Assets.Scripts
             Instance = this;
         }
 
-        public void SelectTurretToBuild (TurretBlueprint turretBlueprint)
+        public void SelectTurretToBuild (GameObject towerPrefab)
         { 
-            _turretToBuild = turretBlueprint;
+            _towerToBuild = towerPrefab;
         }
 
         private void Update()
@@ -71,7 +71,8 @@ namespace Assets.Scripts
 
             if (Input.GetMouseButton(0))
             {
-                if (PlayerStats.Money < _turretToBuild.turretCost)
+                var buildPrice = _towerToBuild.GetComponent<Tower>().BuildPrice;
+                if (PlayerStats.Money < buildPrice)
                 {
                     Debug.LogWarning("You don't have enough Money to build that turret!'");
                     return;
@@ -84,7 +85,7 @@ namespace Assets.Scripts
                 }
 
                 GameObject turret = Instantiate(_selectedTowerPrefab, hit.point, _selectedTowerPrefab.transform.rotation);
-                PlayerStats.Money -= turret.GetComponent<Tower>().BuildPrice;
+                PlayerStats.Money -= buildPrice;
                 Debug.LogWarning("Turret Placed successfully");
                 Debug.Log("Turret built! Money left: " + PlayerStats.Money);
                 LeaveBuildMode();

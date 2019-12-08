@@ -4,10 +4,14 @@ using UnityEngine;
 public class Shop : MonoBehaviour
 {
 
-    public TurretBlueprint RocketTower;
-    public TurretBlueprint BallisticTower;
-    public TurretBlueprint GuidedMissileTower;
-    public TurretBlueprint BlastTower;
+    [SerializeField]
+    private GameObject _rocketTower;
+    [SerializeField]
+    private GameObject _ballisticTower;
+    [SerializeField]
+    private GameObject _guidedMissileTower;
+    [SerializeField]
+    private GameObject _blastTower;
 
     private BuildManager buildManager;
 
@@ -19,25 +23,25 @@ public class Shop : MonoBehaviour
     public void SelectRocketTower()
     {
         Debug.Log("Rocket Tower selected.");
-        buildManager.SelectTurretToBuild(RocketTower);
+        buildManager.SelectTurretToBuild(_rocketTower);
     }
 
     public void SelectBallisticTower()
     {
         Debug.Log("Ballistic Tower selected.");
-        buildManager.SelectTurretToBuild(BallisticTower);
+        buildManager.SelectTurretToBuild(_ballisticTower);
     }
 
     public void SelectGuidedMissileTower()
     {
         Debug.Log("Guided Missle Tower selected.");
-        buildManager.SelectTurretToBuild(GuidedMissileTower);
+        buildManager.SelectTurretToBuild(_guidedMissileTower);
     }
 
     public void SelectBlastTower()
     {
         Debug.Log("Blast Tower selected.");
-        buildManager.SelectTurretToBuild(BlastTower);
+        buildManager.SelectTurretToBuild(_blastTower);
     }
 
 } 
