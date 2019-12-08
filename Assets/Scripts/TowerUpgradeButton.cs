@@ -8,7 +8,7 @@ namespace Assets.Scripts
         {
             PlayerStats.Money -= tower.UpgradePrice;
             tower.Upgrade();
-            if (tower.Level >= 3)
+            if (tower.Level >= tower.MaxLevel)
             {
                 enabled = false;
                 gameObject.SetActive(false);
