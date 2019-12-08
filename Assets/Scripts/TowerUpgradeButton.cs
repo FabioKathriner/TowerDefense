@@ -8,6 +8,11 @@ namespace Assets.Scripts
         {
             PlayerStats.Money -= tower.UpgradePrice;
             tower.Upgrade();
+            if (tower.Level >= 3)
+            {
+                enabled = false;
+                gameObject.SetActive(false);
+            }
         }
 
         protected override int GetNewPrice(Tower tower)

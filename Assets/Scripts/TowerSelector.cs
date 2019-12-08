@@ -41,8 +41,11 @@ namespace Assets.Scripts
                 var towerButtons = _selectedTower.GetComponentsInChildren<TowerButton>(true);
                 foreach (var towerButton in towerButtons)
                 {
-                    // TODO: Do not show button if not expected (e.g. Sell base)
-                    towerButton.gameObject.SetActive(true);
+                    if (towerButton.enabled)
+                    {
+                        // TODO: Do not show button if not expected (e.g. Sell base)
+                        towerButton.gameObject.SetActive(true);
+                    }
                 }
             }
             else

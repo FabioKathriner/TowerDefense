@@ -51,10 +51,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _level: 0
+  _maxLevel: 3
   _buildPrice: 250
   _upgradePrice: 50
   LevelText: {fileID: 6821852161081130179}
   _healthUpgradeIncrement: 20
+  Health: {fileID: 0}
   RateOfFire: 2
   _rateOfFireUpgradeIncrement: 0.1
   _damageUpgradeIncrement: 5

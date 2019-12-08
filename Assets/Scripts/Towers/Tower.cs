@@ -11,6 +11,9 @@ namespace Assets.Scripts.Towers
         private int _level = 1;
 
         [SerializeField]
+        private int _maxLevel;
+
+        [SerializeField]
         private int _buildPrice;
 
         [SerializeField]
@@ -59,6 +62,8 @@ namespace Assets.Scripts.Towers
 
         public int TotalValue { get; private set; }
         public int BuildPrice => _buildPrice;
+
+        public int MaxLevel => _maxLevel;
 
         public event EventHandler OnRepairPriceChanged;
 
