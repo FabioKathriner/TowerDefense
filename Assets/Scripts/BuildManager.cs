@@ -7,28 +7,22 @@ namespace Assets.Scripts
     [RequireComponent(typeof(PlayerStats))]
     public class BuildManager : MonoBehaviour
     {
-        public static BuildManager instance;
-
         public LayerMask HitMask;
         public LayerMask IgnoreTowerMask;
 
         private TurretBlueprint _turretToBuild;
-        private BuildManager _buildManager;
 
-        private bool _IsInBuildMode;
+        private bool _isInBuildMode;
         private GameObject _selectedTowerPreview;
         private GameObject _selectedTowerPrefab;
 
+        public static BuildManager Instance { get; private set; }
+
         private void Awake()
         {
-            if (instance != null)
+            if (Instance != null)
                 Debug.LogError("There is more than one BuildManager in the current scene!");
-            instance = this;
-        }
-
-        private void Start()
-        {
-            _buildManager = BuildManager.instance;
+            Instance = this;
         }
 
         public void SelectTurretToBuild (TurretBlueprint turretBlueprint)
@@ -44,7 +38,7 @@ namespace Assets.Scripts
 
         private void FixedUpdate()
         {
-            if (!_IsInBuildMode)
+            if (!_isInBuildMode)
                 return;
 
             if (Input.GetMouseButton(1))
@@ -103,12 +97,12 @@ namespace Assets.Scripts
                 Destroy(_selectedTowerPreview);
             _selectedTowerPreview = Instantiate(previewPrefab);
             _selectedTowerPrefab = actualPrefab;
-            _IsInBuildMode = true;
+            _isInBuildMode = true;
         }
 
         private void LeaveBuildMode()
         {
-            _IsInBuildMode = false;
+            _isInBuildMode = false;
             _selectedTowerPrefab = null;
             _selectedTowerPreview = null;
         }

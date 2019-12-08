@@ -13,7 +13,7 @@ public class Shop : MonoBehaviour
 
     void Start()
     {
-        buildManager = BuildManager.instance;
+        buildManager = BuildManager.Instance;
     }
 
     public void SelectRocketTower()
