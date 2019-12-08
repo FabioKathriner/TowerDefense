@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,7 +15,8 @@ namespace Assets.Scripts.Health
         [SerializeField]
         private Image _healthBar;
 
-        public event EventHandler<EventArgs> OnDie;
+        public event EventHandler OnDie;
+        public event EventHandler OnDamage;
         public int CurrentHealth
         {
             get => _currentHealth;
@@ -37,15 +37,15 @@ namespace Assets.Scripts.Health
         {
             CurrentHealth -= damage;
             if (CurrentHealth <= 0)
-            {
                 Die();
-            }
+            else
+                OnDamage?.Invoke(this, EventArgs.Empty);
         }
 
         public void Die()
         {
             Dismantle();
-            OnDie?.Invoke(this, null);
+            OnDie?.Invoke(this, EventArgs.Empty);
             Destroy(gameObject);
         }
 

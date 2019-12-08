@@ -51,6 +51,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _level: 0
+  _buildPrice: 250
   _upgradePrice: 50
   LevelText: {fileID: 6821852161081130179}
   _healthUpgradeIncrement: 20
@@ -2598,12 +2599,12 @@ PrefabInstance:
       propertyPath: _tower
       value: 
       objectReference: {fileID: 669968095638424303}
-    - target: {fileID: 8066598976889820612, guid: bd243328be03bf54191c9b70b3453395,
+    - target: {fileID: 305707755450522689, guid: bd243328be03bf54191c9b70b3453395,
         type: 3}
       propertyPath: _tower
       value: 
       objectReference: {fileID: 669968095638424303}
-    - target: {fileID: 305707755450522689, guid: bd243328be03bf54191c9b70b3453395,
+    - target: {fileID: 8066598976889820612, guid: bd243328be03bf54191c9b70b3453395,
         type: 3}
       propertyPath: _tower
       value: 

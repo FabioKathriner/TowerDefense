@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Towers;
+using UnityEngine;
 using UnityEngine.EventSystems;
 
 namespace Assets.Scripts
@@ -82,7 +83,6 @@ namespace Assets.Scripts
                     return;
                 }
 
-                PlayerStats.Money -= _turretToBuild.turretCost;
                 if (_selectedTowerPreview != null)
                 {
                     _selectedTowerPrefab.transform.rotation = _selectedTowerPreview.transform.rotation;
@@ -90,6 +90,7 @@ namespace Assets.Scripts
                 }
 
                 GameObject turret = Instantiate(_selectedTowerPrefab, hit.point, _selectedTowerPrefab.transform.rotation);
+                PlayerStats.Money -= turret.GetComponent<Tower>().BuildPrice;
                 Debug.LogWarning("Turret Placed successfully");
                 Debug.Log("Turret built! Money left: " + PlayerStats.Money);
                 LeaveBuildMode();

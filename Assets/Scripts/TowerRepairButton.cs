@@ -1,20 +1,32 @@
-﻿using Assets.Scripts.Towers;
+﻿using System;
+using Assets.Scripts.Towers;
 
 namespace Assets.Scripts
 {
     public class TowerRepairButton : PricedTowerButton
     {
+        protected override void Start()
+        {
+            base.Start();
+            if (Tower != null)
+                Tower.OnRepairPriceChanged += OnRepairPriceChanged;
+        }
+
+        private void OnRepairPriceChanged(object sender, EventArgs e)
+        {
+            PriceText.text = Tower.RepairPrice.ToString();
+        }
+
         protected override void OnClick(Tower tower)
         {
-            //TODO: Repair
-            tower.Upgrade();
-            PlayerStats.Money -= 2;
+            PlayerStats.Money -= tower.RepairPrice;
+            tower.Repair();
         }
 
         protected override string GetNewPrice(Tower tower)
         {
             //TODO: create repair price on Tower, remove inheritance
-            return tower.UpgradePrice.ToString();
+            return tower.RepairPrice.ToString();
         }
     }
 }
