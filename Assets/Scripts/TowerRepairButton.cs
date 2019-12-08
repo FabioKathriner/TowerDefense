@@ -2,10 +2,11 @@
 
 namespace Assets.Scripts
 {
-    public class TowerRepairButton : TowerButton
+    public class TowerRepairButton : PricedTowerButton
     {
         protected override void OnClick(Tower tower)
         {
+            //TODO: Repair
             tower.Upgrade();
         }
 

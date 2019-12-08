@@ -6,6 +6,7 @@ namespace Assets.Scripts
     {
         protected override void OnClick(Tower tower)
         {
+            //TODO: Sell
             tower.Upgrade();
         }
 

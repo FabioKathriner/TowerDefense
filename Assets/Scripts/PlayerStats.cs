@@ -6,7 +6,6 @@ public class PlayerStats : MonoBehaviour
     [SerializeField]
     private Text _moneyText;
 
-    // Start is called before the first frame update
     public int Money
     {
         get => _money;
@@ -18,8 +17,10 @@ public class PlayerStats : MonoBehaviour
     }
 
     public int startMoney = 1000;
+
     private int _money;
 
+    // Start is called before the first frame update
     void Start()
     {
         Money = startMoney;

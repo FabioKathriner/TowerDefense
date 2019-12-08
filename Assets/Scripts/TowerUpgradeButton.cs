@@ -2,7 +2,7 @@
 
 namespace Assets.Scripts
 {
-    public class TowerUpgradeButton : TowerButton
+    public class TowerUpgradeButton : PricedTowerButton
     {
         protected override void OnClick(Tower tower)
         {

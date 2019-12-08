@@ -4,32 +4,27 @@ using UnityEngine.UI;
 
 namespace Assets.Scripts
 {
+    [RequireComponent(typeof(Button))]
     public abstract class TowerButton : MonoBehaviour
     {
-        [SerializeField]
-        private Text _priceText;
-
         [SerializeField]
         private Tower _tower;
 
         private Button _button;
 
-        private void Start()
+        protected Tower Tower => _tower;
+
+        protected virtual void Start()
         {
             _button = GetComponent<Button>();
             gameObject.SetActive(false);
             _button.onClick.AddListener(OnClick);
-            if (_tower != null)
-                _priceText.text = GetNewPrice(_tower);
         }
 
-        private void OnClick()
+        protected virtual void OnClick()
         {
-            if (_tower != null)
-            {
-                OnClick(_tower);
-                _priceText.text = GetNewPrice(_tower);
-            }
+            if (Tower != null)
+                OnClick(Tower);
         }
 
         protected abstract void OnClick(Tower tower);
