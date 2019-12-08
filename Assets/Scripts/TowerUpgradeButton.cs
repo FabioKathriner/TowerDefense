@@ -7,6 +7,7 @@ namespace Assets.Scripts
         protected override void OnClick(Tower tower)
         {
             tower.Upgrade();
+            PlayerStats.Money -= tower.UpgradePrice;
         }
 
         protected override string GetNewPrice(Tower tower)

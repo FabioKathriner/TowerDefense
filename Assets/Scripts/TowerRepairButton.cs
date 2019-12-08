@@ -8,6 +8,7 @@ namespace Assets.Scripts
         {
             //TODO: Repair
             tower.Upgrade();
+            PlayerStats.Money -= 2;
         }
 
         protected override string GetNewPrice(Tower tower)

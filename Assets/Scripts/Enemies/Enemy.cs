@@ -13,7 +13,7 @@ namespace Assets.Scripts.Enemies
 
         private Health.Health _health;
 
-        public PlayerStats PlayerStats { get; set; } // TODO-bl: Can this property be safely removed?
+        public PlayerStats PlayerStats { get; set; } // TODO: Can this property be safely removed?
 
         private void Awake()
         {

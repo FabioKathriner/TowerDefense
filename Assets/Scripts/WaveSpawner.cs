@@ -24,9 +24,6 @@ namespace Assets.Scripts
         [SerializeField]
         private Text _waveCountDownText;
 
-        [SerializeField]
-        private PlayerStats _playerStats;
-
         private GameObject _enemiesParent;
 
         private void Start()
@@ -84,7 +81,7 @@ namespace Assets.Scripts
         {
             _enemyAliveCount--;
             var enemy = ((Enemy) sender);
-            _playerStats.Money += enemy.LootValue;
+            PlayerStats.Money += enemy.LootValue; // TODO: Simplify enemy death
             enemy.OnDie -= OnEnemyDied;
         }
     }

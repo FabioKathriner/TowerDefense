@@ -1,9 +1,9 @@
-﻿using Assets.Scripts.Towers;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
 namespace Assets.Scripts
 {
+    [RequireComponent(typeof(PlayerStats))]
     public class BuildManager : MonoBehaviour
     {
         public static BuildManager instance;
@@ -14,7 +14,6 @@ namespace Assets.Scripts
         private TurretBlueprint _turretToBuild;
         private BuildManager _buildManager;
 
-        private PlayerStats _playerStats;
         private bool _IsInBuildMode;
         private GameObject _selectedTowerPreview;
         private GameObject _selectedTowerPrefab;
@@ -28,7 +27,6 @@ namespace Assets.Scripts
 
         private void Start()
         {
-            _playerStats = GetComponent<PlayerStats>();
             _buildManager = BuildManager.instance;
         }
 
@@ -78,13 +76,13 @@ namespace Assets.Scripts
 
             if (Input.GetMouseButton(0))
             {
-                if (_playerStats.Money < _turretToBuild.turretCost)
+                if (PlayerStats.Money < _turretToBuild.turretCost)
                 {
                     Debug.LogWarning("You don't have enough Money to build that turret!'");
                     return;
                 }
 
-                _playerStats.Money -= _turretToBuild.turretCost;
+                PlayerStats.Money -= _turretToBuild.turretCost;
                 if (_selectedTowerPreview != null)
                 {
                     _selectedTowerPrefab.transform.rotation = _selectedTowerPreview.transform.rotation;
@@ -93,7 +91,7 @@ namespace Assets.Scripts
 
                 GameObject turret = Instantiate(_selectedTowerPrefab, hit.point, _selectedTowerPrefab.transform.rotation);
                 Debug.LogWarning("Turret Placed successfully");
-                Debug.Log("Turret built! Money left: " + _playerStats.Money);
+                Debug.Log("Turret built! Money left: " + PlayerStats.Money);
                 LeaveBuildMode();
             }
         }
