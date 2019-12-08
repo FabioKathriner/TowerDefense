@@ -88,7 +88,7 @@ namespace Assets.Scripts.Towers
 
         private void OnDamage(object sender, EventArgs e)
         {
-            RepairPrice = (int) (BuildPrice / Health.MaxHealth * (Health.MaxHealth - Health.CurrentHealth) * 0.9);
+            RepairPrice = (int) (BuildPrice / (float)Health.MaxHealth * (Health.MaxHealth - Health.CurrentHealth) * 0.9);
         }
     }
 
