@@ -326,7 +326,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6016564736018293974}
-  - component: {fileID: 7213772972506652816}
   m_Layer: 11
   m_Name: Rocket Launcher
   m_TagString: Untagged
@@ -349,20 +348,6 @@ Transform:
   m_Father: {fileID: 8457667000622939797}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7213772972506652816
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3744222711855630961}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5cb31841c50529641aea26169b308a86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ProjectilePrefab: {fileID: 0}
-  _forwardOffset: 0.5
 --- !u!1 &3877834470540009085
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Towers;
+using UnityEngine;
 
 namespace Assets.Scripts
 {
@@ -11,17 +12,13 @@ namespace Assets.Scripts
         private GameObject _selectedTower;
         private Renderer _selectedRenderer;
         private Color _previousColor;
-        public event TowerSelected OnTowerSelected;
-        public event TowerDeselected OnTowerDeselected;
-        public delegate void TowerSelected(object sender, TowerSelectedArgs args);
-        public delegate void TowerDeselected(object sender);
 
         private void FixedUpdate()
         {
+            // Clear previous selection on right mouse click
             if (Input.GetMouseButton(1) && _selectedTower != null)
             { 
                 ResetPreviousSelection();
-                OnTowerDeselected?.Invoke(this);
                 return;
             }
 
@@ -35,17 +32,23 @@ namespace Assets.Scripts
 
             if (hitInfo.transform.gameObject.tag == Tags.Tower)
             {
+                // Deselect the previous tower and select the clicked one
                 ResetPreviousSelection();
                 _selectedTower = hitInfo.transform.gameObject;
                 _selectedRenderer = _selectedTower.GetComponentInChildren<Renderer>();
                 _previousColor = _selectedRenderer.material.color;
                 _selectedRenderer.material.SetColor("_Color", Color.blue);
-                OnTowerSelected?.Invoke(this, new TowerSelectedArgs(_selectedTower));
+                var towerButtons = _selectedTower.GetComponentsInChildren<TowerButton>(true);
+                foreach (var towerButton in towerButtons)
+                {
+                    // TODO: Do not show button if not expected (e.g. Sell base)
+                    towerButton.gameObject.SetActive(true);
+                }
             }
             else
             {
+                // Clear selection on left mouse click somewhere else
                 ResetPreviousSelection();
-                OnTowerDeselected?.Invoke(this);
             }
         }
 
@@ -53,19 +56,14 @@ namespace Assets.Scripts
         {
             if (_selectedTower != null)
             {
+                var towerButtons = _selectedTower.GetComponentsInChildren<TowerButton>();
+                foreach (var towerButton in towerButtons)
+                {
+                    towerButton.gameObject.SetActive(false);
+                }
                 _selectedRenderer.material.SetColor("_Color", _previousColor);
                 _selectedTower = null;
             }
         }
-    }
-
-    public class TowerSelectedArgs
-    {
-        public TowerSelectedArgs(GameObject selectedTower)
-        {
-            SelectedTower = selectedTower;
-        }
-
-        public GameObject SelectedTower { get; set; }
     }
 }

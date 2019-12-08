@@ -16,7 +16,6 @@ MonoBehaviour:
     type: 3}
   _actualPrefab: {fileID: 2439471149367952929, guid: bef85e6af24c17c4eabab8fa3db9aeb8,
     type: 3}
-  _buildManager: {fileID: 0}
 --- !u!1 &3029435353886298195
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,22 +132,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 175762cba821cd4458cd33112df7d7c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RocketTower:
-    prefab: {fileID: 2439471149367952929, guid: bef85e6af24c17c4eabab8fa3db9aeb8,
-      type: 3}
-    turretCost: 100
-  BallisticTower:
-    prefab: {fileID: 2869298745103565431, guid: 55aaa649b502bba45ab050a56bf2eac9,
-      type: 3}
-    turretCost: 10
-  GuidedMissileTower:
-    prefab: {fileID: 4932611405737507254, guid: 162823a89f7ebe14999105f375c804c4,
-      type: 3}
-    turretCost: 500
-  BlastTower:
-    prefab: {fileID: 2595892129209389196, guid: 4454e4ea1badab045b183e0b5afa5ecf,
-      type: 3}
-    turretCost: 250
+  _rocketTower: {fileID: 2439471149367952929, guid: bef85e6af24c17c4eabab8fa3db9aeb8,
+    type: 3}
+  _ballisticTower: {fileID: 2869298745103565431, guid: 55aaa649b502bba45ab050a56bf2eac9,
+    type: 3}
+  _guidedMissileTower: {fileID: 4932611405737507254, guid: 162823a89f7ebe14999105f375c804c4,
+    type: 3}
+  _blastTower: {fileID: 2595892129209389196, guid: 4454e4ea1badab045b183e0b5afa5ecf,
+    type: 3}
 --- !u!114 &7697679431666760928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,7 +156,6 @@ MonoBehaviour:
     type: 3}
   _actualPrefab: {fileID: 2595892129209389196, guid: 4454e4ea1badab045b183e0b5afa5ecf,
     type: 3}
-  _buildManager: {fileID: 0}
 --- !u!114 &2976131339112679348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,7 +172,6 @@ MonoBehaviour:
     type: 3}
   _actualPrefab: {fileID: 2869298745103565431, guid: 55aaa649b502bba45ab050a56bf2eac9,
     type: 3}
-  _buildManager: {fileID: 0}
 --- !u!114 &3532987220302928895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,7 +188,6 @@ MonoBehaviour:
     type: 3}
   _actualPrefab: {fileID: 4932611405737507254, guid: 162823a89f7ebe14999105f375c804c4,
     type: 3}
-  _buildManager: {fileID: 0}
 --- !u!1001 &3029435353371628970
 PrefabInstance:
   m_ObjectHideFlags: 0

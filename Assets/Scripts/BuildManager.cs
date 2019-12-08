@@ -1,41 +1,33 @@
-﻿using System.Security.Cryptography;
+﻿using Assets.Scripts.Towers;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using Quaternion = UnityEngine.Quaternion;
 
 namespace Assets.Scripts
 {
+    [RequireComponent(typeof(PlayerStats))]
     public class BuildManager : MonoBehaviour
     {
-        public static BuildManager instance;
-
         public LayerMask HitMask;
         public LayerMask IgnoreTowerMask;
 
-        private TurretBlueprint _turretToBuild;
-        private BuildManager _buildManager;
+        private GameObject _towerToBuild;
 
-        private PlayerStats _playerStats;
-        private bool _IsInBuildMode;
+        private bool _isInBuildMode;
         private GameObject _selectedTowerPreview;
         private GameObject _selectedTowerPrefab;
 
+        public static BuildManager Instance { get; private set; }
+
         private void Awake()
         {
-            if (instance != null)
+            if (Instance != null)
                 Debug.LogError("There is more than one BuildManager in the current scene!");
-            instance = this;
+            Instance = this;
         }
 
-        private void Start()
-        {
-            _playerStats = GetComponent<PlayerStats>();
-            _buildManager = BuildManager.instance;
-        }
-
-        public void SelectTurretToBuild (TurretBlueprint turretBlueprint)
+        public void SelectTurretToBuild (GameObject towerPrefab)
         { 
-            _turretToBuild = turretBlueprint;
+            _towerToBuild = towerPrefab;
         }
 
         private void Update()
@@ -46,7 +38,7 @@ namespace Assets.Scripts
 
         private void FixedUpdate()
         {
-            if (!_IsInBuildMode)
+            if (!_isInBuildMode)
                 return;
 
             if (Input.GetMouseButton(1))
@@ -79,13 +71,13 @@ namespace Assets.Scripts
 
             if (Input.GetMouseButton(0))
             {
-                if (_playerStats.Money < _turretToBuild.turretCost)
+                var buildPrice = _towerToBuild.GetComponent<Tower>().BuildPrice;
+                if (PlayerStats.Money < buildPrice)
                 {
                     Debug.LogWarning("You don't have enough Money to build that turret!'");
                     return;
                 }
 
-                _playerStats.Money -= _turretToBuild.turretCost;
                 if (_selectedTowerPreview != null)
                 {
                     _selectedTowerPrefab.transform.rotation = _selectedTowerPreview.transform.rotation;
@@ -93,8 +85,9 @@ namespace Assets.Scripts
                 }
 
                 GameObject turret = Instantiate(_selectedTowerPrefab, hit.point, _selectedTowerPrefab.transform.rotation);
+                PlayerStats.Money -= buildPrice;
                 Debug.LogWarning("Turret Placed successfully");
-                Debug.Log("Turret built! Money left: " + _playerStats.Money);
+                Debug.Log("Turret built! Money left: " + PlayerStats.Money);
                 LeaveBuildMode();
             }
         }
@@ -105,12 +98,12 @@ namespace Assets.Scripts
                 Destroy(_selectedTowerPreview);
             _selectedTowerPreview = Instantiate(previewPrefab);
             _selectedTowerPrefab = actualPrefab;
-            _IsInBuildMode = true;
+            _isInBuildMode = true;
         }
 
         private void LeaveBuildMode()
         {
-            _IsInBuildMode = false;
+            _isInBuildMode = false;
             _selectedTowerPrefab = null;
             _selectedTowerPreview = null;
         }

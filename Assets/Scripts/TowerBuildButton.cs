@@ -11,11 +11,11 @@ namespace Assets.Scripts
         [SerializeField]
         private GameObject _actualPrefab;
 
-        [SerializeField]
         private BuildManager _buildManager;
 
         private void Start()
         {
+            _buildManager = BuildManager.Instance;
             var button = GetComponent<Button>();
             button.onClick.AddListener(OnClick);
         }

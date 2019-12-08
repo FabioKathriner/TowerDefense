@@ -1,48 +1,18 @@
 ﻿using Assets.Scripts.Towers;
-using UnityEngine;
-using UnityEngine.UI;
 
 namespace Assets.Scripts
 {
-    public class TowerUpgradeButton : MonoBehaviour
+    public class TowerUpgradeButton : PricedTowerButton
     {
-        [SerializeField]
-        private TowerSelector _towerSelector;
-        [SerializeField]
-        private Text _priceText;
-
-        private Button _button;
-        private Tower _selectedTower;
-
-        private void Start()
+        protected override void OnClick(Tower tower)
         {
-            _button = GetComponent<Button>();
-            _button.enabled = false;
-            _button.onClick.AddListener(OnClick);
-            _towerSelector.OnTowerSelected += OnTowerSelected;
-            _towerSelector.OnTowerDeselected += OnTowerDeselected;
+            PlayerStats.Money -= tower.UpgradePrice;
+            tower.Upgrade();
         }
 
-        private void OnTowerSelected(object sender, TowerSelectedArgs args)
+        protected override string GetNewPrice(Tower tower)
         {
-            _button.enabled = true;
-            _selectedTower = args.SelectedTower.GetComponent<Tower>();
-            _priceText.text = _selectedTower.UpgradePrice.ToString();
-        }
-
-        private void OnTowerDeselected(object sender)
-        {
-            _button.enabled = false;
-            _selectedTower = null;
-        }
-
-        private void OnClick()
-        {
-            if (_selectedTower != null)
-            {
-                _selectedTower.Upgrade();
-                _priceText.text = _selectedTower.UpgradePrice.ToString();
-            }
+            return tower.UpgradePrice.ToString();
         }
     }
 }

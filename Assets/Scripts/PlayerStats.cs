@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
@@ -6,22 +7,31 @@ public class PlayerStats : MonoBehaviour
     [SerializeField]
     private Text _moneyText;
 
-    // Start is called before the first frame update
-    public int Money
+    private static event EventHandler OnMoneyChanged;
+
+    public static int Money
     {
         get => _money;
         set
         {
             _money = value;
-            _moneyText.text =_money.ToString();
+            OnMoneyChanged?.Invoke(typeof(PlayerStats), EventArgs.Empty);
         }
     }
 
     public int startMoney = 1000;
-    private int _money;
 
+    private static int _money;
+
+    // Start is called before the first frame update
     void Start()
     {
+        OnMoneyChanged += MoneyChanged;
         Money = startMoney;
+    }
+
+    private void MoneyChanged(object sender, EventArgs e)
+    {
+        _moneyText.text = _money.ToString();
     }
 }

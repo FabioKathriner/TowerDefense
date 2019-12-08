@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Weapons;
+﻿using System;
+using Assets.Scripts.Weapons;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +11,9 @@ namespace Assets.Scripts.Towers
         private int _level = 1;
 
         [SerializeField]
+        private int _buildPrice;
+
+        [SerializeField]
         private int _upgradePrice = 50;
 
         [SerializeField]
@@ -17,6 +21,9 @@ namespace Assets.Scripts.Towers
 
         [SerializeField]
         private int _healthUpgradeIncrement;
+
+        private int _repairPrice;
+
 
         protected int HealthUpgradeIncrement
         {
@@ -40,18 +47,48 @@ namespace Assets.Scripts.Towers
             private set => _upgradePrice = value;
         }
 
-        protected Health.Health Health;
+        public int RepairPrice
+        {
+            get => _repairPrice;
+            private set
+            {
+                _repairPrice = value;
+                OnRepairPriceChanged?.Invoke(this, EventArgs.Empty);
+            }
+        }
+
+        public int TotalValue { get; private set; }
+        public int BuildPrice => _buildPrice;
+
+        public event EventHandler OnRepairPriceChanged;
+
+        public Health.Health Health;
+
 
         protected virtual void Start()
         {
+            TotalValue = BuildPrice;
             LevelText.text = _level.ToString();
             Health = GetComponent<Health.Health>();
+            Health.OnDamage += OnDamage;
         }
 
         public virtual void Upgrade()
         {
             Level++;
+            TotalValue += UpgradePrice;
             UpgradePrice *= 2;
+        }
+
+        public void Repair()
+        {
+            Health.CurrentHealth = Health.MaxHealth;
+            RepairPrice = 0;
+        }
+
+        private void OnDamage(object sender, EventArgs e)
+        {
+            RepairPrice = (int) (BuildPrice / Health.MaxHealth * (Health.MaxHealth - Health.CurrentHealth) * 0.9);
         }
     }
 
