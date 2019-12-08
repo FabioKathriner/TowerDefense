@@ -11,6 +11,9 @@ namespace Assets.Scripts.Enemies
         [SerializeField]
         private int _lootValue;
 
+        [SerializeField]
+        private GameObject _deadBodyPrefab;
+
         private Health.Health _health;
 
         public PlayerStats PlayerStats { get; set; } // TODO: Can this property be safely removed?
@@ -25,6 +28,17 @@ namespace Assets.Scripts.Enemies
         {
             OnDie?.Invoke(this, e);
             _health.OnDie -= OnDied;
+            if (_deadBodyPrefab != null)
+            {
+                var body = Instantiate(_deadBodyPrefab, transform.position, transform.rotation, transform.parent);
+                var bodyRbs = body.GetComponentsInChildren<Rigidbody>();
+                var currentRb = GetComponent<Rigidbody>();
+                foreach (var bodyRb in bodyRbs)
+                {
+                    bodyRb.velocity = currentRb.velocity;
+                }
+                Destroy(body, 10f);
+            }
         }
 
         public int AttackPower

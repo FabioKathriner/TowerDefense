@@ -44,7 +44,8 @@ namespace Assets.Scripts.Health
 
         public void Die()
         {
-            Dismantle();
+            //Uncomment Dismantle to make units explode into pieces on death
+            //Dismantle();
             OnDie?.Invoke(this, EventArgs.Empty);
             Destroy(gameObject);
         }
