@@ -32,6 +32,6 @@ public class PlayerStats : MonoBehaviour
 
     private void MoneyChanged(object sender, EventArgs e)
     {
-        _moneyText.text = _money.ToString();
+        _moneyText.text = $"{_money.ToString()}$";
     }
 }

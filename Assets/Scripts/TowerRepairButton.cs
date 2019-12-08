@@ -14,7 +14,7 @@ namespace Assets.Scripts
 
         private void OnRepairPriceChanged(object sender, EventArgs e)
         {
-            PriceText.text = Tower.RepairPrice.ToString();
+            UpdateText(Tower.RepairPrice);
         }
 
         protected override void OnClick(Tower tower)
@@ -23,10 +23,9 @@ namespace Assets.Scripts
             tower.Repair();
         }
 
-        protected override string GetNewPrice(Tower tower)
+        protected override int GetNewPrice(Tower tower)
         {
-            //TODO: create repair price on Tower, remove inheritance
-            return tower.RepairPrice.ToString();
+            return tower.RepairPrice;
         }
     }
 }

@@ -9,13 +9,11 @@ namespace Assets.Scripts
         [SerializeField]
         private Text _priceText;
 
-        protected Text PriceText => _priceText;
-
         protected override void Start()
         {
             base.Start();
             if (Tower != null)
-                PriceText.text = GetNewPrice(Tower);
+                UpdateText(GetNewPrice(Tower));
         }
 
         protected override void OnClick()
@@ -23,10 +21,15 @@ namespace Assets.Scripts
             if (Tower != null)
             {
                 OnClick(Tower);
-                PriceText.text = GetNewPrice(Tower);
+                UpdateText(GetNewPrice(Tower));
             }
         }
 
-        protected abstract string GetNewPrice(Tower tower);
+        protected void UpdateText(int newPrice)
+        {
+            _priceText.text = $"{newPrice}$";
+        }
+
+        protected abstract int GetNewPrice(Tower tower);
     }
 }

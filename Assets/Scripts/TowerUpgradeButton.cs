@@ -10,9 +10,9 @@ namespace Assets.Scripts
             tower.Upgrade();
         }
 
-        protected override string GetNewPrice(Tower tower)
+        protected override int GetNewPrice(Tower tower)
         {
-            return tower.UpgradePrice.ToString();
+            return tower.UpgradePrice;
         }
     }
 }
