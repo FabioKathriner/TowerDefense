@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace Assets.Scripts.Enemies
 {
@@ -32,10 +33,10 @@ namespace Assets.Scripts.Enemies
             {
                 var body = Instantiate(_deadBodyPrefab, transform.position, transform.rotation, transform.parent);
                 var bodyRbs = body.GetComponentsInChildren<Rigidbody>();
-                var currentRb = GetComponent<Rigidbody>();
+                var navAgent = GetComponent<NavMeshAgent>();
                 foreach (var bodyRb in bodyRbs)
                 {
-                    bodyRb.velocity = currentRb.velocity;
+                    bodyRb.velocity = navAgent.velocity;
                 }
                 Destroy(body, 10f);
             }
