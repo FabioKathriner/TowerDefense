@@ -901,6 +901,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _attackPower: 10
   _lootValue: 0
+  _deadBodyPrefab: {fileID: 768049493628036296, guid: cd52f725e66483146a678af32c09d699,
+    type: 3}
 --- !u!1001 &3832639887463589585
 PrefabInstance:
   m_ObjectHideFlags: 0
