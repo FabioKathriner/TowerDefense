@@ -9,7 +9,7 @@ public class PlayGame : MonoBehaviour
     {
 		
 	}
-    void OnClick()
+    void Load()
 	{
 		Application.LoadLevel("Level Test 2");
 	}
