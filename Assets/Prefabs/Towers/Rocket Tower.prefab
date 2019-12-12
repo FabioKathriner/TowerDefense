@@ -149,6 +149,7 @@ MonoBehaviour:
   _upgradePrice: 50
   LevelText: {fileID: 3761704269910239021}
   _healthUpgradeIncrement: 20
+  _endurance: 4
   Health: {fileID: 0}
   RateOfFire: 1.5
   _rateOfFireUpgradeIncrement: 0.1
@@ -1374,11 +1375,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3759080451789721004}
     m_Modifications:
-    - target: {fileID: 2261782069940029047, guid: bd243328be03bf54191c9b70b3453395,
-        type: 3}
-      propertyPath: m_Name
-      value: UnitCanvas
-      objectReference: {fileID: 0}
     - target: {fileID: 2261782069940029035, guid: bd243328be03bf54191c9b70b3453395,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1483,6 +1479,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2261782069940029047, guid: bd243328be03bf54191c9b70b3453395,
+        type: 3}
+      propertyPath: m_Name
+      value: UnitCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 1814277040726195502, guid: bd243328be03bf54191c9b70b3453395,
         type: 3}

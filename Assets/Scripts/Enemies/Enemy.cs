@@ -1,4 +1,5 @@
 ﻿using System;
+using Assets.Scripts.Towers;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -23,6 +24,18 @@ namespace Assets.Scripts.Enemies
         {
             _health = GetComponent<Health.Health>();
             _health.OnDie += OnDied;
+        }
+        private float _time;
+        private void OnCollisionStay(Collision collision)
+        {
+            _time += Time.deltaTime;
+
+            if (collision.gameObject.tag == Tags.Tower && _time >= 0.5f)
+            {
+                _time = 0;
+                var tower = collision.gameObject.GetComponent<Tower>();
+                tower.Health.TakeDamage(AttackPower);
+            }
         }
 
         private void OnDied(object sender, EventArgs e)
