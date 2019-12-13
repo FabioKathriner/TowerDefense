@@ -5,9 +5,11 @@ namespace Assets.Scripts.UI_Elements
 {
     public class PauseMenu : MonoBehaviour
     {
+        [SerializeField]
+        private GameObject _pauseMenuUi;
         private TimeManager _timeManager;
 
-        private void Awake()
+        private void Start()
         {
             _timeManager = GameManager.Instance.TimeManager;
         }
@@ -18,7 +20,7 @@ namespace Assets.Scripts.UI_Elements
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 _timeManager.PauseResume();
-                gameObject.SetActive(_timeManager.GameSpeed == GameSpeed.Paused);
+                _pauseMenuUi.SetActive(_timeManager.GameSpeed == GameSpeed.Paused);
             }
         
         }
@@ -26,7 +28,7 @@ namespace Assets.Scripts.UI_Elements
         public void OnSettingsClick()
         {
             _timeManager.PauseResume();
-            gameObject.SetActive(_timeManager.GameSpeed == GameSpeed.Paused);
+            _pauseMenuUi.SetActive(_timeManager.GameSpeed == GameSpeed.Paused);
         }
 
         public void OnLoadMenuClick()
