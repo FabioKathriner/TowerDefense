@@ -18,7 +18,7 @@ namespace Assets.Scripts.Enemies
         private GameObject _deadBodyPrefab;
 
         private Health.Health _health;
-        private float _time;
+        private float _timeSinceLastMeleeAttack;
 
         private void Awake()
         {
@@ -28,11 +28,11 @@ namespace Assets.Scripts.Enemies
 
         private void OnCollisionStay(Collision collision)
         {
-            _time += Time.deltaTime;
+            _timeSinceLastMeleeAttack += Time.deltaTime;
 
-            if (collision.gameObject.tag == Tags.Tower && _time >= 0.5f)
+            if (collision.gameObject.tag == Tags.Tower && _timeSinceLastMeleeAttack >= 0.5f)
             {
-                _time = 0;
+                _timeSinceLastMeleeAttack = 0;
                 var tower = collision.gameObject.GetComponent<Tower>();
                 tower.Health.TakeDamage(AttackPower);
             }

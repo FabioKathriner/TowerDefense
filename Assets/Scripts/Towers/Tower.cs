@@ -26,11 +26,7 @@ namespace Assets.Scripts.Towers
         [SerializeField]
         private int _healthUpgradeIncrement;
 
-        [SerializeField]
-        private int _endurance = 4;
-
         private int _repairPrice;
-
 
         protected int HealthUpgradeIncrement
         {

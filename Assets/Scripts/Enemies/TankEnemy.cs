@@ -7,7 +7,7 @@ namespace Assets.Scripts.Enemies
     public class TankEnemy : Enemy
     {
         private TargetFinder _targetFinder;
-        private float _time;
+        private float _timeSinceLastRangedAttack;
 
         [SerializeField]
         private float _rateOfFire = 1.2f;
@@ -24,11 +24,11 @@ namespace Assets.Scripts.Enemies
         // Update is called once per frame
         private void Update()
         {
-            _time += Time.deltaTime;
+            _timeSinceLastRangedAttack += Time.deltaTime;
 
-            if (_time >= _rateOfFire)
+            if (_timeSinceLastRangedAttack >= _rateOfFire)
             {
-                _time = 0;
+                _timeSinceLastRangedAttack = 0;
                 var nearestTarget = _targetFinder.GetNextTarget();
                 if (nearestTarget != null)
                     _weapon.Fire(nearestTarget);
