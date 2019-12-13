@@ -5,8 +5,6 @@ public class CameraController : MonoBehaviour
 {
     [SerializeField] private float panSpeed = 30f;
 
-    private bool moveCamera = true;
-
     [SerializeField] private float scrollSpeed = 5f;
 
     [Header("CameraLimits")] [SerializeField]
@@ -16,34 +14,34 @@ public class CameraController : MonoBehaviour
     [SerializeField] private float rotateSpeed = 10; // mouse down rotation speed about x and y axess
 
     private Vector3 _lastMousePosition;
+    private float _currentDeltaTime;
+
+    public void Start()
+    {
+        _currentDeltaTime = Time.deltaTime;
+    }
 
     // Update is called once per frame
     void LateUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-            moveCamera = !moveCamera;
-
-        if (!moveCamera)
-            return;
-
         if (Input.GetKey("w") || (Input.GetKey("up")))
         {
-            transform.Translate(Vector3.forward * panSpeed * Time.deltaTime, Space.Self);
+            transform.Translate(Vector3.forward * panSpeed * _currentDeltaTime, Space.Self);
         }
 
         if (Input.GetKey("s") || Input.GetKey("down"))
         {
-            transform.Translate(Vector3.back * panSpeed * Time.deltaTime, Space.Self);
+            transform.Translate(Vector3.back * panSpeed * _currentDeltaTime, Space.Self);
         }
 
         if (Input.GetKey("d") || Input.GetKey("right"))
         {
-            transform.Translate(Vector3.right * panSpeed * Time.deltaTime, Space.Self);
+            transform.Translate(Vector3.right * panSpeed * _currentDeltaTime, Space.Self);
         }
 
         if (Input.GetKey("a") || Input.GetKey("left"))
         {
-            transform.Translate(Vector3.left * panSpeed * Time.deltaTime, Space.Self);
+            transform.Translate(Vector3.left * panSpeed * _currentDeltaTime, Space.Self);
         }
 
         if (Input.GetMouseButton(1))
@@ -60,7 +58,7 @@ public class CameraController : MonoBehaviour
             else
                 mouseDelta = Vector3.zero;
 
-            var rotation = Vector3.up * Time.deltaTime * rotateSpeed * mouseDelta.x;
+            var rotation = Vector3.up * _currentDeltaTime * rotateSpeed * mouseDelta.x;
             rotation.x = 0;
             rotation.z = 0;
             transform.Rotate(rotation, Space.Self);
@@ -70,7 +68,7 @@ public class CameraController : MonoBehaviour
             transform.rotation = Quaternion.Euler(rotation);
 
 
-            var cameraRotation = Vector3.left * Time.deltaTime * rotateSpeed * mouseDelta.y;
+            var cameraRotation = Vector3.left * _currentDeltaTime * rotateSpeed * mouseDelta.y;
             cameraRotation.y = 0;
             cameraRotation.z = 0;
             Camera.main.transform.Rotate(cameraRotation, Space.Self);
@@ -84,7 +82,7 @@ public class CameraController : MonoBehaviour
         float scroll = Input.GetAxis("Mouse ScrollWheel");
 
         Vector3 pos = transform.position;
-        pos.y -= scroll * 500 * scrollSpeed * Time.deltaTime;
+        pos.y -= scroll * 500 * scrollSpeed * _currentDeltaTime;
         pos.y = Mathf.Clamp(pos.y, minY, maxY);
 
         transform.position = pos;
