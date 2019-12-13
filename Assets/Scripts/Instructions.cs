@@ -1,16 +1,19 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Instructions : MonoBehaviour
+namespace Assets.Scripts
 {
-    // Start is called before the first frame update
-    public void LoadInstructions()
+    public class Instructions : MonoBehaviour
     {
-        SceneManager.LoadScene("Instructions");
-    }
+        // Start is called before the first frame update
+        public void LoadInstructions()
+        {
+            SceneManager.LoadScene("Instructions");
+        }
 
-    public void LoadPlay()
-    {
-        SceneManager.LoadScene("Play");
+        public void LoadPlay()
+        {
+            SceneManager.LoadScene("Play");
+        }
     }
 }

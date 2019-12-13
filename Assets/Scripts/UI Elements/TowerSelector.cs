@@ -1,7 +1,6 @@
-﻿using Assets.Scripts.Towers;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Assets.Scripts
+namespace Assets.Scripts.UI_Elements
 {
 
     public class TowerSelector : MonoBehaviour

@@ -1,47 +1,49 @@
-﻿using Assets.Scripts;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Shop : MonoBehaviour
+namespace Assets.Scripts
 {
-
-    [SerializeField]
-    private GameObject _rocketTower;
-    [SerializeField]
-    private GameObject _ballisticTower;
-    [SerializeField]
-    private GameObject _guidedMissileTower;
-    [SerializeField]
-    private GameObject _blastTower;
-
-    private BuildManager buildManager;
-
-    void Start()
+    public class Shop : MonoBehaviour
     {
-        buildManager = BuildManager.Instance;
-    }
 
-    public void SelectRocketTower()
-    {
-        Debug.Log("Rocket Tower selected.");
-        buildManager.SelectTurretToBuild(_rocketTower);
-    }
+        [SerializeField]
+        private GameObject _rocketTower;
+        [SerializeField]
+        private GameObject _ballisticTower;
+        [SerializeField]
+        private GameObject _guidedMissileTower;
+        [SerializeField]
+        private GameObject _blastTower;
 
-    public void SelectBallisticTower()
-    {
-        Debug.Log("Ballistic Tower selected.");
-        buildManager.SelectTurretToBuild(_ballisticTower);
-    }
+        private BuildManager buildManager;
 
-    public void SelectGuidedMissileTower()
-    {
-        Debug.Log("Guided Missle Tower selected.");
-        buildManager.SelectTurretToBuild(_guidedMissileTower);
-    }
+        void Start()
+        {
+            buildManager = BuildManager.Instance;
+        }
 
-    public void SelectBlastTower()
-    {
-        Debug.Log("Blast Tower selected.");
-        buildManager.SelectTurretToBuild(_blastTower);
-    }
+        public void SelectRocketTower()
+        {
+            Debug.Log("Rocket Tower selected.");
+            buildManager.SelectTurretToBuild(_rocketTower);
+        }
 
+        public void SelectBallisticTower()
+        {
+            Debug.Log("Ballistic Tower selected.");
+            buildManager.SelectTurretToBuild(_ballisticTower);
+        }
+
+        public void SelectGuidedMissileTower()
+        {
+            Debug.Log("Guided Missle Tower selected.");
+            buildManager.SelectTurretToBuild(_guidedMissileTower);
+        }
+
+        public void SelectBlastTower()
+        {
+            Debug.Log("Blast Tower selected.");
+            buildManager.SelectTurretToBuild(_blastTower);
+        }
+
+    }
 } 

@@ -1,7 +1,7 @@
 ﻿using System;
 using Assets.Scripts.Towers;
 
-namespace Assets.Scripts
+namespace Assets.Scripts.UI_Elements
 {
     public class TowerRepairButton : PricedTowerButton
     {
