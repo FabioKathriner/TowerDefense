@@ -5,8 +5,6 @@ public class CameraController : MonoBehaviour
 {
     [SerializeField] private float panSpeed = 30f;
 
-    private bool moveCamera = true;
-
     [SerializeField] private float scrollSpeed = 5f;
 
     [Header("CameraLimits")] [SerializeField]
@@ -26,12 +24,6 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-            moveCamera = !moveCamera;
-
-        if (!moveCamera)
-            return;
-
         if (Input.GetKey("w") || (Input.GetKey("up")))
         {
             transform.Translate(Vector3.forward * panSpeed * _currentDeltaTime, Space.Self);
