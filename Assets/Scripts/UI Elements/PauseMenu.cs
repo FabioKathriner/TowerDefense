@@ -9,7 +9,7 @@ namespace Assets.Scripts.UI_Elements
         private GameObject _pauseMenuUi;
         private TimeManager _timeManager;
 
-        private void Start()
+        private void Awake()
         {
             _timeManager = GameManager.Instance.TimeManager;
         }

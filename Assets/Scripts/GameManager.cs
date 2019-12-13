@@ -10,16 +10,7 @@ namespace Assets.Scripts
     [RequireComponent(typeof(TimeManager))]
     public class GameManager : MonoBehaviour
     {
-        private static GameManager _instance;
-
-        public static GameManager Instance
-        {
-            get
-            {
-                return _instance;
-            }
-            private set => _instance = value;
-        }
+        public static GameManager Instance { get; private set; }
 
         public BuildManager BuildManager { get; private set; }
         public PlayerStats PlayerStats { get; private set; }
