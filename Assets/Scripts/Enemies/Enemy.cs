@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 namespace Assets.Scripts.Enemies
 {
+    [RequireComponent(typeof(Health.Health))]
     public class Enemy : MonoBehaviour
     {
         [SerializeField]
@@ -18,9 +19,6 @@ namespace Assets.Scripts.Enemies
 
         private Health.Health _health;
         private float _time;
-
-        public PlayerStats PlayerStats { get; set; } // TODO: Can this property be safely removed?
-
 
         private void Awake()
         {

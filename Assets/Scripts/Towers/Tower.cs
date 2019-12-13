@@ -1,11 +1,11 @@
 ﻿using System;
-using Assets.Scripts.Enemies;
 using Assets.Scripts.Weapons;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Assets.Scripts.Towers
 {
+    [RequireComponent(typeof(Health.Health))]
     public abstract class Tower : MonoBehaviour, IUpgradable
     {
         [SerializeField]
@@ -101,7 +101,6 @@ namespace Assets.Scripts.Towers
     }
 
     [RequireComponent(typeof(Weapon))]
-    [RequireComponent(typeof(Health.Health))]
     public abstract class Tower<TWeapon> : Tower
         where TWeapon : Weapon
     {
