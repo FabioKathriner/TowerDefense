@@ -1,71 +1,31 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ChangeTimeButton : MonoBehaviour
 {
-    private float fixedDeltaTime;
+    [SerializeField] private TimeManager _timeManager;
 
-    void Awake()
+    public void OnPauseResume()
     {
-        this.fixedDeltaTime = Time.fixedDeltaTime;
+        _timeManager.PauseResume();
     }
 
-    public void PauseResumeGame()
+    public void OnGoFast()
     {
-        if (Time.timeScale == 1.0f)
-        {
-            Time.timeScale = 0f;
-        }
-        else if (Time.timeScale == 0f)
-        {
-            Time.timeScale = 1.0f;
-        }
-        else if (Time.timeScale != 1.0f)
-        {
-            Time.timeScale = 0f;
-        }
-        
-
-        // Adjust fixed delta time according to timescale
-        // The fixed delta time will now be 0.02 frames per real-time second
-        Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
-
+        _timeManager.GoFast();
     }
 
-    public void GoFast()
+    public void OnGoVeryFast()
     {
-        Time.timeScale = 1.5f;
-       
-        // Adjust fixed delta time according to timescale
-        // The fixed delta time will now be 0.02 frames per real-time second
-        Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
+        _timeManager.GoVeryFast();
     }
 
-    public void GoVeryFast()
+    public void OnGoSlow()
     {
-      
-        Time.timeScale = 2.0f;
-        // Adjust fixed delta time according to timescale
-        // The fixed delta time will now be 0.02 frames per real-time second
-        Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
+        _timeManager.GoSlow();
     }
 
-    public void SlowDown()
+    public void OnGoVerySlow()
     {
-       
-        Time.timeScale = 0.5f;
-        // Adjust fixed delta time according to timescale
-        // The fixed delta time will now be 0.02 frames per real-time second
-        Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
-    }
-
-    public void SlowDownEvenMore()
-    {
-        
-        Time.timeScale = 0.25f;
-        // Adjust fixed delta time according to timescale
-        // The fixed delta time will now be 0.02 frames per real-time second
-        Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
+        _timeManager.GoVerySlow();
     }
 }
