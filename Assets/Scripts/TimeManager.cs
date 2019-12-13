@@ -10,11 +10,14 @@ namespace Assets.Scripts
         private const float SpeedVeryFast = 2.0f;
         private const float SpeedSlow = 0.5f;
         private const float SpeedVerySlow = 0.25f;
-        private float fixedDeltaTime;
+        private float _fixedDeltaTime;
         private GameSpeed _gameSpeed;
+
+        public GameSpeed GameSpeed => _gameSpeed;
+
         void Awake()
         {
-            this.fixedDeltaTime = Time.fixedDeltaTime;
+            this._fixedDeltaTime = Time.fixedDeltaTime;
         }
         // Update is called once per frame
         void Update()
@@ -27,9 +30,9 @@ namespace Assets.Scripts
 
         public void PauseResume()
         {
-            if (_gameSpeed == GameSpeed.Normal)
+            if (GameSpeed == GameSpeed.Normal)
                 Pause();
-            else if (_gameSpeed == GameSpeed.Paused)
+            else if (GameSpeed == GameSpeed.Paused)
                 Resume();
             else
                 Pause();
@@ -38,14 +41,14 @@ namespace Assets.Scripts
         private void Resume()
         {
             Time.timeScale = SpeedNormal;
-            Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
+            Time.fixedDeltaTime = this._fixedDeltaTime * Time.timeScale;
             _gameSpeed = GameSpeed.Normal;
         }
 
         private void Pause()
         {
             Time.timeScale = SpeedPaused;
-            Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
+            Time.fixedDeltaTime = this._fixedDeltaTime * Time.timeScale;
             _gameSpeed = GameSpeed.Paused;
 
         }
@@ -53,7 +56,7 @@ namespace Assets.Scripts
         public void GoFast()
         {
             Time.timeScale = SpeedFast;
-            Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
+            Time.fixedDeltaTime = this._fixedDeltaTime * Time.timeScale;
             _gameSpeed = GameSpeed.Fast;
         }
 
@@ -61,7 +64,7 @@ namespace Assets.Scripts
         {
 
             Time.timeScale = SpeedVeryFast;
-            Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
+            Time.fixedDeltaTime = this._fixedDeltaTime * Time.timeScale;
             _gameSpeed = GameSpeed.VeryFast;
         }
 
@@ -69,7 +72,7 @@ namespace Assets.Scripts
         {
 
             Time.timeScale = SpeedSlow;
-            Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
+            Time.fixedDeltaTime = this._fixedDeltaTime * Time.timeScale;
             _gameSpeed = GameSpeed.Slow;
         }
 
@@ -77,7 +80,7 @@ namespace Assets.Scripts
         {
 
             Time.timeScale = SpeedVerySlow;
-            Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
+            Time.fixedDeltaTime = this._fixedDeltaTime * Time.timeScale;
             _gameSpeed = GameSpeed.VerySlow;
         }
     }

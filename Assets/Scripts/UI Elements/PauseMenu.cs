@@ -5,61 +5,37 @@ namespace Assets.Scripts.UI_Elements
 {
     public class PauseMenu : MonoBehaviour
     {
+        private TimeManager _timeManager;
 
-        public static bool GameIsPaused = false;
-
-        public GameObject pauseMenuUI;
+        private void Awake()
+        {
+            _timeManager = GameManager.Instance.TimeManager;
+        }
 
         // Update is called once per frame
         void Update()
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                if (GameIsPaused)
-                {
-                    Resume();
-                } else
-                {
-                    Pause();
-                }
-
+                _timeManager.PauseResume();
+                gameObject.SetActive(_timeManager.GameSpeed == GameSpeed.Paused);
             }
         
         }
 
         public void OnSettingsClick()
         {
-            if (GameIsPaused)
-            {
-                Resume();
-            }
-            else
-            {
-                Pause();
-            }
+            _timeManager.PauseResume();
+            gameObject.SetActive(_timeManager.GameSpeed == GameSpeed.Paused);
         }
 
-        public void Resume()
+        public void OnLoadMenuClick()
         {
-            pauseMenuUI.SetActive(false);
-            Time.timeScale = 1f;
-            GameIsPaused = false;
-        }
-
-        void Pause()
-        {
-            pauseMenuUI.SetActive(true);
-            Time.timeScale = 0f;
-            GameIsPaused = true;
-        }
-
-        public void LoadMenu()
-        {
-            Time.timeScale = 1f;
+            _timeManager.PauseResume();
             SceneManager.LoadScene("Play");
         }
 
-        public void QuitGame()
+        public void OnQuitGameClick()
         {
             Application.Quit();
         }

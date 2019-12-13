@@ -4,7 +4,12 @@ namespace Assets.Scripts.UI_Elements
 {
     public class ChangeTimeButton : MonoBehaviour
     {
-        [SerializeField] private TimeManager _timeManager;
+        private TimeManager _timeManager;
+
+        private void Awake()
+        {
+            _timeManager = GameManager.Instance.TimeManager;
+        }
 
         public void OnPauseResume()
         {

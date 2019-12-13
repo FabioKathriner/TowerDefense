@@ -11,18 +11,15 @@ namespace Assets.Scripts.UI_Elements
         [SerializeField]
         private GameObject _actualPrefab;
 
-        private BuildManager _buildManager;
-
         private void Start()
         {
-            _buildManager = BuildManager.Instance;
             var button = GetComponent<Button>();
             button.onClick.AddListener(OnClick);
         }
 
         private void OnClick()
         {
-            _buildManager.EnterBuildMode(_previewPrefab, _actualPrefab);
+            GameManager.Instance.BuildManager.EnterBuildMode(_previewPrefab, _actualPrefab);
         }
     }
 }

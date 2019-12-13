@@ -17,15 +17,17 @@ namespace Assets.Scripts.Enemies
         private GameObject _deadBodyPrefab;
 
         private Health.Health _health;
+        private float _time;
 
         public PlayerStats PlayerStats { get; set; } // TODO: Can this property be safely removed?
+
 
         private void Awake()
         {
             _health = GetComponent<Health.Health>();
             _health.OnDie += OnDied;
         }
-        private float _time;
+
         private void OnCollisionStay(Collision collision)
         {
             _time += Time.deltaTime;

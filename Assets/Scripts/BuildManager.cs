@@ -4,31 +4,14 @@ using UnityEngine.EventSystems;
 
 namespace Assets.Scripts
 {
-    [RequireComponent(typeof(PlayerStats))]
     public class BuildManager : MonoBehaviour
     {
         public LayerMask HitMask;
         public LayerMask IgnoreTowerMask;
 
-        private GameObject _towerToBuild;
-
         private bool _isInBuildMode;
         private GameObject _selectedTowerPreview;
         private GameObject _selectedTowerPrefab;
-
-        public static BuildManager Instance { get; private set; }
-
-        private void Awake()
-        {
-            if (Instance != null)
-                Debug.LogError("There is more than one BuildManager in the current scene!");
-            Instance = this;
-        }
-
-        public void SelectTurretToBuild (GameObject towerPrefab)
-        { 
-            _towerToBuild = towerPrefab;
-        }
 
         private void Update()
         {
@@ -71,7 +54,7 @@ namespace Assets.Scripts
 
             if (Input.GetMouseButton(0))
             {
-                var buildPrice = _towerToBuild.GetComponent<Tower>().BuildPrice;
+                var buildPrice = _selectedTowerPrefab.GetComponent<Tower>().BuildPrice;
                 if (PlayerStats.Money < buildPrice)
                 {
                     Debug.LogWarning("You don't have enough Money to build that turret!'");

@@ -28,7 +28,6 @@ GameObject:
   - component: {fileID: 3029435353886298192}
   - component: {fileID: 3029435353886298193}
   - component: {fileID: 3029435353886298191}
-  - component: {fileID: 3029435353886298190}
   m_Layer: 5
   m_Name: Shop
   m_TagString: Untagged
@@ -120,26 +119,6 @@ MonoBehaviour:
   m_ChildControlHeight: 1
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
---- !u!114 &3029435353886298190
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3029435353886298195}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 175762cba821cd4458cd33112df7d7c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _rocketTower: {fileID: 2439471149367952929, guid: bef85e6af24c17c4eabab8fa3db9aeb8,
-    type: 3}
-  _ballisticTower: {fileID: 2869298745103565431, guid: 55aaa649b502bba45ab050a56bf2eac9,
-    type: 3}
-  _guidedMissileTower: {fileID: 4932611405737507254, guid: 162823a89f7ebe14999105f375c804c4,
-    type: 3}
-  _blastTower: {fileID: 2595892129209389196, guid: 4454e4ea1badab045b183e0b5afa5ecf,
-    type: 3}
 --- !u!114 &7697679431666760928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,11 +174,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3029435353886298194}
     m_Modifications:
-    - target: {fileID: 7771724964413010970, guid: dfb842b52b57bc84d963bfc3eccd7322,
-        type: 3}
-      propertyPath: m_Name
-      value: BuyGuidedMissileTowerButton
-      objectReference: {fileID: 0}
     - target: {fileID: 7771724964413010971, guid: dfb842b52b57bc84d963bfc3eccd7322,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -305,6 +279,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7771724964413010970, guid: dfb842b52b57bc84d963bfc3eccd7322,
+        type: 3}
+      propertyPath: m_Name
+      value: BuyGuidedMissileTowerButton
+      objectReference: {fileID: 0}
     - target: {fileID: 7771724964413010968, guid: dfb842b52b57bc84d963bfc3eccd7322,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -324,7 +303,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 3029435353886298190}
+      objectReference: {fileID: 0}
     - target: {fileID: 7771724964413010968, guid: dfb842b52b57bc84d963bfc3eccd7322,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -363,11 +342,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3029435353886298194}
     m_Modifications:
-    - target: {fileID: 7771724964413010970, guid: dfb842b52b57bc84d963bfc3eccd7322,
-        type: 3}
-      propertyPath: m_Name
-      value: BuyBlastTowerButton
-      objectReference: {fileID: 0}
     - target: {fileID: 7771724964413010971, guid: dfb842b52b57bc84d963bfc3eccd7322,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -473,6 +447,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7771724964413010970, guid: dfb842b52b57bc84d963bfc3eccd7322,
+        type: 3}
+      propertyPath: m_Name
+      value: BuyBlastTowerButton
+      objectReference: {fileID: 0}
     - target: {fileID: 7771724964413010968, guid: dfb842b52b57bc84d963bfc3eccd7322,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -492,7 +471,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 3029435353886298190}
+      objectReference: {fileID: 0}
     - target: {fileID: 7771724964413010968, guid: dfb842b52b57bc84d963bfc3eccd7322,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -531,11 +510,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3029435353886298194}
     m_Modifications:
-    - target: {fileID: 7771724964413010970, guid: dfb842b52b57bc84d963bfc3eccd7322,
-        type: 3}
-      propertyPath: m_Name
-      value: BuyBallisticTowerButton
-      objectReference: {fileID: 0}
     - target: {fileID: 7771724964413010971, guid: dfb842b52b57bc84d963bfc3eccd7322,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -641,6 +615,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7771724964413010970, guid: dfb842b52b57bc84d963bfc3eccd7322,
+        type: 3}
+      propertyPath: m_Name
+      value: BuyBallisticTowerButton
+      objectReference: {fileID: 0}
     - target: {fileID: 7771724964413010968, guid: dfb842b52b57bc84d963bfc3eccd7322,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -660,7 +639,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 3029435353886298190}
+      objectReference: {fileID: 0}
     - target: {fileID: 7771724964413010968, guid: dfb842b52b57bc84d963bfc3eccd7322,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -709,11 +688,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3029435353886298194}
     m_Modifications:
-    - target: {fileID: 7771724964413010970, guid: dfb842b52b57bc84d963bfc3eccd7322,
-        type: 3}
-      propertyPath: m_Name
-      value: BuyRocketTowerButton
-      objectReference: {fileID: 0}
     - target: {fileID: 7771724964413010971, guid: dfb842b52b57bc84d963bfc3eccd7322,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -819,6 +793,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7771724964413010970, guid: dfb842b52b57bc84d963bfc3eccd7322,
+        type: 3}
+      propertyPath: m_Name
+      value: BuyRocketTowerButton
+      objectReference: {fileID: 0}
     - target: {fileID: 7771724964413010966, guid: dfb842b52b57bc84d963bfc3eccd7322,
         type: 3}
       propertyPath: m_CullTransparentMesh
@@ -848,7 +827,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 3029435353886298190}
+      objectReference: {fileID: 0}
     - target: {fileID: 7771724964413010968, guid: dfb842b52b57bc84d963bfc3eccd7322,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName

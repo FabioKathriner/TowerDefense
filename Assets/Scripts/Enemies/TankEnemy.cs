@@ -10,7 +10,7 @@ namespace Assets.Scripts.Enemies
         private float _time;
 
         [SerializeField]
-        protected float RateOfFire = 1.2f;
+        private float _rateOfFire = 1.2f;
         private ProjectileWeapon _weapon;
 
         // Start is called before the first frame update
@@ -26,7 +26,7 @@ namespace Assets.Scripts.Enemies
         {
             _time += Time.deltaTime;
 
-            if (_time >= RateOfFire)
+            if (_time >= _rateOfFire)
             {
                 _time = 0;
                 var nearestTarget = _targetFinder.GetNextTarget();
