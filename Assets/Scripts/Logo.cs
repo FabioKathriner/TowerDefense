@@ -1,15 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Logo : MonoBehaviour
 {
 
     public float timer = 30;
     // Start is called before the first frame update
-    void Start()
+    public void Load()
     {
-        
+        SceneManager.LoadScene("Play");
     }
 
     // Update is called once per frame
@@ -18,7 +17,7 @@ public class Logo : MonoBehaviour
         timer -= Time.deltaTime;
 
         if (timer <= 0) {
-            Application.LoadLevel("Play");
+            SceneManager.LoadScene("Play");
         }
     }
 }
