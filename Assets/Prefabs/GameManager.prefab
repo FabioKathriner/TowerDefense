@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8515071155832134620}
   - component: {fileID: 8515071155832134622}
   - component: {fileID: 7321790370323833604}
+  - component: {fileID: 4495906046461001248}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -46,41 +47,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de37cbd6db2e01d4c9497d34232fcd03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waves:
-  - Enemy: {fileID: 2317368896312824663, guid: 21362314394137b44b4e7e7dd87a412d, type: 3}
-    Count: 4
-    Rate: 0.5
-  - Enemy: {fileID: 8864333768579407967, guid: b2e45d992ac722c48bd5fb9eae757342, type: 3}
-    Count: 6
-    Rate: 0.5
-  - Enemy: {fileID: 8355096478231934017, guid: 38a0720e67ce05842a42668628f7ba92, type: 3}
-    Count: 5
-    Rate: 0.5
-  - Enemy: {fileID: 8355096478231934017, guid: 38a0720e67ce05842a42668628f7ba92, type: 3}
-    Count: 8
-    Rate: 1
-  - Enemy: {fileID: 2317368896312824663, guid: 21362314394137b44b4e7e7dd87a412d, type: 3}
-    Count: 10
-    Rate: 0.8
-  - Enemy: {fileID: 8355096478231934017, guid: 38a0720e67ce05842a42668628f7ba92, type: 3}
-    Count: 20
-    Rate: 1
-  - Enemy: {fileID: 2317368896312824663, guid: 21362314394137b44b4e7e7dd87a412d, type: 3}
-    Count: 15
-    Rate: 1
-  - Enemy: {fileID: 8864333768579407967, guid: b2e45d992ac722c48bd5fb9eae757342, type: 3}
-    Count: 40
-    Rate: 1
-  - Enemy: {fileID: 2317368896312824663, guid: 21362314394137b44b4e7e7dd87a412d, type: 3}
-    Count: 20
-    Rate: 2
-  - Enemy: {fileID: 8355096478231934017, guid: 38a0720e67ce05842a42668628f7ba92, type: 3}
-    Count: 100
-    Rate: 10
-  spawnPoint: {fileID: 0}
-  timeBetweenWaves: 10
-  waveCountDownText: {fileID: 0}
-  _playerStats: {fileID: 0}
+  _waves: []
+  _spawnPoint: {fileID: 7119190740101105393, guid: e14f16a3a48a88b4fb6ba0d47728e810,
+    type: 3}
+  _timeBetweenWaves: 5.5
+  _waveCountDownText: {fileID: 0}
 --- !u!114 &8515071155832134620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,3 +99,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moneyText: {fileID: 0}
   startMoney: 5000
+--- !u!114 &4495906046461001248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8515071155832134593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b2c9a6d73af53b4abb8f18c8c827762, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

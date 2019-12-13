@@ -1,4 +1,5 @@
 ﻿using System;
+using Assets.Scripts.Enemies;
 using Assets.Scripts.Weapons;
 using UnityEngine;
 using UnityEngine.UI;
@@ -24,6 +25,9 @@ namespace Assets.Scripts.Towers
 
         [SerializeField]
         private int _healthUpgradeIncrement;
+
+        [SerializeField]
+        private int _endurance = 4;
 
         private int _repairPrice;
 
@@ -68,7 +72,6 @@ namespace Assets.Scripts.Towers
         public event EventHandler OnRepairPriceChanged;
 
         public Health.Health Health;
-
 
         protected virtual void Start()
         {
