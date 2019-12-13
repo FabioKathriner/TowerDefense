@@ -1412,7 +1412,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 242.99991, y: -0.99999523}
+  m_AnchoredPosition: {x: 255, y: -0.99999523}
   m_SizeDelta: {x: 1486.7, y: 533.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1160733531
@@ -1454,7 +1454,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: e760a50f360a94bf5809fc1cc46b0be6, type: 3}
-    m_FontSize: 30
+    m_FontSize: 25
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 2
@@ -2097,7 +2097,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 243, y: -63}
+  m_AnchoredPosition: {x: 255.00008, y: -63}
   m_SizeDelta: {x: 1486.7, y: 679.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1539047477
@@ -2139,7 +2139,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: e760a50f360a94bf5809fc1cc46b0be6, type: 3}
-    m_FontSize: 30
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -2150,10 +2150,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Space\t\tPause\nA\t\t\t\tCam goes left (Also arrow left)\nS \t\t\t\tCam
-    goes down (Also arrow down)\nD\t\t\t\tCam goes right (Also arrow right)\nW\t\t\t\tCam
-    goes up (Also arrow up)\nR\t\t\t\tRotate Towers (Select Tower First)\nScroll\t\tZoom
-    In and Zoom Out\nRight\t\tOn right mouse click cam moves \n\t\t\t\t(Hold and move)"
+  m_Text: "Esc\t\t\tPause/Menu\nSpace\t\tPause\nA\t\t\t\tCam goes left (Also arrow
+    left)\nS \t\t\t\tCam goes down (Also arrow down)\nD\t\t\t\tCam goes right (Also
+    arrow right)\nW\t\t\t\tCam goes up (Also arrow up)\nR\t\t\t\tRotate Towers (Select
+    Tower First)\nScroll\t\tZoom In and Zoom Out\nRight\t\tOn right mouse click cam
+    moves \n\t\t\t\t(Hold and move)"
 --- !u!222 &1539047479
 CanvasRenderer:
   m_ObjectHideFlags: 0
