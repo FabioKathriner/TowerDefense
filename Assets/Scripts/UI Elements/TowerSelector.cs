@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Towers;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 namespace Assets.Scripts.UI_Elements
@@ -81,13 +82,13 @@ namespace Assets.Scripts.UI_Elements
         {
             _lineRenderer = _selectedTower.GetComponent<LineRenderer>();
             if (_lineRenderer == null)
+            {
                 _lineRenderer = _selectedTower.AddComponent<LineRenderer>();
-
-            _lineRenderer.widthMultiplier = 0.2f;
-            _lineRenderer.endColor = Color.white;
-            _lineRenderer.startColor = Color.white;
-            _lineRenderer.useWorldSpace = false;
-            _lineRenderer.positionCount = LineSegments + 1;
+                _lineRenderer.material = Resources.Load<Material>("Materials/Tower Range Preview Color");
+                _lineRenderer.widthMultiplier = 0.2f;
+                _lineRenderer.useWorldSpace = false;
+                _lineRenderer.positionCount = LineSegments + 1;
+            }
 
             float x;
             float z;
@@ -99,7 +100,7 @@ namespace Assets.Scripts.UI_Elements
                 x = Mathf.Sin(Mathf.Deg2Rad * angle) * _selectedTargetFinder.Radius;
                 z = Mathf.Cos(Mathf.Deg2Rad * angle) * _selectedTargetFinder.Radius;
 
-                _lineRenderer.SetPosition(i, new Vector3(x, 0f, z));
+                _lineRenderer.SetPosition(i, new Vector3(x, 0.1f, z));
 
                 angle += (360f / LineSegments);
             }
