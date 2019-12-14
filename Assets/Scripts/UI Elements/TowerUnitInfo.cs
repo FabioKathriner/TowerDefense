@@ -19,7 +19,9 @@ public class TowerUnitInfo : MonoBehaviour, IUnitInfo
                 towerButton.gameObject.SetActive(true);
             }
         }
-        DrawTowerRadius();
+
+        if (_selectedTargetFinder != null)
+            DrawTowerRadius();
     }
 
     public void Hide()
@@ -29,7 +31,9 @@ public class TowerUnitInfo : MonoBehaviour, IUnitInfo
         {
             towerButton.gameObject.SetActive(false);
         }
-        _lineRenderer.enabled = false;
+
+        if (_selectedTargetFinder != null)
+            _lineRenderer.enabled = false;
     }
 
     private void DrawTowerRadius()
