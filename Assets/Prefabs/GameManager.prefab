@@ -85,7 +85,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _layerMask:
     serializedVersion: 2
-    m_Bits: 32768
+    m_Bits: 49920
 --- !u!114 &7321790370323833604
 MonoBehaviour:
   m_ObjectHideFlags: 0

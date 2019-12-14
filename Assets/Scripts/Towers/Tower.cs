@@ -67,7 +67,7 @@ namespace Assets.Scripts.Towers
 
         public event EventHandler OnRepairPriceChanged;
 
-        public Health.Health Health;
+        public Health.Health Health; // TODO: why public field?
 
         protected virtual void Start()
         {

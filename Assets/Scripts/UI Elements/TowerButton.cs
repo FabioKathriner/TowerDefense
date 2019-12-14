@@ -8,7 +8,7 @@ namespace Assets.Scripts.UI_Elements
     public abstract class TowerButton : MonoBehaviour
     {
         [SerializeField]
-        private Tower _tower;
+        private Tower _tower; // TODO: Use GetComponentInParent<Tower>();
 
         private Button _button;
 
