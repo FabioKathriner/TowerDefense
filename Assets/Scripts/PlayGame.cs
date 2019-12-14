@@ -9,5 +9,9 @@ namespace Assets.Scripts
         {
             SceneManager.LoadScene("Level Test 2");
         }
+        public void OnQuit()
+        {
+            Application.Quit();
+        }
     }
 }

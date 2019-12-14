@@ -34,6 +34,7 @@ namespace Assets.Scripts
                 Debug.LogWarning($"There was more than one {nameof(GameManager)} in the current scene!");
                 Destroy(gameObject);
             }
+            DontDestroyOnLoad(Instance);
         }
     }
 }
