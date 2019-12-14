@@ -14,9 +14,11 @@ namespace Assets.Scripts.Towers
 
         public List<string> TargetTags { get; } = new List<string>();
 
+        public int Radius => _radius;
+
         public GameObject GetNextTarget()
         {
-            Collider[] hitColliders = Physics.OverlapSphere(transform.position, _radius, _layerMask);
+            Collider[] hitColliders = Physics.OverlapSphere(transform.position, Radius, _layerMask);
             Target min = null;
             bool first = true;
             foreach (var hitCollider in hitColliders)
@@ -39,7 +41,7 @@ namespace Assets.Scripts.Towers
 
         public List<GameObject> GetTargets()
         {
-            Collider[] hitColliders = Physics.OverlapSphere(transform.position, _radius, _layerMask);
+            Collider[] hitColliders = Physics.OverlapSphere(transform.position, Radius, _layerMask);
             return hitColliders.Select(x => x.gameObject).ToList();
         }
     }

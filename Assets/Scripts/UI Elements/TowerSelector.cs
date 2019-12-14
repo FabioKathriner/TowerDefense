@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Towers;
+using UnityEngine;
 
 namespace Assets.Scripts.UI_Elements
 {
@@ -11,6 +12,9 @@ namespace Assets.Scripts.UI_Elements
         private GameObject _selectedTower;
         private Renderer _selectedRenderer;
         private Color _previousColor;
+        private TargetFinder _selectedTargetFinder;
+        private LineRenderer _lineRenderer;
+        private const int LineSegments = 50;
 
         private void FixedUpdate()
         {
@@ -34,9 +38,13 @@ namespace Assets.Scripts.UI_Elements
                 // Deselect the previous tower and select the clicked one
                 ResetPreviousSelection();
                 _selectedTower = hitInfo.transform.gameObject;
+                _selectedTargetFinder = _selectedTower.GetComponent<TargetFinder>();
                 _selectedRenderer = _selectedTower.GetComponentInChildren<Renderer>();
                 _previousColor = _selectedRenderer.material.color;
                 _selectedRenderer.material.SetColor("_Color", Color.blue);
+
+                DrawTowerRadius();
+
                 var towerButtons = _selectedTower.GetComponentsInChildren<TowerButton>(true);
                 foreach (var towerButton in towerButtons)
                 {
@@ -64,8 +72,38 @@ namespace Assets.Scripts.UI_Elements
                     towerButton.gameObject.SetActive(false);
                 }
                 _selectedRenderer.material.SetColor("_Color", _previousColor);
+                _lineRenderer.enabled = false;
                 _selectedTower = null;
             }
+        }
+
+        private void DrawTowerRadius()
+        {
+            _lineRenderer = _selectedTower.GetComponent<LineRenderer>();
+            if (_lineRenderer == null)
+                _lineRenderer = _selectedTower.AddComponent<LineRenderer>();
+
+            _lineRenderer.widthMultiplier = 0.2f;
+            _lineRenderer.endColor = Color.white;
+            _lineRenderer.startColor = Color.white;
+            _lineRenderer.useWorldSpace = false;
+            _lineRenderer.positionCount = LineSegments + 1;
+
+            float x;
+            float z;
+
+            float angle = 20f;
+
+            for (int i = 0; i < (LineSegments + 1); i++)
+            {
+                x = Mathf.Sin(Mathf.Deg2Rad * angle) * _selectedTargetFinder.Radius;
+                z = Mathf.Cos(Mathf.Deg2Rad * angle) * _selectedTargetFinder.Radius;
+
+                _lineRenderer.SetPosition(i, new Vector3(x, 0f, z));
+
+                angle += (360f / LineSegments);
+            }
+            _lineRenderer.enabled = true;
         }
     }
 }
