@@ -1,26 +1,26 @@
 ﻿using Assets.Scripts.Towers;
-using UnityEditor.Rendering;
 using UnityEngine;
 
 namespace Assets.Scripts.UI_Elements
 {
 
-    public class TowerSelector : MonoBehaviour
+    public class UnitSelector : MonoBehaviour
     {
         [SerializeField]
         private LayerMask _layerMask;
 
-        private GameObject _selectedTower;
+        private GameObject _selectedUnit;
         private Renderer _selectedRenderer;
         private Color _previousColor;
         private TargetFinder _selectedTargetFinder;
         private LineRenderer _lineRenderer;
+        private IUnitInfo _unitInfo;
         private const int LineSegments = 50;
 
         private void FixedUpdate()
         {
             // Clear previous selection on right mouse click
-            if (Input.GetMouseButton(1) && _selectedTower != null)
+            if (Input.GetMouseButton(1) && _selectedUnit != null)
             { 
                 ResetPreviousSelection();
                 return;
@@ -38,23 +38,15 @@ namespace Assets.Scripts.UI_Elements
             {
                 // Deselect the previous tower and select the clicked one
                 ResetPreviousSelection();
-                _selectedTower = hitInfo.transform.gameObject;
-                _selectedTargetFinder = _selectedTower.GetComponent<TargetFinder>();
-                _selectedRenderer = _selectedTower.GetComponentInChildren<Renderer>();
+                _selectedUnit = hitInfo.transform.gameObject;
+                _selectedTargetFinder = _selectedUnit.GetComponent<TargetFinder>();
+                _selectedRenderer = _selectedUnit.GetComponentInChildren<MeshRenderer>();
                 _previousColor = _selectedRenderer.material.color;
-                _selectedRenderer.material.SetColor("_Color", Color.blue);
+                _selectedRenderer.material.color = Color.blue;
 
                 DrawTowerRadius();
-
-                var towerButtons = _selectedTower.GetComponentsInChildren<TowerButton>(true);
-                foreach (var towerButton in towerButtons)
-                {
-                    if (towerButton.enabled)
-                    {
-                        // TODO: Do not show button if not expected (e.g. Sell base)
-                        towerButton.gameObject.SetActive(true);
-                    }
-                }
+                _unitInfo = _selectedUnit.GetComponentInChildren<IUnitInfo>();
+                _unitInfo.Show();
             }
             else
             {
@@ -65,25 +57,21 @@ namespace Assets.Scripts.UI_Elements
 
         private void ResetPreviousSelection()
         {
-            if (_selectedTower != null)
+            if (_selectedUnit != null)
             {
-                var towerButtons = _selectedTower.GetComponentsInChildren<TowerButton>();
-                foreach (var towerButton in towerButtons)
-                {
-                    towerButton.gameObject.SetActive(false);
-                }
-                _selectedRenderer.material.SetColor("_Color", _previousColor);
+                _unitInfo.Hide();
+                _selectedRenderer.material.color = _previousColor;
                 _lineRenderer.enabled = false;
-                _selectedTower = null;
+                _selectedUnit = null;
             }
         }
 
         private void DrawTowerRadius()
         {
-            _lineRenderer = _selectedTower.GetComponent<LineRenderer>();
+            _lineRenderer = _selectedUnit.GetComponent<LineRenderer>();
             if (_lineRenderer == null)
             {
-                _lineRenderer = _selectedTower.AddComponent<LineRenderer>();
+                _lineRenderer = _selectedUnit.AddComponent<LineRenderer>();
                 _lineRenderer.material = Resources.Load<Material>("Materials/Tower Range Preview Color");
                 _lineRenderer.widthMultiplier = 0.2f;
                 _lineRenderer.useWorldSpace = false;
