@@ -47,13 +47,14 @@ namespace Assets.Scripts.Enemies
             if (_deadBodyPrefab != null)
             {
                 var body = Instantiate(_deadBodyPrefab, transform.position, transform.rotation, transform.parent);
-                var bodyRbs = body.GetComponentsInChildren<Rigidbody>();
                 var navAgent = GetComponent<NavMeshAgent>();
+                var bodyRbs = body.GetComponentsInChildren<Rigidbody>();
+                
                 foreach (var bodyRb in bodyRbs)
                 {
                     bodyRb.velocity = navAgent.velocity;
                 }
-                Destroy(body, 10f);
+                Destroy(body, 7f);
             }
         }
 
