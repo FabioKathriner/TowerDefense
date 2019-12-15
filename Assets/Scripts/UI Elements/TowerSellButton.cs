@@ -6,7 +6,7 @@ namespace Assets.Scripts.UI_Elements
     {
         protected override void OnClick(Tower tower)
         {
-            Destroy(tower.gameObject);
+            tower.Health.Die();
             PlayerStats.Money += tower.TotalValue / 2;
         }
     }
