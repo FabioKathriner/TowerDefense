@@ -153,6 +153,7 @@ GameObject:
   - component: {fileID: 908894533118843429}
   - component: {fileID: 1359298002366943352}
   - component: {fileID: 644670895169640530}
+  - component: {fileID: -8005785468728921091}
   m_Layer: 15
   m_Name: Guided Missile Tower
   m_TagString: tower
@@ -196,8 +197,7 @@ MonoBehaviour:
   _upgradePrice: 50
   LevelText: {fileID: 2790142011243012962}
   _healthUpgradeIncrement: 20
-  Health: {fileID: 0}
-  RateOfFire: 0.8
+  _rateOfFire: 0.8
   _rateOfFireUpgradeIncrement: 0.1
   _damageUpgradeIncrement: 5
 --- !u!114 &908894533118843429
@@ -247,6 +247,20 @@ MonoBehaviour:
   _layerMask:
     serializedVersion: 2
     m_Bits: 768
+--- !u!114 &-8005785468728921091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4932611405737507254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfe2b7ab761a57846832109928776ac9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _detailsPrefab: {fileID: 3122616529501397518, guid: 41e2ec117836ab24790e1344afab9fd2,
+    type: 3}
 --- !u!1 &7554770194977235026
 GameObject:
   m_ObjectHideFlags: 0

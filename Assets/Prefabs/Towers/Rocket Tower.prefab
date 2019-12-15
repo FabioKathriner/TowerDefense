@@ -106,6 +106,7 @@ GameObject:
   - component: {fileID: 781216930756461645}
   - component: {fileID: 8877067048122164034}
   - component: {fileID: 7194960228725094584}
+  - component: {fileID: -1384611121609608651}
   m_Layer: 15
   m_Name: Rocket Tower
   m_TagString: tower
@@ -149,8 +150,7 @@ MonoBehaviour:
   _upgradePrice: 50
   LevelText: {fileID: 1570271481369897374}
   _healthUpgradeIncrement: 20
-  Health: {fileID: 0}
-  RateOfFire: 1.5
+  _rateOfFire: 0.8
   _rateOfFireUpgradeIncrement: 0.1
   _damageUpgradeIncrement: 5
 --- !u!114 &781216930756461645
@@ -200,6 +200,20 @@ MonoBehaviour:
   _layerMask:
     serializedVersion: 2
     m_Bits: 256
+--- !u!114 &-1384611121609608651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2439471149367952929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfe2b7ab761a57846832109928776ac9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _detailsPrefab: {fileID: 3122616529501397518, guid: 41e2ec117836ab24790e1344afab9fd2,
+    type: 3}
 --- !u!1 &6292854478232118283
 GameObject:
   m_ObjectHideFlags: 0

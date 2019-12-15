@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Towers;
+﻿using System;
+using Assets.Scripts.Towers;
 using UnityEngine;
 
 namespace Assets.Scripts.UI_Elements
@@ -13,6 +14,8 @@ namespace Assets.Scripts.UI_Elements
         private Renderer _selectedRenderer;
         private Color _previousColor;
         private IUnitInfo _unitInfo;
+        public event EventHandler<UnitSelectionEventArgs> OnUnitSelected;
+        public event EventHandler<UnitSelectionEventArgs> OnUnitDeselected;
 
         private void FixedUpdate()
         {
@@ -40,6 +43,7 @@ namespace Assets.Scripts.UI_Elements
 
             _unitInfo = _selectedUnit.GetComponentInChildren<IUnitInfo>();
             _unitInfo?.Show();
+            OnUnitSelected?.Invoke(this, new UnitSelectionEventArgs(_selectedUnit));
         }
 
         private void ResetPreviousSelection()
@@ -48,8 +52,19 @@ namespace Assets.Scripts.UI_Elements
             {
                 _unitInfo?.Hide();
                 _selectedRenderer.material.color = _previousColor;
+                OnUnitDeselected?.Invoke(this, new UnitSelectionEventArgs(_selectedUnit));
                 _selectedUnit = null;
             }
         }
+    }
+
+    public class UnitSelectionEventArgs : EventArgs
+    {
+        public UnitSelectionEventArgs(GameObject unit)
+        {
+            Unit = unit;
+        }
+
+        public GameObject Unit { get; }
     }
 }
