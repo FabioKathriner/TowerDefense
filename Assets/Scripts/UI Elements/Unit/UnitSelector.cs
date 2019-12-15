@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Assets.Scripts.UI_Elements.Unit
@@ -10,9 +11,8 @@ namespace Assets.Scripts.UI_Elements.Unit
         private LayerMask _layerMask;
 
         private GameObject _selectedUnit;
-        private Renderer _selectedRenderer;
-        private Color _previousColor;
         private IUnitInfo _unitInfo;
+        private readonly IDictionary<MeshRenderer, Color> _selectedRenderers = new Dictionary<MeshRenderer, Color>();
         public event EventHandler<UnitSelectionEventArgs> OnUnitSelected;
         public event EventHandler<UnitSelectionEventArgs> OnUnitDeselected;
 
@@ -36,9 +36,12 @@ namespace Assets.Scripts.UI_Elements.Unit
             // Deselect the previous tower and select the clicked one
             ResetPreviousSelection();
             _selectedUnit = hitInfo.transform.gameObject;
-            _selectedRenderer = _selectedUnit.GetComponentInChildren<MeshRenderer>();
-            _previousColor = _selectedRenderer.material.color;
-            _selectedRenderer.material.color = Color.blue;
+            var meshRenderers = _selectedUnit.GetComponentsInChildren<MeshRenderer>();
+            foreach (var meshRenderer in meshRenderers)
+            {
+                _selectedRenderers[meshRenderer] = meshRenderer.material.color;
+                meshRenderer.material.color = Color.blue;
+            }
 
             _unitInfo = _selectedUnit.GetComponentInChildren<IUnitInfo>();
             _unitInfo?.Show();
@@ -50,7 +53,12 @@ namespace Assets.Scripts.UI_Elements.Unit
             if (_selectedUnit != null)
             {
                 _unitInfo?.Hide();
-                _selectedRenderer.material.color = _previousColor;
+                foreach (var previousRendererColor in _selectedRenderers)
+                {
+                    if (previousRendererColor.Key != null)
+                        previousRendererColor.Key.material.color = previousRendererColor.Value;
+                }
+                _selectedRenderers.Clear();
                 OnUnitDeselected?.Invoke(this, new UnitSelectionEventArgs(_selectedUnit));
                 _selectedUnit = null;
             }
