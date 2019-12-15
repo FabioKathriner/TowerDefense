@@ -6,5 +6,6 @@ namespace Assets.Scripts.Towers
     {
         Weapon GetWeapon();
         float RateOfFire { get; }
+        TargetFinder TargetFinder { get; }
     }
 }

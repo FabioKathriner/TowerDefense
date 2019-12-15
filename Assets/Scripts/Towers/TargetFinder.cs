@@ -15,28 +15,17 @@ namespace Assets.Scripts.Towers
         public List<string> TargetTags { get; } = new List<string>();
 
         public int Radius => _radius;
+        public ITargetingBehaviour TargetingBehaviour { get; set; }
+
+        private void Awake()
+        {
+            TargetingBehaviour = new ClosestToBaseTargetingBehaviour();
+        }
 
         public GameObject GetNextTarget()
         {
             Collider[] hitColliders = Physics.OverlapSphere(transform.position, Radius, _layerMask);
-            Target min = null;
-            bool first = true;
-            foreach (var hitCollider in hitColliders)
-            {
-                var targetDistance = Vector3.Distance(transform.position, hitCollider.transform.position);
-                if (first)
-                {
-                    first = false;
-                    min = new Target(hitCollider.gameObject, targetDistance);
-                    continue;
-                }
-
-
-                if (!(min.Distance < targetDistance))
-                    min = new Target(hitCollider.gameObject, targetDistance);
-            }
-
-            return min?.Enemy;
+            return TargetingBehaviour.GetTarget(hitColliders);
         }
 
         public List<GameObject> GetTargets()
@@ -44,17 +33,5 @@ namespace Assets.Scripts.Towers
             Collider[] hitColliders = Physics.OverlapSphere(transform.position, Radius, _layerMask);
             return hitColliders.Select(x => x.gameObject).ToList();
         }
-    }
-
-    internal class Target
-    {
-        public Target(GameObject enemy, float distance)
-        {
-            Enemy = enemy;
-            Distance = distance;
-        }
-
-        public GameObject Enemy { get; }
-        public float Distance { get; set; }
     }
 }

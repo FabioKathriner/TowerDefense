@@ -32,7 +32,7 @@ namespace Assets.Scripts
             }
             else if (Instance != this)
             {
-                Debug.LogWarning($"There was more than one {nameof(GameManager)} in the current scene!");
+                Debug.LogWarning($"There is more than one {nameof(GameManager)} in the current scene!");
                 Destroy(gameObject);
             }
             DontDestroyOnLoad(Instance);

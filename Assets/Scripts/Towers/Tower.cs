@@ -107,8 +107,6 @@ namespace Assets.Scripts.Towers
         [SerializeField]
         private float _rateOfFire = 0.8f;
 
-        protected TargetFinder TargetFinder;
-
         [SerializeField]
         private float _rateOfFireUpgradeIncrement;
 
@@ -139,6 +137,8 @@ namespace Assets.Scripts.Towers
             get => _rateOfFire;
             protected set => _rateOfFire = value;
         }
+
+        public TargetFinder TargetFinder { get; private set; }
 
 
         // Start is called before the first frame update

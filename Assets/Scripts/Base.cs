@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Enemies;
+using Assets.Scripts.UI_Elements.Unit;
 using UnityEngine;
 
 namespace Assets.Scripts
@@ -7,11 +8,20 @@ namespace Assets.Scripts
     public class Base : MonoBehaviour, IUnit
     {
         public Health.Health Health { get; private set; }
+        public static Base Instance { get; private set; }
 
-        // Start is called before the first frame update
-        void Start()
+        private void Awake()
         {
-            Health = GetComponent<Health.Health>();;
+            Health = GetComponent<Health.Health>();
+            if (Instance == null)
+            {
+                Instance = this;
+            }
+            else if (Instance != this)
+            {
+                Debug.LogWarning($"There is more than one {nameof(Base)} in the current scene!");
+                Destroy(gameObject);
+            }
         }
 
         // Collision only with Layers "Normal Enemy" and "Flying Enemy"
