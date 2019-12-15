@@ -626,7 +626,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1047107583}
-        m_MethodName: QuitGame
+        m_MethodName: OnQuit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -700,10 +700,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1047107577}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae447a22f0e5746ef98159cfc84e6d2c, type: 3}
+  m_Script: {fileID: 11500000, guid: b771abf283ec74782b512fa0643c3010, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenuUI: {fileID: 0}
 --- !u!1 &1098545596
 GameObject:
   m_ObjectHideFlags: 0

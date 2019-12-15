@@ -6,7 +6,7 @@ namespace Assets.Scripts
     [RequireComponent(typeof(BuildManager))]
     [RequireComponent(typeof(PlayerStats))]
     [RequireComponent(typeof(WaveSpawner))]
-    [RequireComponent(typeof(TowerSelector))]
+    [RequireComponent(typeof(UnitSelector))]
     [RequireComponent(typeof(TimeManager))]
     public class GameManager : MonoBehaviour
     {
@@ -15,7 +15,7 @@ namespace Assets.Scripts
         public BuildManager BuildManager { get; private set; }
         public PlayerStats PlayerStats { get; private set; }
         public WaveSpawner WaveSpawner { get; private set; }
-        public TowerSelector TowerSelector { get; private set; }
+        public UnitSelector UnitSelector { get; private set; }
         public TimeManager TimeManager { get; private set; }
 
         private void Awake()
@@ -26,7 +26,7 @@ namespace Assets.Scripts
                 BuildManager = GetComponent<BuildManager>();
                 PlayerStats = GetComponent<PlayerStats>();
                 WaveSpawner = GetComponent<WaveSpawner>();
-                TowerSelector = GetComponent<TowerSelector>();
+                UnitSelector = GetComponent<UnitSelector>();
                 TimeManager = GetComponent<TimeManager>();
             }
             else if (Instance != this)
@@ -34,6 +34,7 @@ namespace Assets.Scripts
                 Debug.LogWarning($"There was more than one {nameof(GameManager)} in the current scene!");
                 Destroy(gameObject);
             }
+            DontDestroyOnLoad(Instance);
         }
     }
 }

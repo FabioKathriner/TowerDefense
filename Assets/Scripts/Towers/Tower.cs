@@ -6,7 +6,7 @@ using UnityEngine.UI;
 namespace Assets.Scripts.Towers
 {
     [RequireComponent(typeof(Health.Health))]
-    public abstract class Tower : MonoBehaviour, IUpgradable
+    public abstract class Tower : MonoBehaviour, IUpgradable, ITower
     {
         [SerializeField]
         private int _level = 1;
@@ -33,6 +33,8 @@ namespace Assets.Scripts.Towers
             get => _healthUpgradeIncrement;
             set => _healthUpgradeIncrement = value;
         }
+
+        public string Name => gameObject.name;
 
         public int Level
         {
@@ -67,7 +69,7 @@ namespace Assets.Scripts.Towers
 
         public event EventHandler OnRepairPriceChanged;
 
-        public Health.Health Health;
+        public Health.Health Health { get; private set; }
 
         protected virtual void Start()
         {
@@ -97,13 +99,13 @@ namespace Assets.Scripts.Towers
     }
 
     [RequireComponent(typeof(Weapon))]
-    public abstract class Tower<TWeapon> : Tower
+    public abstract class Tower<TWeapon> : Tower, IWeaponizedTower
         where TWeapon : Weapon
     {
         private float _time;
 
         [SerializeField]
-        protected float RateOfFire = 0.8f;
+        private float _rateOfFire = 0.8f;
 
         protected TargetFinder TargetFinder;
 
@@ -126,6 +128,17 @@ namespace Assets.Scripts.Towers
         }
 
         public TWeapon Weapon { get; set; }
+
+        public Weapon GetWeapon()
+        {
+            return Weapon;
+        }
+
+        public float RateOfFire
+        {
+            get => _rateOfFire;
+            protected set => _rateOfFire = value;
+        }
 
 
         // Start is called before the first frame update
