@@ -39,10 +39,9 @@ namespace Assets.Scripts
             if (EventSystem.current.IsPointerOverGameObject())
                 return;
 
-            // TODO: second raycast needed?
             if (Physics.Raycast(ray, out nonhit, 1000, IgnoreTowerMask))
             {
-                Debug.LogWarning("Can't place a Turret  this location!");
+                Debug.LogWarning("Can't place a Tower at this location!");
                 return;
             }
 
@@ -69,8 +68,8 @@ namespace Assets.Scripts
 
                 GameObject turret = Instantiate(_selectedTowerPrefab, hit.point, _selectedTowerPrefab.transform.rotation);
                 PlayerStats.Money -= buildPrice;
-                Debug.LogWarning("Turret Placed successfully");
-                Debug.Log("Turret built! Money left: " + PlayerStats.Money);
+                Debug.LogWarning("Tower Placed successfully");
+                Debug.Log("Tower built! Money left: " + PlayerStats.Money);
                 LeaveBuildMode();
             }
         }

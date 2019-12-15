@@ -5,6 +5,8 @@ namespace Assets.Scripts.UI_Elements.Unit
 {
     public class TowerUnitInfo : MonoBehaviour, IUnitInfo
     {
+        [SerializeField]
+        private Material _lineRendererMaterial;
         private TargetFinder _selectedTargetFinder;
         private LineRenderer _lineRenderer;
         private const int LineSegments = 50;
@@ -43,9 +45,10 @@ namespace Assets.Scripts.UI_Elements.Unit
             if (_lineRenderer == null)
             {
                 _lineRenderer = _selectedTargetFinder.gameObject.AddComponent<LineRenderer>();
-                _lineRenderer.material = Resources.Load<Material>("Materials/Tower Range Preview Color");
+                _lineRenderer.material = _lineRendererMaterial;
                 _lineRenderer.widthMultiplier = 0.2f;
                 _lineRenderer.useWorldSpace = false;
+                _lineRenderer.generateLightingData = true;
                 _lineRenderer.positionCount = LineSegments + 1;
             }
 
