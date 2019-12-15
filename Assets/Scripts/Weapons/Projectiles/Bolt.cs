@@ -13,7 +13,7 @@ namespace Assets.Scripts.Weapons.Projectiles
             _rb = GetComponent<Rigidbody>();
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             if (!_hasHitSomething && _rb.velocity != Vector3.zero)
             {

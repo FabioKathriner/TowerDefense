@@ -11,7 +11,7 @@ namespace Assets.Scripts.Enemies
         private NavMeshAgent _enemyAgent;
     
         // Start is called before the first frame update
-        void Start()
+        private void Start()
         {
             var points = Waypoints.Points;
             if (points == null)
@@ -24,8 +24,7 @@ namespace Assets.Scripts.Enemies
             _enemyAgent.destination = _target.position;
         }
 
-        // Update is called once per frame
-        void Update()
+        private void FixedUpdate()
         {
             if (_enemyAgent != null && !_enemyAgent.pathPending && _enemyAgent.remainingDistance < 0.5f)
             {

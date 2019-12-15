@@ -31,7 +31,7 @@ namespace Assets.Scripts
             _enemiesParent = new GameObject("Enemies");
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             if (_enemyAliveCount > 0)
                 return;

@@ -21,8 +21,7 @@ namespace Assets.Scripts.Enemies
             _weapon = GetComponentInChildren<Bow>();
         }
 
-        // Update is called once per frame
-        private void Update()
+        private void FixedUpdate()
         {
             _timeSinceLastRangedAttack += Time.deltaTime;
 
