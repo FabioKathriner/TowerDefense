@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &413791526832510592
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4850309839280133957}
+  m_Layer: 0
+  m_Name: ParticleSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4850309839280133957
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 413791526832510592}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.78, z: 0.36}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6008288396889567557}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &803555932904544463
 GameObject:
   m_ObjectHideFlags: 0
@@ -14037,7 +14067,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 1, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.25655538, y: -0.33968565, z: 0}
+  m_ConnectedAnchor: {x: -0.25655589, y: -0.33968565, z: 0}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -26709,7 +26739,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0.75, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.5847121, y: 0.38472563, z: -0.22483571}
+  m_ConnectedAnchor: {x: 0.5847122, y: 0.38472563, z: -0.22483514}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -26752,6 +26782,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6008288396889567557}
+  - component: {fileID: 3605922641404062962}
   m_Layer: 0
   m_Name: Dead Tank Enemy
   m_TagString: Untagged
@@ -26773,9 +26804,28 @@ Transform:
   - {fileID: 6008288397001264260}
   - {fileID: 6008288396739968234}
   - {fileID: 334984971509297060}
+  - {fileID: 4850309839280133957}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3605922641404062962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6008288396889567556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0af832021ee1aac4a80b1b4afe67a5d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ParticleSpawnPoint: {fileID: 413791526832510592}
+  cubeSize: 0.1
+  cubesInRow: 5
+  explosionForce: 30
+  explosionRadius: 6
+  explosionUpward: 0.1
 --- !u!1 &6008288397001264263
 GameObject:
   m_ObjectHideFlags: 0
@@ -39414,7 +39464,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 1, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.27440146, y: -0.33968922, z: 0}
+  m_ConnectedAnchor: {x: 0.27440327, y: -0.33968922, z: 0}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -52086,7 +52136,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0.75, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.63219523, y: 0.3573262, z: 0.02976838}
+  m_ConnectedAnchor: {x: -0.6321937, y: 0.3573262, z: 0.029767103}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
