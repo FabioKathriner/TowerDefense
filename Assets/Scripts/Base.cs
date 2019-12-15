@@ -4,22 +4,15 @@ using UnityEngine;
 namespace Assets.Scripts
 {
     [RequireComponent(typeof(Health.Health))]
-    public class Base : MonoBehaviour
+    public class Base : MonoBehaviour, IUnit
     {
-        private Health.Health _hp;
+        public Health.Health Health { get; private set; }
 
         // Start is called before the first frame update
         void Start()
         {
-            _hp = GetComponent<Health.Health>();;
+            Health = GetComponent<Health.Health>();;
         }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
-
 
         // Collision only with Layers "Normal Enemy" and "Flying Enemy"
         void OnTriggerEnter(Collider other)
@@ -28,7 +21,7 @@ namespace Assets.Scripts
             var enemy = other.GetComponentInParent<Enemy>();
             if (enemy != null)
             {
-                _hp.TakeDamage(enemy.AttackPower);
+                Health.TakeDamage(enemy.AttackPower);
                 var enemyHp = enemy.GetComponent<Health.Health>();
                 enemyHp.Die();
             }

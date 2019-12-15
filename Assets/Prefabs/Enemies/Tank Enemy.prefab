@@ -25307,6 +25307,7 @@ GameObject:
   - component: {fileID: -206857001025482135}
   - component: {fileID: 2958225445249595767}
   - component: {fileID: 8963608058576113926}
+  - component: {fileID: -700958056481409014}
   m_Layer: 0
   m_Name: Tank Enemy
   m_TagString: enemy
@@ -25414,7 +25415,7 @@ MonoBehaviour:
   _lootValue: 0
   _deadBodyPrefab: {fileID: 6008288396889567556, guid: 657172f8750457442bdfa326a3676bf1,
     type: 3}
-  RateOfFire: 1.2
+  _rateOfFire: 1.2
 --- !u!114 &8963608058576113926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25431,6 +25432,20 @@ MonoBehaviour:
   _layerMask:
     serializedVersion: 2
     m_Bits: 32768
+--- !u!114 &-700958056481409014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2317368896312824663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc64ef976773d5b419389735b0876ab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _detailsPrefab: {fileID: 3122616529501397518, guid: 91ac83b7b14149c4d9cf5c2524f141c5,
+    type: 3}
 --- !u!1 &2317368896369946260
 GameObject:
   m_ObjectHideFlags: 0

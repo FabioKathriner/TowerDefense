@@ -11201,6 +11201,16 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 2119139011}
+    - target: {fileID: 6368302202115699728, guid: 40cb5030f29ea2843aa930147d6217b2,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 4.0077715
+      objectReference: {fileID: 0}
+    - target: {fileID: 6368302202115699728, guid: 40cb5030f29ea2843aa930147d6217b2,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0.3573048
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40cb5030f29ea2843aa930147d6217b2, type: 3}
 --- !u!1001 &1734288518
@@ -11864,7 +11874,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-362992
+  m_Name: pb_Mesh-14110
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

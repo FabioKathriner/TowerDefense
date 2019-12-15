@@ -24,9 +24,15 @@ namespace Assets.Scripts.UI_Elements
             _unitName.text = unitDetails.GetUnitName();
             var detailsPrefab = unitDetails.GetDetailsPrefab();
             if (_unitDetailsCanvas == null)
+            {
                 _unitDetailsCanvas = Instantiate(detailsPrefab, transform);
+            }
             else
+            {
+                Destroy(_unitDetailsCanvas);
+                _unitDetailsCanvas = Instantiate(detailsPrefab, transform);
                 unitDetails.UpdateDetails(_unitDetailsCanvas);
+            }
 
             gameObject.SetActive(true);
         }

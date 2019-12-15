@@ -883,6 +883,7 @@ GameObject:
   - component: {fileID: 505511001512550472}
   - component: {fileID: -507204973605838575}
   - component: {fileID: 1839444725788165399}
+  - component: {fileID: -8378778503091550198}
   m_Layer: 8
   m_Name: Runner Enemy
   m_TagString: enemy
@@ -988,6 +989,20 @@ MonoBehaviour:
   _attackPower: 10
   _lootValue: 0
   _deadBodyPrefab: {fileID: 364449200939740857, guid: b9ded9cd0a26fe24bbd55e3b915fbcfe,
+    type: 3}
+--- !u!114 &-8378778503091550198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8864333768579407967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc64ef976773d5b419389735b0876ab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _detailsPrefab: {fileID: 3122616529501397518, guid: 91ac83b7b14149c4d9cf5c2524f141c5,
     type: 3}
 --- !u!1 &8864333768737350873
 GameObject:
@@ -1425,6 +1440,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8864333768579407964}
     m_Modifications:
+    - target: {fileID: 7176334287865277168, guid: 15d82f54a91a0094587e9b5373c666ef,
+        type: 3}
+      propertyPath: m_Name
+      value: Enemy Unit Canvas
+      objectReference: {fileID: 0}
     - target: {fileID: 7176334287865277164, guid: 15d82f54a91a0094587e9b5373c666ef,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1529,11 +1549,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7176334287865277168, guid: 15d82f54a91a0094587e9b5373c666ef,
-        type: 3}
-      propertyPath: m_Name
-      value: Enemy Unit Canvas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15d82f54a91a0094587e9b5373c666ef, type: 3}

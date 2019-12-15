@@ -6,7 +6,7 @@ using UnityEngine.AI;
 namespace Assets.Scripts.Enemies
 {
     [RequireComponent(typeof(Health.Health))]
-    public class Enemy : MonoBehaviour
+    public class Enemy : MonoBehaviour, IUnit
     {
         [SerializeField]
         private int _attackPower = 10;
@@ -17,13 +17,15 @@ namespace Assets.Scripts.Enemies
         [SerializeField]
         private GameObject _deadBodyPrefab;
 
-        private Health.Health _health;
+        public Health.Health Health { get; private set; }
+
         private float _timeSinceLastMeleeAttack;
+
 
         private void Awake()
         {
-            _health = GetComponent<Health.Health>();
-            _health.OnDie += OnDied;
+            Health = GetComponent<Health.Health>();
+            Health.OnDie += OnDied;
         }
 
         private void OnCollisionStay(Collision collision)
@@ -41,7 +43,7 @@ namespace Assets.Scripts.Enemies
         private void OnDied(object sender, EventArgs e)
         {
             OnDie?.Invoke(this, e);
-            _health.OnDie -= OnDied;
+            Health.OnDie -= OnDied;
             if (_deadBodyPrefab != null)
             {
                 var body = Instantiate(_deadBodyPrefab, transform.position, transform.rotation, transform.parent);
