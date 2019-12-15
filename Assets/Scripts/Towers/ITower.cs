@@ -1,6 +1,4 @@
-﻿using Assets.Scripts.Health;
-
-namespace Assets.Scripts.Towers
+﻿namespace Assets.Scripts.Towers
 {
     public interface ITower : IUnit
     {

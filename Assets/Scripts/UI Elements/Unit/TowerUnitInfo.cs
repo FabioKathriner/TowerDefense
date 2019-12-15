@@ -39,6 +39,7 @@ namespace Assets.Scripts.UI_Elements.Unit
                 _lineRenderer.enabled = false;
         }
 
+        // TODO: Use RangeDrawer?
         private void DrawTowerRadius()
         {
             _lineRenderer = GetComponentInParent<LineRenderer>();
