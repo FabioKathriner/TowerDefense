@@ -1,32 +1,34 @@
-﻿using Assets.Scripts.Health;
-using UnityEngine;
+﻿using UnityEngine;
 
-[RequireComponent(typeof(Health))]
-public class UnitDetailsProvider : MonoBehaviour, IUnitDetailsProvider
+namespace Assets.Scripts.UI_Elements.Unit
 {
-    [SerializeField]
-    private GameObject _detailsPrefab;
-    private Health _health;
-
-    private void Awake()
+    [RequireComponent(typeof(Health.Health))]
+    public class UnitDetailsProvider : MonoBehaviour, IUnitDetailsProvider
     {
-        _health = GetComponent<Health>();
-    }
+        [SerializeField]
+        private GameObject _detailsPrefab;
+        private Health.Health _health;
 
-    public GameObject GetDetailsPrefab()
-    {
-        UpdateDetails(_detailsPrefab);
-        return _detailsPrefab;
-    }
+        private void Awake()
+        {
+            _health = GetComponent<Health.Health>();
+        }
 
-    public string GetUnitName()
-    {
-        return gameObject.name;
-    }
+        public GameObject GetDetailsPrefab()
+        {
+            UpdateDetails(_detailsPrefab);
+            return _detailsPrefab;
+        }
 
-    public void UpdateDetails(GameObject unitDetailsCanvas)
-    {
-        var unitDetails = unitDetailsCanvas.GetComponent<UnitDetails>();
-        unitDetails.Health = $"Health: {_health.CurrentHealth} / {_health.MaxHealth}";
+        public string GetUnitName()
+        {
+            return gameObject.name;
+        }
+
+        public void UpdateDetails(GameObject unitDetailsCanvas)
+        {
+            var unitDetails = unitDetailsCanvas.GetComponent<UnitDetails>();
+            unitDetails.Health = $"Health: {_health.CurrentHealth} / {_health.MaxHealth}";
+        }
     }
 }

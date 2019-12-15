@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
 
-public interface IUnitDetailsProvider
+namespace Assets.Scripts.UI_Elements.Unit
 {
-    GameObject GetDetailsPrefab();
-    string GetUnitName();
-    void UpdateDetails(GameObject unitDetailsCanvas);
+    public interface IUnitDetailsProvider
+    {
+        GameObject GetDetailsPrefab();
+        string GetUnitName();
+        void UpdateDetails(GameObject unitDetailsCanvas);
+    }
 }

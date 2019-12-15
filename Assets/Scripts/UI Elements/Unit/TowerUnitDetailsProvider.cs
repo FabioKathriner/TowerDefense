@@ -1,35 +1,38 @@
 ﻿using Assets.Scripts.Towers;
 using UnityEngine;
 
-[RequireComponent(typeof(Tower))]
-public class TowerUnitDetailsProvider : MonoBehaviour, IUnitDetailsProvider
+namespace Assets.Scripts.UI_Elements.Unit
 {
-    [SerializeField]
-    private GameObject _detailsPrefab;
-    private IWeaponizedTower _tower;
-
-    private void Awake()
+    [RequireComponent(typeof(Tower))]
+    public class TowerUnitDetailsProvider : MonoBehaviour, IUnitDetailsProvider
     {
-        _tower = GetComponent<IWeaponizedTower>();
-    }
+        [SerializeField]
+        private GameObject _detailsPrefab;
+        private IWeaponizedTower _tower;
 
-    public GameObject GetDetailsPrefab()
-    {
-        UpdateDetails(_detailsPrefab);
-        return _detailsPrefab;
-    }
+        private void Awake()
+        {
+            _tower = GetComponent<IWeaponizedTower>();
+        }
 
-    public string GetUnitName()
-    {
-        return _tower.Name;
-    }
+        public GameObject GetDetailsPrefab()
+        {
+            UpdateDetails(_detailsPrefab);
+            return _detailsPrefab;
+        }
 
-    public void UpdateDetails(GameObject unitDetailsCanvas)
-    {
-        var unitDetails = unitDetailsCanvas.GetComponent<TowerUnitDetails>();
-        unitDetails.Level = $"Level: {_tower.Level}";
-        unitDetails.Health = $"Health: {_tower.Health.CurrentHealth} / {_tower.Health.MaxHealth}";
-        unitDetails.RateOfFire = $"Rate of fire: {_tower.RateOfFire}";
-        unitDetails.Damage = $"Damage: {_tower.GetWeapon().AttackDamage}";
+        public string GetUnitName()
+        {
+            return _tower.Name;
+        }
+
+        public void UpdateDetails(GameObject unitDetailsCanvas)
+        {
+            var unitDetails = unitDetailsCanvas.GetComponent<TowerUnitDetails>();
+            unitDetails.Level = $"Level: {_tower.Level}";
+            unitDetails.Health = $"Health: {_tower.Health.CurrentHealth} / {_tower.Health.MaxHealth}";
+            unitDetails.RateOfFire = $"Rate of fire: {_tower.RateOfFire}";
+            unitDetails.Damage = $"Damage: {_tower.GetWeapon().AttackDamage}";
+        }
     }
 }

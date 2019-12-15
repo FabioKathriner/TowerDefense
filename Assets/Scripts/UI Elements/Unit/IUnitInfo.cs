@@ -1,5 +1,8 @@
-﻿public interface IUnitInfo
+﻿namespace Assets.Scripts.UI_Elements.Unit
 {
-    void Show();
-    void Hide();
+    public interface IUnitInfo
+    {
+        void Show();
+        void Hide();
+    }
 }

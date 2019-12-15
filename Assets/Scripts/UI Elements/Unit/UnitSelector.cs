@@ -1,8 +1,7 @@
 ﻿using System;
-using Assets.Scripts.Towers;
 using UnityEngine;
 
-namespace Assets.Scripts.UI_Elements
+namespace Assets.Scripts.UI_Elements.Unit
 {
 
     public class UnitSelector : MonoBehaviour

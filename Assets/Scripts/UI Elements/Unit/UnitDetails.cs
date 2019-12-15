@@ -1,13 +1,16 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class UnitDetails : MonoBehaviour
+namespace Assets.Scripts.UI_Elements.Unit
 {
-    [SerializeField]
-    private Text _health;
-
-    public string Health
+    public class UnitDetails : MonoBehaviour
     {
-        set => _health.text = value;
+        [SerializeField]
+        private Text _health;
+
+        public string Health
+        {
+            set => _health.text = value;
+        }
     }
 }

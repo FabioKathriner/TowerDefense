@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace Assets.Scripts.UI_Elements
+namespace Assets.Scripts.UI_Elements.Unit
 {
     public class UnitDetailsPanel : MonoBehaviour
     {
