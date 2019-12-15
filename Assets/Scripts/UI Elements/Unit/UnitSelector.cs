@@ -46,6 +46,12 @@ namespace Assets.Scripts.UI_Elements.Unit
             _unitInfo = _selectedUnit.GetComponentInChildren<IUnitInfo>();
             _unitInfo?.Show();
             OnUnitSelected?.Invoke(this, new UnitSelectionEventArgs(_selectedUnit));
+            _selectedUnit.GetComponent<IUnit>().Health.OnDie += OnSelectedUnitDied;
+        }
+
+        private void OnSelectedUnitDied(object sender, EventArgs e)
+        {
+            ResetPreviousSelection();
         }
 
         private void ResetPreviousSelection()
