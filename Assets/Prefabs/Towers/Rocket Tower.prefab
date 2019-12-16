@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 8877067048122164034}
   - component: {fileID: 7194960228725094584}
   - component: {fileID: -1384611121609608651}
+  - component: {fileID: 1664115597822962954}
   m_Layer: 15
   m_Name: Rocket Tower
   m_TagString: tower
@@ -214,6 +215,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _detailsPrefab: {fileID: 3122616529501397518, guid: 41e2ec117836ab24790e1344afab9fd2,
     type: 3}
+--- !u!114 &1664115597822962954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2439471149367952929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0af832021ee1aac4a80b1b4afe67a5d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _material: {fileID: 2100000, guid: 8d172c634cf886c49b65c29072e2ecdf, type: 2}
+  _cubeDestroyAfterSeconds: 5
+  ParticleSpawnPoint: {fileID: 6292854478232118283}
+  _particlesUseGravity: 1
+  cubeSize: 0.2
+  cubesInRow: 5
+  explosionForce: 50
+  explosionRadius: 4
+  explosionUpward: 0.4
 --- !u!1 &6292854478232118283
 GameObject:
   m_ObjectHideFlags: 0
@@ -1498,12 +1520,12 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 1744897286107974306, guid: 30bd697564d1a3d488d6a1e2d059e71a,
+    - target: {fileID: 7850801202827029163, guid: 30bd697564d1a3d488d6a1e2d059e71a,
         type: 3}
       propertyPath: _tower
       value: 
       objectReference: {fileID: 8150222399371903124}
-    - target: {fileID: 7850801202827029163, guid: 30bd697564d1a3d488d6a1e2d059e71a,
+    - target: {fileID: 1744897286107974306, guid: 30bd697564d1a3d488d6a1e2d059e71a,
         type: 3}
       propertyPath: _tower
       value: 

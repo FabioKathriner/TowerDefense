@@ -26820,7 +26820,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af832021ee1aac4a80b1b4afe67a5d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _material: {fileID: 2100000, guid: d5ae0e66bf863b14f8edd60ccb20d476, type: 2}
+  _cubeDestroyAfterSeconds: 5
   ParticleSpawnPoint: {fileID: 413791526832510592}
+  _particlesUseGravity: 1
   cubeSize: 0.1
   cubesInRow: 5
   explosionForce: 30

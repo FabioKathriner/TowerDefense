@@ -1,11 +1,20 @@
-﻿using System.Collections;
-using Assets.Scripts;
+﻿using Assets.Scripts;
 using UnityEngine;
 
 public class DyingEffect : MonoBehaviour
 {
     [SerializeField]
+    private Material _material;
+
+    [SerializeField]
+    private float _cubeDestroyAfterSeconds = 5f;
+
+    [SerializeField]
     GameObject ParticleSpawnPoint;
+
+    [SerializeField] 
+    private bool _particlesUseGravity = true;
+
     public float cubeSize = 0.2f;
     public int cubesInRow = 5;
 
@@ -17,25 +26,15 @@ public class DyingEffect : MonoBehaviour
     public float explosionUpward = 0.4f;
     private float _localMultiplier = TimeManager.SpeedMultiplier;
 
-    
-
     // Use this for initialization
     void Start()
     {
-        StartCoroutine(ExplodeAfterSeconds(0f));
-    }
-    
-    private IEnumerator ExplodeAfterSeconds(float seconds)
-    {
-        yield return new WaitForSeconds(seconds);
-        //calculate pivot distance
         cubesPivotDistance = cubeSize * cubesInRow / 2;
         //use this value to create pivot vector)
         cubesPivot = new Vector3(cubesPivotDistance, cubesPivotDistance, cubesPivotDistance);
-        Explode();
     }
 
-   public void Explode()
+    public void Explode()
    {
        //loop 3 times to create 5x5x5 pieces in x,y,z coordinates
        for (int x = 0; x < cubesInRow; x++)
@@ -81,8 +80,9 @@ public class DyingEffect : MonoBehaviour
 
         //add rigidbody and set mass
         var rb = piece.AddComponent<Rigidbody>();
-        piece.GetComponent<Rigidbody>().mass = cubeSize;
-        piece.GetComponent<Renderer>().material.color = Color.red;
-        Destroy(piece,5f);
+        rb.useGravity = _particlesUseGravity;
+        rb.mass = cubeSize;
+        piece.GetComponent<Renderer>().material = _material;
+        Destroy(piece,_cubeDestroyAfterSeconds);
     }
 }

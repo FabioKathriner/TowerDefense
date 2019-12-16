@@ -105,6 +105,7 @@ GameObject:
   - component: {fileID: -1235534474826079785}
   - component: {fileID: 2894480746705683181}
   - component: {fileID: 6067665520802651005}
+  - component: {fileID: 7925517778650625405}
   m_Layer: 15
   m_Name: Ballistic Tower
   m_TagString: tower
@@ -148,8 +149,7 @@ MonoBehaviour:
   _upgradePrice: 50
   LevelText: {fileID: 3721479473039989334}
   _healthUpgradeIncrement: 30
-  Health: {fileID: 0}
-  RateOfFire: 0.8
+  _rateOfFire: 0.8
   _rateOfFireUpgradeIncrement: 0.3
   _damageUpgradeIncrement: 20
 --- !u!114 &-1235534474826079785
@@ -197,6 +197,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _detailsPrefab: {fileID: 3122616529501397518, guid: 41e2ec117836ab24790e1344afab9fd2,
     type: 3}
+--- !u!114 &7925517778650625405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2869298745103565431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0af832021ee1aac4a80b1b4afe67a5d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _material: {fileID: 2100000, guid: 8d172c634cf886c49b65c29072e2ecdf, type: 2}
+  _cubeDestroyAfterSeconds: 5
+  ParticleSpawnPoint: {fileID: 5673805820318701327}
+  _particlesUseGravity: 1
+  cubeSize: 0.2
+  cubesInRow: 5
+  explosionForce: 50
+  explosionRadius: 4
+  explosionUpward: 0.4
 --- !u!1 &5673805820318701327
 GameObject:
   m_ObjectHideFlags: 0
@@ -564,12 +585,12 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 1744897286107974306, guid: 30bd697564d1a3d488d6a1e2d059e71a,
+    - target: {fileID: 7850801202827029163, guid: 30bd697564d1a3d488d6a1e2d059e71a,
         type: 3}
       propertyPath: _tower
       value: 
       objectReference: {fileID: 2959143058768520645}
-    - target: {fileID: 7850801202827029163, guid: 30bd697564d1a3d488d6a1e2d059e71a,
+    - target: {fileID: 1744897286107974306, guid: 30bd697564d1a3d488d6a1e2d059e71a,
         type: 3}
       propertyPath: _tower
       value: 

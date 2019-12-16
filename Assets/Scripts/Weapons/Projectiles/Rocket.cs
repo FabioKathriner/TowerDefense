@@ -2,10 +2,18 @@
 
 namespace Assets.Scripts.Weapons.Projectiles
 {
+    [RequireComponent(typeof(DyingEffect))]
     public class Rocket : Projectile
     {
         [SerializeField]
         private float _explosionRadius = 2f;
+
+        private DyingEffect _explosionEffect;
+
+        private void Awake()
+        {
+            _explosionEffect = GetComponent<DyingEffect>();
+        }
 
         private void FixedUpdate()
         {
@@ -26,6 +34,7 @@ namespace Assets.Scripts.Weapons.Projectiles
                     health.TakeDamage(Damage);
             }
 
+            _explosionEffect.Explode();
             Destroy(gameObject);
         }
     }
