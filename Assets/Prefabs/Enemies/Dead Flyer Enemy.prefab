@@ -1308,4 +1308,4 @@ MonoBehaviour:
   cubesInRow: 4
   explosionForce: 50
   explosionRadius: 10
-  explosionUpward: -3
+  explosionUpward: 0.1

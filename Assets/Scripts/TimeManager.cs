@@ -11,7 +11,9 @@ namespace Assets.Scripts
         private const float SpeedSlow = 0.5f;
         private const float SpeedVerySlow = 0.25f;
         private float _fixedDeltaTime;
-        private GameSpeed _gameSpeed;
+        public GameSpeed _gameSpeed;
+
+        public static float SpeedMultiplier = 1f;
 
         public GameSpeed GameSpeed => _gameSpeed;
 
@@ -42,6 +44,7 @@ namespace Assets.Scripts
         {
             Time.timeScale = SpeedNormal;
             Time.fixedDeltaTime = this._fixedDeltaTime * Time.timeScale;
+            SpeedMultiplier = 1/SpeedNormal;
             _gameSpeed = GameSpeed.Normal;
         }
 
@@ -49,6 +52,7 @@ namespace Assets.Scripts
         {
             Time.timeScale = SpeedPaused;
             Time.fixedDeltaTime = this._fixedDeltaTime * Time.timeScale;
+            SpeedMultiplier = 1/SpeedNormal;
             _gameSpeed = GameSpeed.Paused;
 
         }
@@ -57,30 +61,31 @@ namespace Assets.Scripts
         {
             Time.timeScale = SpeedFast;
             Time.fixedDeltaTime = this._fixedDeltaTime * Time.timeScale;
+            SpeedMultiplier = 1/SpeedFast;
             _gameSpeed = GameSpeed.Fast;
         }
 
         public void GoVeryFast()
         {
-
             Time.timeScale = SpeedVeryFast;
             Time.fixedDeltaTime = this._fixedDeltaTime * Time.timeScale;
+            SpeedMultiplier = 1/SpeedVeryFast;
             _gameSpeed = GameSpeed.VeryFast;
         }
 
         public void GoSlow()
         {
-
             Time.timeScale = SpeedSlow;
             Time.fixedDeltaTime = this._fixedDeltaTime * Time.timeScale;
+            SpeedMultiplier = 1/SpeedSlow;
             _gameSpeed = GameSpeed.Slow;
         }
 
         public void GoVerySlow()
         {
-
             Time.timeScale = SpeedVerySlow;
             Time.fixedDeltaTime = this._fixedDeltaTime * Time.timeScale;
+            SpeedMultiplier = 1/SpeedVerySlow;
             _gameSpeed = GameSpeed.VerySlow;
         }
     }

@@ -16,13 +16,15 @@ public class DyingEffect : MonoBehaviour
     public float explosionForce = 50f;
     public float explosionRadius = 4f;
     public float explosionUpward = 0.4f;
+    private float _localMultiplier = TimeManager.SpeedMultiplier;
+
+    
 
     // Use this for initialization
     void Start()
     {
         StartCoroutine(ExplodeAfterSeconds(0f));
     }
-
     
     private IEnumerator ExplodeAfterSeconds(float seconds)
     {
@@ -60,7 +62,7 @@ public class DyingEffect : MonoBehaviour
            if (rb != null)
            {
                //add explosion force to this body with given parameters
-                rb.AddExplosionForce(explosionForce, transform.position, explosionRadius, explosionUpward);
+                rb.AddExplosionForce(explosionForce * _localMultiplier, transform.position, explosionRadius, explosionUpward * _localMultiplier);
            }
        }
 
