@@ -154,6 +154,7 @@ GameObject:
   - component: {fileID: 1359298002366943352}
   - component: {fileID: 644670895169640530}
   - component: {fileID: -8005785468728921091}
+  - component: {fileID: 714114336646175274}
   m_Layer: 15
   m_Name: Guided Missile Tower
   m_TagString: tower
@@ -264,6 +265,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _detailsPrefab: {fileID: 3122616529501397518, guid: 41e2ec117836ab24790e1344afab9fd2,
     type: 3}
+--- !u!114 &714114336646175274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4932611405737507254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0af832021ee1aac4a80b1b4afe67a5d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _material: {fileID: 2100000, guid: 8d172c634cf886c49b65c29072e2ecdf, type: 2}
+  _cubeDestroyAfterSeconds: 5
+  ParticleSpawnPoint: {fileID: 7554770194977235026}
+  _particlesUseGravity: 1
+  cubeSize: 0.2
+  cubesInRow: 5
+  explosionForce: 50
+  explosionRadius: 4
+  explosionUpward: 0.4
 --- !u!1 &7554770194977235026
 GameObject:
   m_ObjectHideFlags: 0

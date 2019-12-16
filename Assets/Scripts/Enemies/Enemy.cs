@@ -6,6 +6,7 @@ using UnityEngine.AI;
 namespace Assets.Scripts.Enemies
 {
     [RequireComponent(typeof(Health.Health))]
+    [RequireComponent(typeof(DyingEffect))]
     public class Enemy : MonoBehaviour, IUnit
     {
         [SerializeField]
@@ -54,7 +55,10 @@ namespace Assets.Scripts.Enemies
                 {
                     bodyRb.velocity = navAgent.velocity;
                 }
-                Destroy(body, 7f);
+
+                var bloodEffect = body.GetComponent<DyingEffect>();
+                bloodEffect.Explode();
+                Destroy(body, 3f);
             }
         }
 

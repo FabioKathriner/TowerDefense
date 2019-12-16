@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8174082269415806330}
   - component: {fileID: 8547152745817078013}
   - component: {fileID: 4171521883737803183}
+  - component: {fileID: 6598535272852794726}
   m_Layer: 13
   m_Name: Rocket
   m_TagString: Untagged
@@ -62,8 +63,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 30
-  _damage: 50
+  _damage: 65
   _explosionRadius: 2
+--- !u!114 &6598535272852794726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 606530497101438671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0af832021ee1aac4a80b1b4afe67a5d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _material: {fileID: 2100000, guid: 37606706b1c3bb34e808e3a71ab274ea, type: 2}
+  _cubeDestroyAfterSeconds: 1
+  ParticleSpawnPoint: {fileID: 606530497101438671}
+  _particlesUseGravity: 0
+  cubeSize: 0.1
+  cubesInRow: 4
+  explosionForce: 30
+  explosionRadius: 4
+  explosionUpward: 0.1
 --- !u!1 &5714852369821114035
 GameObject:
   m_ObjectHideFlags: 0
