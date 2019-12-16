@@ -25433,6 +25433,9 @@ MonoBehaviour:
   _layerMask:
     serializedVersion: 2
     m_Bits: 32768
+  _obstacleMask:
+    serializedVersion: 2
+    m_Bits: 4
 --- !u!114 &-700958056481409014
 MonoBehaviour:
   m_ObjectHideFlags: 0

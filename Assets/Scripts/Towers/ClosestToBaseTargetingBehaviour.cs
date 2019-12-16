@@ -12,12 +12,15 @@ namespace Assets.Scripts.Towers
             _basePosition = Base.Instance.transform.position;
         }
 
-        public GameObject GetTarget(Collider[] hitColliders)
+        public GameObject GetTarget(Collider[] hitColliders, LayerMask obstacleMask, Vector3 towerPosition)
         {
             Tuple<GameObject, float> min = null;
             bool first = true;
             foreach (var hitCollider in hitColliders)
             {
+                if (Physics.Linecast(towerPosition, hitCollider.gameObject.transform.position, obstacleMask))
+                    continue;
+
                 var distanceFromTargetToBase = Vector3.Distance(_basePosition, hitCollider.transform.position);
                 if (first)
                 {
@@ -25,7 +28,6 @@ namespace Assets.Scripts.Towers
                     min = new Tuple<GameObject, float>(hitCollider.gameObject, distanceFromTargetToBase);
                     continue;
                 }
-
 
                 if (!(min.Item2 < distanceFromTargetToBase))
                     min = new Tuple<GameObject, float>(hitCollider.gameObject, distanceFromTargetToBase);

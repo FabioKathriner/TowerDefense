@@ -247,6 +247,9 @@ MonoBehaviour:
   _layerMask:
     serializedVersion: 2
     m_Bits: 768
+  _obstacleMask:
+    serializedVersion: 2
+    m_Bits: 4
 --- !u!114 &-8005785468728921091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2726,12 +2729,12 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 1744897286107974306, guid: 30bd697564d1a3d488d6a1e2d059e71a,
+    - target: {fileID: 7850801202827029163, guid: 30bd697564d1a3d488d6a1e2d059e71a,
         type: 3}
       propertyPath: _tower
       value: 
       objectReference: {fileID: 452396004791475552}
-    - target: {fileID: 7850801202827029163, guid: 30bd697564d1a3d488d6a1e2d059e71a,
+    - target: {fileID: 1744897286107974306, guid: 30bd697564d1a3d488d6a1e2d059e71a,
         type: 3}
       propertyPath: _tower
       value: 

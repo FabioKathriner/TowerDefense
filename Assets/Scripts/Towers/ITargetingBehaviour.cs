@@ -4,6 +4,6 @@ namespace Assets.Scripts.Towers
 {
     public interface ITargetingBehaviour
     {
-        GameObject GetTarget(Collider[] hitColliders);
+        GameObject GetTarget(Collider[] hitColliders, LayerMask obstacleMask, Vector3 towerPosition);
     }
 }

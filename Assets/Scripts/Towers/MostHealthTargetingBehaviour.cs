@@ -5,12 +5,15 @@ namespace Assets.Scripts.Towers
 {
     public class MostHealthTargetingBehaviour : ITargetingBehaviour
     {
-        public GameObject GetTarget(Collider[] hitColliders)
+        public GameObject GetTarget(Collider[] hitColliders, LayerMask obstacleMask, Vector3 towerPosition)
         {
             Tuple<GameObject, int> max = null;
             bool first = true;
             foreach (var hitCollider in hitColliders)
             {
+                if (Physics.Linecast(towerPosition, hitCollider.gameObject.transform.position, obstacleMask))
+                    continue;
+
                 var targetHealth = hitCollider.gameObject.GetComponentInParent<Health.Health>().CurrentHealth;
                 if (first)
                 {

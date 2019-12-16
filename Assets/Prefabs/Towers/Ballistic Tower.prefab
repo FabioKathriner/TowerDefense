@@ -148,8 +148,7 @@ MonoBehaviour:
   _upgradePrice: 50
   LevelText: {fileID: 3721479473039989334}
   _healthUpgradeIncrement: 30
-  Health: {fileID: 0}
-  RateOfFire: 0.8
+  _rateOfFire: 0.8
   _rateOfFireUpgradeIncrement: 0.3
   _damageUpgradeIncrement: 20
 --- !u!114 &-1235534474826079785
@@ -564,12 +563,12 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 1744897286107974306, guid: 30bd697564d1a3d488d6a1e2d059e71a,
+    - target: {fileID: 7850801202827029163, guid: 30bd697564d1a3d488d6a1e2d059e71a,
         type: 3}
       propertyPath: _tower
       value: 
       objectReference: {fileID: 2959143058768520645}
-    - target: {fileID: 7850801202827029163, guid: 30bd697564d1a3d488d6a1e2d059e71a,
+    - target: {fileID: 1744897286107974306, guid: 30bd697564d1a3d488d6a1e2d059e71a,
         type: 3}
       propertyPath: _tower
       value: 

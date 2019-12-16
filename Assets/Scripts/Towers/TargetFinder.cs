@@ -12,6 +12,9 @@ namespace Assets.Scripts.Towers
         [SerializeField]
         private LayerMask _layerMask;
 
+        [SerializeField]
+        private LayerMask _obstacleMask;
+
         public List<string> TargetTags { get; } = new List<string>();
 
         public int Radius => _radius;
@@ -25,7 +28,7 @@ namespace Assets.Scripts.Towers
         public GameObject GetNextTarget()
         {
             Collider[] hitColliders = Physics.OverlapSphere(transform.position, Radius, _layerMask);
-            return TargetingBehaviour.GetTarget(hitColliders);
+            return TargetingBehaviour.GetTarget(hitColliders, _obstacleMask, transform.position);
         }
 
         public List<GameObject> GetTargets()
