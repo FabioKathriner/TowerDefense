@@ -32,23 +32,6 @@ namespace Assets.Scripts.UI_Elements.Unit
             unitDetails.Health = $"Health: {_tower.Health.CurrentHealth} / {_tower.Health.MaxHealth}";
             unitDetails.RateOfFire = $"Rate of fire: {_tower.RateOfFire}";
             unitDetails.Damage = $"Damage: {_tower.GetWeapon().AttackDamage}";
-            if (_tower.TargetFinder != null)
-            {
-                unitDetails.TargetPanel.SetActive(true);
-                unitDetails.TargetClosestToBaseButton.onClick.AddListener(() => UpdateTargetingBehaviour(new ClosestToBaseTargetingBehaviour()));
-                unitDetails.TargetLowestHealthButton.onClick.AddListener(() => UpdateTargetingBehaviour(new LowestHealthTargetingBehaviour()));
-                unitDetails.TargetMostHealthButton.onClick.AddListener(() => UpdateTargetingBehaviour(new MostHealthTargetingBehaviour()));
-            }
-            else
-            {
-                unitDetails.TargetPanel.SetActive(false);
-            }
-        }
-
-        private void UpdateTargetingBehaviour(ITargetingBehaviour targetingBehaviour)
-        {
-            _tower.TargetFinder.TargetingBehaviour = targetingBehaviour;
-            Debug.Log($"TargetingBehaviour of {_tower.Name} was changed to {targetingBehaviour.GetType().Name}");
         }
     }
 }

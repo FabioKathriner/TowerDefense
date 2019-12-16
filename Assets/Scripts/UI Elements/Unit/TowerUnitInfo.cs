@@ -7,36 +7,41 @@ namespace Assets.Scripts.UI_Elements.Unit
     {
         [SerializeField]
         private Material _lineRendererMaterial;
+        [SerializeField]
+        private GameObject _selectionContainer;
         private TargetFinder _selectedTargetFinder;
         private LineRenderer _lineRenderer;
+        private Tower _selectedTower;
         private const int LineSegments = 50;
+
+        private void Start()
+        {
+            _selectedTower = GetComponentInParent<Tower>();
+            _selectedTargetFinder = GetComponentInParent<TargetFinder>();
+        }
+
         public void Show()
         {
-            _selectedTargetFinder = gameObject.GetComponentInParent<TargetFinder>();
-            var towerButtons = gameObject.GetComponentsInChildren<TowerButton>(true);
-            foreach (var towerButton in towerButtons)
-            {
-                if (towerButton.enabled)
-                {
-                    // TODO: Do not show button if not expected (e.g. Sell base)
-                    towerButton.gameObject.SetActive(true);
-                }
-            }
-
+            _selectionContainer.SetActive(true);
             if (_selectedTargetFinder != null)
                 DrawTowerRadius();
         }
 
         public void Hide()
         {
-            var towerButtons = gameObject.GetComponentsInChildren<TowerButton>();
-            foreach (var towerButton in towerButtons)
-            {
-                towerButton.gameObject.SetActive(false);
-            }
-
+            _selectionContainer.SetActive(false);
             if (_selectedTargetFinder != null)
                 _lineRenderer.enabled = false;
+        }
+
+        public void OnTargetClosestToBaseClick() => UpdateTargetingBehaviour(new ClosestToBaseTargetingBehaviour());
+        public void OnTargetLowestHealthClick() => UpdateTargetingBehaviour(new LowestHealthTargetingBehaviour());
+        public void OnTargetMostHealthClick() => UpdateTargetingBehaviour(new MostHealthTargetingBehaviour());
+
+        private void UpdateTargetingBehaviour(ITargetingBehaviour targetingBehaviour)
+        {
+            _selectedTargetFinder.TargetingBehaviour = targetingBehaviour;
+            Debug.Log($"TargetingBehaviour of {_selectedTower.Name} was changed to {targetingBehaviour.GetType().Name}");
         }
 
         // TODO: Use RangeDrawer?

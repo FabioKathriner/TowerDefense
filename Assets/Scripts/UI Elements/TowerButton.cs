@@ -7,17 +7,14 @@ namespace Assets.Scripts.UI_Elements
     [RequireComponent(typeof(Button))]
     public abstract class TowerButton : MonoBehaviour
     {
-        [SerializeField]
-        private Tower _tower; // TODO: Use GetComponentInParent<Tower>();
-
         private Button _button;
 
-        protected Tower Tower => _tower;
+        protected Tower Tower { get; private set; }
 
         protected virtual void Start()
         {
+            Tower = GetComponentInParent<Tower>();
             _button = GetComponent<Button>();
-            gameObject.SetActive(false);
             _button.onClick.AddListener(OnClick);
         }
 

@@ -13,14 +13,6 @@ namespace Assets.Scripts.UI_Elements.Unit
         private Text _rateOfFire;
         [SerializeField]
         private Text _damage;
-        [SerializeField]
-        private Button _targetClosestToBaseButton;
-        [SerializeField]
-        private Button _targetLowestHealthButton;
-        [SerializeField]
-        private Button _targetMostHealthButton;
-        [SerializeField]
-        private GameObject _targetPanel;
 
         public string Level
         {
@@ -41,10 +33,5 @@ namespace Assets.Scripts.UI_Elements.Unit
         {
             set => _damage.text = value;
         }
-
-        public Button TargetClosestToBaseButton => _targetClosestToBaseButton;
-        public Button TargetLowestHealthButton => _targetLowestHealthButton;
-        public Button TargetMostHealthButton => _targetMostHealthButton;
-        public GameObject TargetPanel => _targetPanel;
     }
 }
