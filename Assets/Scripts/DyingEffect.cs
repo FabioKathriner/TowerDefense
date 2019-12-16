@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class DyingEffect : MonoBehaviour
 {
-    //TODO Adjust TimeScaling of Particles
     [SerializeField]
     GameObject ParticleSpawnPoint;
     public float cubeSize = 0.2f;
