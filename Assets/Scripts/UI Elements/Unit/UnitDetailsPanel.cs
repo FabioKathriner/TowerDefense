@@ -9,6 +9,7 @@ namespace Assets.Scripts.UI_Elements.Unit
         private Text _unitName;
         private UnitSelector _unitSelector;
         private GameObject _unitDetailsCanvas;
+        private IUnitDetailsProvider _unitDetails;
 
         private void Awake()
         {
@@ -18,11 +19,18 @@ namespace Assets.Scripts.UI_Elements.Unit
             gameObject.SetActive(false);
         }
 
+        // TODO: UpdateDetails should be called after the values actually changed by using events
+        private void LateUpdate()
+        {
+            if (_unitDetails != null && _unitDetailsCanvas != null)
+                _unitDetails.UpdateDetails(_unitDetailsCanvas);
+        }
+
         private void OnUnitSelected(object sender, UnitSelectionEventArgs e)
         {
-            var unitDetails = e.Unit.GetComponent<IUnitDetailsProvider>();
-            _unitName.text = unitDetails.GetUnitName();
-            var detailsPrefab = unitDetails.GetDetailsPrefab();
+            _unitDetails = e.Unit.GetComponent<IUnitDetailsProvider>();
+            _unitName.text = _unitDetails.GetUnitName();
+            var detailsPrefab = _unitDetails.GetDetailsPrefab();
             if (_unitDetailsCanvas == null)
             {
                 _unitDetailsCanvas = Instantiate(detailsPrefab, transform);
@@ -31,7 +39,7 @@ namespace Assets.Scripts.UI_Elements.Unit
             {
                 Destroy(_unitDetailsCanvas);
                 _unitDetailsCanvas = Instantiate(detailsPrefab, transform);
-                unitDetails.UpdateDetails(_unitDetailsCanvas);
+                _unitDetails.UpdateDetails(_unitDetailsCanvas);
             }
 
             gameObject.SetActive(true);
@@ -39,6 +47,7 @@ namespace Assets.Scripts.UI_Elements.Unit
 
         private void OnUnitDeselected(object sender, UnitSelectionEventArgs e)
         {
+            _unitDetails = null;
             gameObject.SetActive(false);
         }
     }

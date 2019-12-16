@@ -16,7 +16,6 @@ namespace Assets.Scripts.UI_Elements.Unit
 
         public GameObject GetDetailsPrefab()
         {
-            UpdateDetails(_detailsPrefab);
             return _detailsPrefab;
         }
 
