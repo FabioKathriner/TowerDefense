@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Enemies;
+﻿using System;
+using Assets.Scripts.Enemies;
 using Assets.Scripts.UI_Elements.Unit;
 using UnityEngine;
 
@@ -13,6 +14,8 @@ namespace Assets.Scripts
         private void Awake()
         {
             Health = GetComponent<Health.Health>();
+            Health.OnDie += OnBaseDestroyed;
+
             if (Instance == null)
             {
                 Instance = this;
@@ -35,6 +38,11 @@ namespace Assets.Scripts
                 var enemyHp = enemy.GetComponent<Health.Health>();
                 enemyHp.Die();
             }
+        }
+
+        private void OnBaseDestroyed(object sender, EventArgs e)
+        {
+            GameManager.Instance.GameOver();
         }
     }
 }

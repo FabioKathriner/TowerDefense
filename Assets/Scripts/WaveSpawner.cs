@@ -66,6 +66,7 @@ namespace Assets.Scripts
             {
                 Debug.Log("Level Over!");
                 this.enabled = false;
+                GameManager.Instance.StageCleared();
             }
         }
 
