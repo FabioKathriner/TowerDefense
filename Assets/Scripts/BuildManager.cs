@@ -71,7 +71,7 @@ namespace Assets.Scripts
                 PlayerStats.Money -= buildPrice;
                 Debug.Log("Tower Placed successfully");
                 Debug.Log("Tower built! Money left: " + PlayerStats.Money);
-                LeaveBuildMode();
+                EnterBuildMode(_selectedTowerPreview, _selectedTowerPrefab);
             }
         }
 

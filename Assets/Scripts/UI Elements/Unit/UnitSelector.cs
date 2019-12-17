@@ -19,7 +19,7 @@ namespace Assets.Scripts.UI_Elements.Unit
         private void FixedUpdate()
         {
             // Clear previous selection on right mouse click
-            if (Input.GetMouseButton(1) && _selectedUnit != null)
+            if (Input.GetMouseButton(1))
             { 
                 ResetPreviousSelection();
                 return;

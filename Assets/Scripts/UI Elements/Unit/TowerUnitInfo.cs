@@ -21,6 +21,7 @@ namespace Assets.Scripts.UI_Elements.Unit
         {
             _selectedTower = GetComponentInParent<Tower>();
             _selectedTargetFinder = GetComponentInParent<TargetFinder>();
+            _selectionContainer.SetActive(false);
         }
 
         private void Update()
