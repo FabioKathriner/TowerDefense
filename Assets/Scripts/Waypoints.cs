@@ -4,10 +4,8 @@ namespace Assets.Scripts
 {
     public class Waypoints : MonoBehaviour
     {
-        // TODO: Do not use public static fields if possible
-        public static Transform[] Points;
-
-
+        public static Transform[] Points { get; private set; }
+        
         void Awake()
         {
             Points = new Transform[transform.childCount];

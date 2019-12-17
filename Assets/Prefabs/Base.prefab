@@ -896,7 +896,7 @@ GameObject:
   - component: {fileID: -6543390227004068353}
   m_Layer: 14
   m_Name: Base
-  m_TagString: Untagged
+  m_TagString: base
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -979,11 +979,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 877489671351620442}
     m_Modifications:
-    - target: {fileID: 2261782069940029047, guid: bd243328be03bf54191c9b70b3453395,
-        type: 3}
-      propertyPath: m_Name
-      value: UnitCanvas
-      objectReference: {fileID: 0}
     - target: {fileID: 2261782069940029035, guid: bd243328be03bf54191c9b70b3453395,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1088,6 +1083,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2261782069940029047, guid: bd243328be03bf54191c9b70b3453395,
+        type: 3}
+      propertyPath: m_Name
+      value: UnitCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 3700582143482569178, guid: bd243328be03bf54191c9b70b3453395,
         type: 3}

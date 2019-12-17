@@ -960,10 +960,10 @@ GameObject:
   - component: {fileID: 8864333768579407964}
   - component: {fileID: -8534919739063431126}
   - component: {fileID: -9117505077829966330}
-  - component: {fileID: 505511001512550472}
   - component: {fileID: -507204973605838575}
   - component: {fileID: 1839444725788165399}
   - component: {fileID: -8378778503091550198}
+  - component: {fileID: 1331687629959994842}
   m_Layer: 8
   m_Name: Runner Enemy
   m_TagString: enemy
@@ -1021,18 +1021,6 @@ MonoBehaviour:
   _maxHealth: 80
   _currentHealth: 80
   _healthBar: {fileID: 2189401713971045069}
---- !u!114 &505511001512550472
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8864333768579407967}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2d0d51bf4032504ebd19e29f40d4f1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!195 &-507204973605838575
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1085,6 +1073,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _detailsPrefab: {fileID: 3122616529501397518, guid: 91ac83b7b14149c4d9cf5c2524f141c5,
     type: 3}
+--- !u!114 &1331687629959994842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8864333768579407967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d0d51bf4032504ebd19e29f40d4f1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8864333768737350873
 GameObject:
   m_ObjectHideFlags: 0

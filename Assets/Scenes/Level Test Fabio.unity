@@ -107,8 +107,8 @@ NavMeshSettings:
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
-    agentSlope: 0
-    agentClimb: 0
+    agentSlope: 45
+    agentClimb: 0.75
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
@@ -140,7 +140,7 @@ PrefabInstance:
     - target: {fileID: 9137387687411878456, guid: 2ed262507109854448abe5a66fe3790d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.48
+      value: -0.059999943
       objectReference: {fileID: 0}
     - target: {fileID: 9137387687411878456, guid: 2ed262507109854448abe5a66fe3790d,
         type: 3}
@@ -401,7 +401,7 @@ PrefabInstance:
     - target: {fileID: 9137387687411878456, guid: 2ed262507109854448abe5a66fe3790d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.48
+      value: -0.059999943
       objectReference: {fileID: 0}
     - target: {fileID: 9137387687411878456, guid: 2ed262507109854448abe5a66fe3790d,
         type: 3}
@@ -488,7 +488,7 @@ PrefabInstance:
     - target: {fileID: 9137387687411878456, guid: 2ed262507109854448abe5a66fe3790d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.48
+      value: -0.059999943
       objectReference: {fileID: 0}
     - target: {fileID: 9137387687411878456, guid: 2ed262507109854448abe5a66fe3790d,
         type: 3}
@@ -828,7 +828,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh14242
+  m_Name: pb_Mesh15192
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1061,7 +1061,7 @@ PrefabInstance:
     - target: {fileID: 9137387687411878456, guid: 2ed262507109854448abe5a66fe3790d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.48
+      value: -0.059999943
       objectReference: {fileID: 0}
     - target: {fileID: 9137387687411878456, guid: 2ed262507109854448abe5a66fe3790d,
         type: 3}
@@ -1136,7 +1136,7 @@ PrefabInstance:
     - target: {fileID: 9137387687411878456, guid: 2ed262507109854448abe5a66fe3790d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.48
+      value: -0.059999943
       objectReference: {fileID: 0}
     - target: {fileID: 9137387687411878456, guid: 2ed262507109854448abe5a66fe3790d,
         type: 3}
@@ -1376,7 +1376,7 @@ PrefabInstance:
     - target: {fileID: 9137387687411878456, guid: 2ed262507109854448abe5a66fe3790d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.48
+      value: -0.059999943
       objectReference: {fileID: 0}
     - target: {fileID: 9137387687411878456, guid: 2ed262507109854448abe5a66fe3790d,
         type: 3}
@@ -1457,7 +1457,7 @@ PrefabInstance:
     - target: {fileID: 9137387687411878456, guid: 2ed262507109854448abe5a66fe3790d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.48
+      value: -0.059999943
       objectReference: {fileID: 0}
     - target: {fileID: 9137387687411878456, guid: 2ed262507109854448abe5a66fe3790d,
         type: 3}
@@ -1526,7 +1526,7 @@ PrefabInstance:
     - target: {fileID: 9137387687411878456, guid: 2ed262507109854448abe5a66fe3790d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.48
+      value: -0.059999943
       objectReference: {fileID: 0}
     - target: {fileID: 9137387687411878456, guid: 2ed262507109854448abe5a66fe3790d,
         type: 3}
@@ -1667,7 +1667,7 @@ PrefabInstance:
     - target: {fileID: 9137387687411878456, guid: 2ed262507109854448abe5a66fe3790d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.48
+      value: -0.059999943
       objectReference: {fileID: 0}
     - target: {fileID: 9137387687411878456, guid: 2ed262507109854448abe5a66fe3790d,
         type: 3}
@@ -1779,7 +1779,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1677012460
 Transform:
@@ -11448,7 +11448,7 @@ PrefabInstance:
     - target: {fileID: 9137387687411878456, guid: 2ed262507109854448abe5a66fe3790d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.48
+      value: -0.06
       objectReference: {fileID: 0}
     - target: {fileID: 9137387687411878456, guid: 2ed262507109854448abe5a66fe3790d,
         type: 3}
@@ -11625,7 +11625,7 @@ PrefabInstance:
     - target: {fileID: 9137387687411878456, guid: 2ed262507109854448abe5a66fe3790d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.48
+      value: -0.059999943
       objectReference: {fileID: 0}
     - target: {fileID: 9137387687411878456, guid: 2ed262507109854448abe5a66fe3790d,
         type: 3}
@@ -12130,7 +12130,7 @@ PrefabInstance:
     - target: {fileID: 9137387687411878456, guid: 2ed262507109854448abe5a66fe3790d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.48
+      value: -0.059999943
       objectReference: {fileID: 0}
     - target: {fileID: 9137387687411878456, guid: 2ed262507109854448abe5a66fe3790d,
         type: 3}
@@ -12191,7 +12191,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1284
+  m_Name: pb_Mesh-1338
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12368,7 +12368,7 @@ PrefabInstance:
     - target: {fileID: 9137387687411878456, guid: 2ed262507109854448abe5a66fe3790d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.48
+      value: -0.059999943
       objectReference: {fileID: 0}
     - target: {fileID: 9137387687411878456, guid: 2ed262507109854448abe5a66fe3790d,
         type: 3}
@@ -12673,7 +12673,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _waves.Array.data[0].EnemyPrefab
       value: 
-      objectReference: {fileID: 2317368896312824663, guid: 21362314394137b44b4e7e7dd87a412d,
+      objectReference: {fileID: 8355096478231934017, guid: 38a0720e67ce05842a42668628f7ba92,
         type: 3}
     - target: {fileID: 8515071155832134595, guid: 7d0914cb4b08db44e8c2cd141479fc16,
         type: 3}
@@ -12702,12 +12702,12 @@ PrefabInstance:
     - target: {fileID: 8515071155832134595, guid: 7d0914cb4b08db44e8c2cd141479fc16,
         type: 3}
       propertyPath: _waves.Array.data[0].Count
-      value: 30
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8515071155832134595, guid: 7d0914cb4b08db44e8c2cd141479fc16,
         type: 3}
       propertyPath: _waves.Array.data[0].Rate
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8515071155832134595, guid: 7d0914cb4b08db44e8c2cd141479fc16,
         type: 3}
