@@ -1,4 +1,6 @@
-﻿using Assets.Scripts.Towers;
+﻿using System;
+using Assets.Scripts.Towers;
+using UnityEditor;
 using UnityEngine;
 
 namespace Assets.Scripts.UI_Elements.Unit
@@ -12,6 +14,7 @@ namespace Assets.Scripts.UI_Elements.Unit
         private TargetFinder _selectedTargetFinder;
         private LineRenderer _lineRenderer;
         private Tower _selectedTower;
+        private bool _isShowing;
         private const int LineSegments = 50;
 
         private void Start()
@@ -20,8 +23,18 @@ namespace Assets.Scripts.UI_Elements.Unit
             _selectedTargetFinder = GetComponentInParent<TargetFinder>();
         }
 
+        private void Update()
+        {
+            if (_isShowing)
+            {
+                var distance = Vector3.Distance(transform.position, Camera.main.transform.position);
+                _selectionContainer.transform.localScale = Vector3.one * Mathf.Clamp(distance / 10, 0.5f, 10f);
+            }
+        }
+
         public void Show()
         {
+            _isShowing = true;
             _selectionContainer.SetActive(true);
             if (_selectedTargetFinder != null)
                 DrawTowerRadius();
@@ -29,6 +42,8 @@ namespace Assets.Scripts.UI_Elements.Unit
 
         public void Hide()
         {
+            _isShowing = false;
+            _selectionContainer.transform.localScale = Vector3.one * 0.03f;
             _selectionContainer.SetActive(false);
             if (_selectedTargetFinder != null)
                 _lineRenderer.enabled = false;
