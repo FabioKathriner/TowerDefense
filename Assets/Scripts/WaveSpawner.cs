@@ -51,6 +51,7 @@ namespace Assets.Scripts
 
         private IEnumerator SpawnWave()
         {
+            GameManager.Instance.Broadcast("Next Wave incoming!");
             Wave wave = _waves[_waveIndex];
            
             for (int i = 0; i < wave.Count; i++)
@@ -61,7 +62,6 @@ namespace Assets.Scripts
 
             _waveIndex++;
             Debug.Log("Wave Incoming!");
-            GameManager.Instance.Broadcast("Next Wave incoming!");
 
             if (_waveIndex == _waves.Length)
             {
