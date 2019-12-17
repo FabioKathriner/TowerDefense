@@ -1,7 +1,7 @@
 ﻿using Assets.Scripts;
 using UnityEngine;
 
-public class DyingEffect : MonoBehaviour
+public class ParticleEffect : MonoBehaviour
 {
     [SerializeField]
     private Material _material;
@@ -15,16 +15,24 @@ public class DyingEffect : MonoBehaviour
     [SerializeField] 
     private bool _particlesUseGravity = true;
 
-    public float cubeSize = 0.2f;
-    public int cubesInRow = 5;
+    [SerializeField]
+    private float cubeSize = 0.2f;
 
-    private float cubesPivotDistance;
-    private Vector3 cubesPivot;
+    [SerializeField]
+    private int cubesInRow = 5;
 
-    public float explosionForce = 50f;
-    public float explosionRadius = 4f;
-    public float explosionUpward = 0.4f;
+    [SerializeField]
+    private float explosionForce = 50f;
+
+    [SerializeField]
+    private float explosionRadius = 4f;
+
+    [SerializeField]
+    private float explosionUpward = 0.4f;
+    
     private float _localMultiplier = TimeManager.SpeedMultiplier;
+    private Vector3 cubesPivot;
+    private float cubesPivotDistance;
 
     // Use this for initialization
     void Start()

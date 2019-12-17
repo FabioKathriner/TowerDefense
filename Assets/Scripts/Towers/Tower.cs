@@ -6,7 +6,7 @@ using UnityEngine.UI;
 namespace Assets.Scripts.Towers
 {
     [RequireComponent(typeof(Health.Health))]
-    [RequireComponent(typeof(DyingEffect))]
+    [RequireComponent(typeof(ParticleEffect))]
     public abstract class Tower : MonoBehaviour, IUpgradable, ITower
     {
         [SerializeField]
@@ -29,7 +29,7 @@ namespace Assets.Scripts.Towers
 
         private int _repairPrice;
 
-        private DyingEffect _crumbleEffect;
+        private ParticleEffect _crumbleEffect;
 
         protected int HealthUpgradeIncrement
         {
@@ -76,7 +76,7 @@ namespace Assets.Scripts.Towers
 
         protected virtual void Start()
         {
-            _crumbleEffect = GetComponent<DyingEffect>();
+            _crumbleEffect = GetComponent<ParticleEffect>();
             TotalValue = BuildPrice;
             LevelText.text = _level.ToString();
             Health = GetComponent<Health.Health>();

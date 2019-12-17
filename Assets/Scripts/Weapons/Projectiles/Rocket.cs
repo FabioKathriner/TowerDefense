@@ -2,17 +2,17 @@
 
 namespace Assets.Scripts.Weapons.Projectiles
 {
-    [RequireComponent(typeof(DyingEffect))]
+    [RequireComponent(typeof(ParticleEffect))]
     public class Rocket : Projectile
     {
         [SerializeField]
         private float _explosionRadius = 2f;
 
-        private DyingEffect _explosionEffect;
+        private ParticleEffect _explosionEffect;
 
         private void Awake()
         {
-            _explosionEffect = GetComponent<DyingEffect>();
+            _explosionEffect = GetComponent<ParticleEffect>();
         }
 
         private void FixedUpdate()

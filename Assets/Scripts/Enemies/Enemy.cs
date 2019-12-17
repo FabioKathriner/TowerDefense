@@ -6,7 +6,7 @@ using UnityEngine.AI;
 namespace Assets.Scripts.Enemies
 {
     [RequireComponent(typeof(Health.Health))]
-    [RequireComponent(typeof(DyingEffect))]
+    [RequireComponent(typeof(ParticleEffect))]
     public class Enemy : MonoBehaviour, IUnit
     {
         [SerializeField]
@@ -56,7 +56,7 @@ namespace Assets.Scripts.Enemies
                     bodyRb.velocity = navAgent.velocity;
                 }
 
-                var bloodEffect = body.GetComponent<DyingEffect>();
+                var bloodEffect = body.GetComponent<ParticleEffect>();
                 bloodEffect.Explode();
                 Destroy(body, 3f);
             }
