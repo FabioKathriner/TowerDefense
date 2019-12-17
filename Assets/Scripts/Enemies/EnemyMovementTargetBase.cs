@@ -3,7 +3,7 @@ using UnityEngine.AI;
 
 namespace Assets.Scripts.Enemies
 {
-    //Use the EnemeyMovements Script instead of this one.
+    [RequireComponent(typeof(NavMeshAgent))]
     public class EnemyMovementTargetBase : MonoBehaviour
     {
         
