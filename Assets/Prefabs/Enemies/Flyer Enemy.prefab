@@ -970,7 +970,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _attackPower: 10
-  _lootValue: 0
+  _lootValue: 20
   _deadBodyPrefab: {fileID: 768049493628036296, guid: cd52f725e66483146a678af32c09d699,
     type: 3}
 --- !u!114 &-3934291882973847122
