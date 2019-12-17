@@ -1,6 +1,4 @@
-﻿using System;
-using Assets.Scripts.Weapons;
-using UnityEngine;
+﻿using Assets.Scripts.Weapons;
 
 namespace Assets.Scripts.Towers
 {

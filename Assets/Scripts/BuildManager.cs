@@ -41,7 +41,7 @@ namespace Assets.Scripts
 
             if (Physics.Raycast(ray, out nonhit, 1000, IgnoreTowerMask))
             {
-                Debug.LogWarning("Can't place a Tower at this location!");
+                Debug.Log("Can't place a Tower at this location!");
                 return;
             }
 
@@ -57,6 +57,7 @@ namespace Assets.Scripts
                 if (PlayerStats.Money < buildPrice)
                 {
                     Debug.LogWarning("You don't have enough Money to build that turret!'");
+                    GameManager.Instance.Broadcast($"Insufficient funds! Missing {buildPrice - PlayerStats.Money}$");
                     return;
                 }
 
@@ -68,7 +69,7 @@ namespace Assets.Scripts
 
                 GameObject turret = Instantiate(_selectedTowerPrefab, hit.point, _selectedTowerPrefab.transform.rotation);
                 PlayerStats.Money -= buildPrice;
-                Debug.LogWarning("Tower Placed successfully");
+                Debug.Log("Tower Placed successfully");
                 Debug.Log("Tower built! Money left: " + PlayerStats.Money);
                 LeaveBuildMode();
             }

@@ -1,5 +1,4 @@
 ﻿using Assets.Scripts.Weapons;
-using UnityEngine;
 
 namespace Assets.Scripts.Towers
 {

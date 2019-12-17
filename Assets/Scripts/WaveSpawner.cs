@@ -61,6 +61,7 @@ namespace Assets.Scripts
 
             _waveIndex++;
             Debug.Log("Wave Incoming!");
+            GameManager.Instance.Broadcast("Next Wave incoming!");
 
             if (_waveIndex == _waves.Length)
             {

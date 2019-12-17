@@ -43,11 +43,30 @@ namespace Assets.Scripts
         public void GameOver()
         {
             OnGameOver?.Invoke(this, EventArgs.Empty);
+            Broadcast("GAME OVER");
         }
 
         public void StageCleared()
         {
             OnStageCleared?.Invoke(this, EventArgs.Empty);
+            Broadcast("Stage cleared!");
         }
+
+        public event EventHandler<MessageEventArgs> OnMessage;
+
+        public void Broadcast(string message)
+        {
+            OnMessage?.Invoke(this, new MessageEventArgs(message));
+        }
+    }
+
+    public class MessageEventArgs
+    {
+        public MessageEventArgs(string message)
+        {
+            Message = message;
+        }
+
+        public string Message { get; }
     }
 }
