@@ -18,6 +18,9 @@ namespace Assets.Scripts.Weapons
         [SerializeField]
         protected GameObject ProjectilePrefab;
 
+        [SerializeField]
+        protected GameObject _spawnPointObject;
+
         private int _attackDamage;
         private Projectile _projectile;
 

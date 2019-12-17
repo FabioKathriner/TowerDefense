@@ -236,9 +236,40 @@ MonoBehaviour:
   _particlesUseGravity: 1
   cubeSize: 0.2
   cubesInRow: 5
+  cubesInRowYdifferential: 2
   explosionForce: 50
   explosionRadius: 4
   explosionUpward: 0.4
+--- !u!1 &3904412216269441186
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8350123927415961541}
+  m_Layer: 15
+  m_Name: Projectile Spawn Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8350123927415961541
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3904412216269441186}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.269, z: 1.605}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1299962848015144943}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6292854478232118283
 GameObject:
   m_ObjectHideFlags: 0
@@ -602,6 +633,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4328068414793272226}
+  - {fileID: 8350123927415961541}
   m_Father: {fileID: 3759080451789721004}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -619,7 +651,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ProjectilePrefab: {fileID: 606530497101438671, guid: 9c7e2cada6c727948ba05781b61fb94a,
     type: 3}
-  _forwardOffset: 0.5
+  _spawnPointObject: {fileID: 3904412216269441186}
 --- !u!1 &8405284213165370692
 GameObject:
   m_ObjectHideFlags: 0

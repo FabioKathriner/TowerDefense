@@ -122,6 +122,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6457068190036932941}
+  - {fileID: 7306837107843417654}
   m_Father: {fileID: 6903105937129149071}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -139,7 +140,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ProjectilePrefab: {fileID: 4625311561217322498, guid: ee52755729c09094993cd27fe795399f,
     type: 3}
-  _forwardOffset: 0.5
+  _spawnPointObject: {fileID: 3578851239344379762}
+--- !u!1 &3578851239344379762
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7306837107843417654}
+  m_Layer: 15
+  m_Name: Projectile Spawn Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7306837107843417654
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3578851239344379762}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.141, y: 0, z: 1.911}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5879958882272899272}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4932611405737507254
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,6 +314,7 @@ MonoBehaviour:
   _particlesUseGravity: 1
   cubeSize: 0.2
   cubesInRow: 5
+  cubesInRowYdifferential: 2
   explosionForce: 50
   explosionRadius: 4
   explosionUpward: 0.4
