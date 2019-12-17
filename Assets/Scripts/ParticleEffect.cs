@@ -22,11 +22,14 @@ public class ParticleEffect : MonoBehaviour
     private int cubesInRow = 5;
 
     [SerializeField]
+    private int cubesInRowYdifferential = 2;
+
+    [SerializeField]
     private float explosionForce = 50f;
 
     [SerializeField]
     private float explosionRadius = 4f;
-
+    
     [SerializeField]
     private float explosionUpward = 0.4f;
     
@@ -47,7 +50,7 @@ public class ParticleEffect : MonoBehaviour
        //loop 3 times to create 5x5x5 pieces in x,y,z coordinates
        for (int x = 0; x < cubesInRow; x++)
        {
-           for (int y = 0; y < cubesInRow -2; y++)
+           for (int y = 0; y < cubesInRow - cubesInRowYdifferential; y++)
            {
                for (int z = 0; z < cubesInRow; z++)
                {
