@@ -99,11 +99,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 310332061204490999, guid: 38a0720e67ce05842a42668628f7ba92,
         type: 3}
-      propertyPath: _attackPower
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 310332061204490999, guid: 38a0720e67ce05842a42668628f7ba92,
-        type: 3}
       propertyPath: _deadBodyPrefab
       value: 
       objectReference: {fileID: 1085151066047924158, guid: c2876603f1e748848952a911c4d30af2,
