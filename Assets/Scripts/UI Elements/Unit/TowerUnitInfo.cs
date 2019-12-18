@@ -2,26 +2,40 @@
 using Assets.Scripts.Towers;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Assets.Scripts.UI_Elements.Unit
 {
     public class TowerUnitInfo : MonoBehaviour, IUnitInfo
     {
+        private const int LineSegments = 50;
+        private const string ClosestToBaseTargetingBehaviourName = "Closest to Base";
+        private const string LowestHealthTargetingBehaviourName = "Lowest Health";
+        private const string MostHealthTargetingBehaviourName = "Most Health";
+
         [SerializeField]
         private Material _lineRendererMaterial;
+
         [SerializeField]
         private GameObject _selectionContainer;
+
+        [SerializeField]
+        private GameObject _targetPanel;
+
+        [SerializeField]
+        private Text _selectedTargetBehaviour;
+
         private TargetFinder _selectedTargetFinder;
         private LineRenderer _lineRenderer;
         private Tower _selectedTower;
         private bool _isShowing;
-        private const int LineSegments = 50;
 
         private void Start()
         {
             _selectedTower = GetComponentInParent<Tower>();
             _selectedTargetFinder = GetComponentInParent<TargetFinder>();
             _selectionContainer.SetActive(false);
+            _selectedTargetBehaviour.text = ClosestToBaseTargetingBehaviourName;
         }
 
         private void Update()
@@ -39,6 +53,8 @@ namespace Assets.Scripts.UI_Elements.Unit
             _selectionContainer.SetActive(true);
             if (_selectedTargetFinder != null)
                 DrawTowerRadius();
+            else
+                _targetPanel.SetActive(false);
         }
 
         public void Hide()
@@ -50,13 +66,14 @@ namespace Assets.Scripts.UI_Elements.Unit
                 _lineRenderer.enabled = false;
         }
 
-        public void OnTargetClosestToBaseClick() => UpdateTargetingBehaviour(new ClosestToBaseTargetingBehaviour());
-        public void OnTargetLowestHealthClick() => UpdateTargetingBehaviour(new LowestHealthTargetingBehaviour());
-        public void OnTargetMostHealthClick() => UpdateTargetingBehaviour(new MostHealthTargetingBehaviour());
+        public void OnTargetClosestToBaseClick() => UpdateTargetingBehaviour(new ClosestToBaseTargetingBehaviour(), ClosestToBaseTargetingBehaviourName);
+        public void OnTargetLowestHealthClick() => UpdateTargetingBehaviour(new LowestHealthTargetingBehaviour(), LowestHealthTargetingBehaviourName);
+        public void OnTargetMostHealthClick() => UpdateTargetingBehaviour(new MostHealthTargetingBehaviour(), MostHealthTargetingBehaviourName);
 
-        private void UpdateTargetingBehaviour(ITargetingBehaviour targetingBehaviour)
+        private void UpdateTargetingBehaviour(ITargetingBehaviour targetingBehaviour, string updateText)
         {
             _selectedTargetFinder.TargetingBehaviour = targetingBehaviour;
+            _selectedTargetBehaviour.text = updateText;
             Debug.Log($"TargetingBehaviour of {_selectedTower.Name} was changed to {targetingBehaviour.GetType().Name}");
         }
 

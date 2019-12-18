@@ -9,6 +9,7 @@ namespace Assets.Scripts.Weapons
 
         public override void Fire(GameObject target)
         {
+            PlayAnimation();
             var projectile = Instantiate(ProjectilePrefab, _spawnPointObject.transform.position, transform.rotation);
             projectile.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * _initialForce, ForceMode.Impulse);
         }

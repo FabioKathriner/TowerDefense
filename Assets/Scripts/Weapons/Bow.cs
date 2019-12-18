@@ -11,6 +11,7 @@ namespace Assets.Scripts.Weapons
                 return;
 
             transform.LookAt(target.transform);
+            PlayAnimation();
             var projectile = Instantiate(ProjectilePrefab, _spawnPointObject.transform.position, transform.rotation);
             var arrow = projectile.GetComponent<Arrow>();
             if (arrow != null)
