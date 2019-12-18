@@ -25414,7 +25414,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _attackPower: 20
-  _lootValue: 50
+  _lootValue: 30
   _deadBodyPrefab: {fileID: 6008288396889567556, guid: 657172f8750457442bdfa326a3676bf1,
     type: 3}
   _rateOfFire: 1.2

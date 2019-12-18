@@ -151,7 +151,7 @@ MonoBehaviour:
   _healthUpgradeIncrement: 10
   _rateOfFire: 0.8
   _rateOfFireUpgradeIncrement: 0.1
-  _damageUpgradeIncrement: 20
+  _damageUpgradeIncrement: 10
 --- !u!114 &-1235534474826079785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,8 +164,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87ed5cad8bdcfbd4580c9a72ed575d34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 60
-  _currentHealth: 60
+  _maxHealth: 40
+  _currentHealth: 40
   _healthBar: {fileID: 3811508739496017110}
 --- !u!54 &2894480746705683181
 Rigidbody:
