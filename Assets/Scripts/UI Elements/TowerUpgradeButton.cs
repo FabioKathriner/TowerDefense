@@ -6,12 +6,19 @@ namespace Assets.Scripts.UI_Elements
     {
         protected override void OnClick(Tower tower)
         {
-            PlayerStats.Money -= tower.UpgradePrice;
-            tower.Upgrade();
-            if (tower.Level >= tower.MaxLevel)
+            if (PlayerStats.Money >= tower.UpgradePrice)
             {
-                enabled = false;
-                gameObject.SetActive(false);
+                PlayerStats.Money -= tower.UpgradePrice;
+                tower.Upgrade();
+                if (tower.Level >= tower.MaxLevel)
+                {
+                    enabled = false;
+                    gameObject.SetActive(false);
+                }
+            }
+            else
+            {
+                GameManager.Instance.Broadcast($"Insufficient funds! Missing {tower.UpgradePrice - PlayerStats.Money}$");
             }
         }
 

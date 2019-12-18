@@ -30,6 +30,7 @@ namespace Assets.Scripts.Towers
         private int _repairPrice;
 
         private ParticleEffect _crumbleEffect;
+        private int _totalValue;
 
         protected int HealthUpgradeIncrement
         {
@@ -65,12 +66,22 @@ namespace Assets.Scripts.Towers
             }
         }
 
-        public int TotalValue { get; private set; }
+        public int TotalValue
+        {
+            get => _totalValue;
+            private set
+            {
+                _totalValue = value;
+                OnTotalValueChanged?.Invoke(this, EventArgs.Empty);
+            }
+        }
+
         public int BuildPrice => _buildPrice;
 
         public int MaxLevel => _maxLevel;
 
         public event EventHandler OnRepairPriceChanged;
+        public event EventHandler OnTotalValueChanged;
 
         public Health.Health Health { get; private set; }
 

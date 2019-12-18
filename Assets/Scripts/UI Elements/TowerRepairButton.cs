@@ -19,8 +19,15 @@ namespace Assets.Scripts.UI_Elements
 
         protected override void OnClick(Tower tower)
         {
-            PlayerStats.Money -= tower.RepairPrice;
-            tower.Repair();
+            if (PlayerStats.Money >= tower.RepairPrice)
+            {
+                PlayerStats.Money -= tower.RepairPrice;
+                tower.Repair();
+            }
+            else
+            {
+                GameManager.Instance.Broadcast($"Insufficient funds! Missing {tower.RepairPrice - PlayerStats.Money}$");
+            }
         }
 
         protected override int GetNewPrice(Tower tower)
