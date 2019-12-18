@@ -11098,7 +11098,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-3616
+  m_Name: pb_Mesh-223656
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -11485,6 +11485,11 @@ PrefabInstance:
       propertyPath: _moneyText
       value: 
       objectReference: {fileID: 581680751}
+    - target: {fileID: 7321790370323833604, guid: 7d0914cb4b08db44e8c2cd141479fc16,
+        type: 3}
+      propertyPath: startMoney
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 8515071155832134594, guid: 7d0914cb4b08db44e8c2cd141479fc16,
         type: 3}
       propertyPath: m_LocalPosition.x
