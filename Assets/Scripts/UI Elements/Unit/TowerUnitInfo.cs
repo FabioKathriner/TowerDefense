@@ -89,22 +89,20 @@ namespace Assets.Scripts.UI_Elements.Unit
                 _lineRenderer.useWorldSpace = false;
                 _lineRenderer.generateLightingData = true;
                 _lineRenderer.positionCount = LineSegments + 1;
+                float x;
+                float z;
+                float angle = 20f;
+                for (int i = 0; i < (LineSegments + 1); i++)
+                {
+                    x = Mathf.Sin(Mathf.Deg2Rad * angle) * _selectedTargetFinder.Radius;
+                    z = Mathf.Cos(Mathf.Deg2Rad * angle) * _selectedTargetFinder.Radius;
+
+                    _lineRenderer.SetPosition(i, new Vector3(x, 0.1f, z));
+
+                    angle += (360f / LineSegments);
+                }
             }
 
-            float x;
-            float z;
-
-            float angle = 20f;
-
-            for (int i = 0; i < (LineSegments + 1); i++)
-            {
-                x = Mathf.Sin(Mathf.Deg2Rad * angle) * _selectedTargetFinder.Radius;
-                z = Mathf.Cos(Mathf.Deg2Rad * angle) * _selectedTargetFinder.Radius;
-
-                _lineRenderer.SetPosition(i, new Vector3(x, 0.1f, z));
-
-                angle += (360f / LineSegments);
-            }
             _lineRenderer.enabled = true;
         }
     }

@@ -160,6 +160,7 @@ GameObject:
   - component: {fileID: 7176334287865277170}
   - component: {fileID: 7176334287865277169}
   - component: {fileID: 8679804680592026035}
+  - component: {fileID: 9013978229693075984}
   m_Layer: 5
   m_Name: Enemy Unit Canvas
   m_TagString: Untagged
@@ -259,3 +260,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8577042a7de51034bbf3bc5a277d381c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &9013978229693075984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7176334287865277168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 353fb73a3e8ba2a4cb51a75cdc841668, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _lineRendererMaterial: {fileID: 2100000, guid: f5d4fff4beb9c5b4a9dc79ab85b5b8b8,
+    type: 2}
