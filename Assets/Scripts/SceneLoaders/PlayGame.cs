@@ -7,8 +7,9 @@ namespace Assets.Scripts.SceneLoaders
     {
         public void Load()
         {
-            SceneManager.LoadScene("Level Test 2");
+            SceneManager.LoadScene("Final Level 1");
         }
+
         public void OnQuit()
         {
             Application.Quit();

@@ -422,7 +422,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Keys:\t\tFunction:\n\n"
+  m_Text: "Keys:\t\t\t\tFunction:\n\n"
 --- !u!95 &9061411797199315144
 Animator:
   serializedVersion: 3
@@ -747,11 +747,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Esc\t\t\tPause/Menu\nSpace\t\tPause\nA\t\t\t\tCam goes left (Also arrow
-    left)\nS \t\t\t\tCam goes down (Also arrow down)\nD\t\t\t\tCam goes right (Also
-    arrow right)\nW\t\t\t\tCam goes up (Also arrow up)\nR\t\t\t\tRotate Towers (Select
-    Tower First)\nScroll\t\tZoom In and Zoom Out\nRight\t\tOn right mouse click cam
-    moves \n\t\t\t\t(Hold and move)"
+  m_Text: "Esc\t\t\t\t\tPause/Menu\nSpace\t\t\t\tPause\nA or \u2190\t\t\t\tCamera
+    moves left\nS or  \u2193\t\t\t\tCamera moves down\nD or \u2192\t\t\t\tCamera moves
+    right\nW or \u2191\t\t\t\tCamera moves up\nR\t\t\t\t\t\tRotate tower (in build
+    mode)\nScroll\t\t\t\tZoom in and out\nRight mouse\nclick (hold)\t\tRotate camera"
 --- !u!95 &9061411797491909542
 Animator:
   serializedVersion: 3
