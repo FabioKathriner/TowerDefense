@@ -120,7 +120,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2869298745103565431}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: -0.7071068}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -328,36 +328,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
---- !u!1 &6350040860798302079
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7057307083452575232}
-  m_Layer: 2
-  m_Name: Projectile Spawn Point
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7057307083452575232
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6350040860798302079}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.0111, z: 0.589}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 6890802344810917291}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6963031445843024910
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,7 +450,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1.4961, z: 1}
   m_Children:
   - {fileID: 7895029310031341944}
-  - {fileID: 7057307083452575232}
   m_Father: {fileID: 6017287359251677540}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -40, y: 0, z: 0}
@@ -498,7 +467,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ProjectilePrefab: {fileID: 7041471227579193664, guid: 7a1ca5af35ebbd44bac67f40605d2213,
     type: 3}
-  _spawnPointObject: {fileID: 6350040860798302079}
+  _spawnOffset: {x: 0, y: 0.5, z: 0}
   _initialForce: 30
 --- !u!1001 &6077059025487067783
 PrefabInstance:
