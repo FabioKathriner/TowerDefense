@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moneyText: {fileID: 0}
-  startMoney: 5000
+  startMoney: 300
 --- !u!114 &4495906046461001248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,6 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b2c9a6d73af53b4abb8f18c8c827762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gameSpeed: 0
 --- !u!114 &1039876595345393172
 MonoBehaviour:
   m_ObjectHideFlags: 0

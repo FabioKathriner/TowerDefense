@@ -932,8 +932,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87ed5cad8bdcfbd4580c9a72ed575d34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 60
-  _currentHealth: 60
+  _maxHealth: 120
+  _currentHealth: 120
   _healthBar: {fileID: 6244016207739190368}
 --- !u!195 &5015706287636352232
 NavMeshAgent:
