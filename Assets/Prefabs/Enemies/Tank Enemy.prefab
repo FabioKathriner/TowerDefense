@@ -25364,8 +25364,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87ed5cad8bdcfbd4580c9a72ed575d34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 150
-  _currentHealth: 150
+  _maxHealth: 180
+  _currentHealth: 180
   _healthBar: {fileID: 3186078248561941540}
 --- !u!114 &3215381073598440641
 MonoBehaviour:
@@ -25413,8 +25413,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5d772405bd8f654ba3f2e2d805192e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attackPower: 10
-  _lootValue: 40
+  _attackPower: 20
+  _lootValue: 50
   _deadBodyPrefab: {fileID: 6008288396889567556, guid: 657172f8750457442bdfa326a3676bf1,
     type: 3}
   _rateOfFire: 1.2
@@ -63726,11 +63726,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2317368896312824662}
     m_Modifications:
-    - target: {fileID: 7176334287865277168, guid: 15d82f54a91a0094587e9b5373c666ef,
-        type: 3}
-      propertyPath: m_Name
-      value: Enemy Unit Canvas
-      objectReference: {fileID: 0}
     - target: {fileID: 7176334287865277164, guid: 15d82f54a91a0094587e9b5373c666ef,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -63835,6 +63830,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176334287865277168, guid: 15d82f54a91a0094587e9b5373c666ef,
+        type: 3}
+      propertyPath: m_Name
+      value: Enemy Unit Canvas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15d82f54a91a0094587e9b5373c666ef, type: 3}

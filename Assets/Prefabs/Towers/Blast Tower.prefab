@@ -52,15 +52,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb3217222d6bda44abf2393658d1faba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _level: 0
+  _level: 1
   _maxLevel: 3
-  _buildPrice: 250
-  _upgradePrice: 50
+  _buildPrice: 125
+  _upgradePrice: 85
   LevelText: {fileID: 7181053087406653714}
   _healthUpgradeIncrement: 20
   _rateOfFire: 0.8
   _rateOfFireUpgradeIncrement: 0.1
-  _damageUpgradeIncrement: 5
+  _damageUpgradeIncrement: 10
 --- !u!114 &109877767962799933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73,7 +73,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3677abab50d64dc4ea6fbabffa3a32c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attackDamage: 12
+  _attackDamage: 20
 --- !u!114 &-8225741278730024665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86,8 +86,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87ed5cad8bdcfbd4580c9a72ed575d34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 150
-  _currentHealth: 150
+  _maxHealth: 80
+  _currentHealth: 80
   _healthBar: {fileID: 7271153271825803154}
 --- !u!54 &488559009871832508
 Rigidbody:
@@ -156,6 +156,7 @@ MonoBehaviour:
   _particlesUseGravity: 1
   cubeSize: 0.2
   cubesInRow: 5
+  cubesInRowYdifferential: 2
   explosionForce: 50
   explosionRadius: 4
   explosionUpward: 0.4
@@ -2525,11 +2526,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8863311807982871318}
     m_Modifications:
-    - target: {fileID: 6967983405962343952, guid: 30bd697564d1a3d488d6a1e2d059e71a,
-        type: 3}
-      propertyPath: m_Name
-      value: Tower Unit Canvas
-      objectReference: {fileID: 0}
     - target: {fileID: 6967983405962343948, guid: 30bd697564d1a3d488d6a1e2d059e71a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2634,6 +2630,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6967983405962343952, guid: 30bd697564d1a3d488d6a1e2d059e71a,
+        type: 3}
+      propertyPath: m_Name
+      value: Tower Unit Canvas
       objectReference: {fileID: 0}
     - target: {fileID: 7850801202827029163, guid: 30bd697564d1a3d488d6a1e2d059e71a,
         type: 3}

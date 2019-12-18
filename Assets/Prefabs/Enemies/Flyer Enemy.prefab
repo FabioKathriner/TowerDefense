@@ -945,7 +945,7 @@ NavMeshAgent:
   m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 6
+  m_Speed: 4
   m_Acceleration: 1000
   avoidancePriority: 50
   m_AngularSpeed: 1000
@@ -970,7 +970,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _attackPower: 10
-  _lootValue: 20
+  _lootValue: 25
   _deadBodyPrefab: {fileID: 768049493628036296, guid: cd52f725e66483146a678af32c09d699,
     type: 3}
 --- !u!114 &-3934291882973847122
@@ -1006,11 +1006,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8355096478231934016}
     m_Modifications:
-    - target: {fileID: 7176334287865277168, guid: 15d82f54a91a0094587e9b5373c666ef,
-        type: 3}
-      propertyPath: m_Name
-      value: Enemy Unit Canvas
-      objectReference: {fileID: 0}
     - target: {fileID: 7176334287865277164, guid: 15d82f54a91a0094587e9b5373c666ef,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1115,6 +1110,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176334287865277168, guid: 15d82f54a91a0094587e9b5373c666ef,
+        type: 3}
+      propertyPath: m_Name
+      value: Enemy Unit Canvas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15d82f54a91a0094587e9b5373c666ef, type: 3}

@@ -63,7 +63,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 30
-  _damage: 70
+  _damage: 40
   _explosionRadius: 2
 --- !u!114 &6598535272852794726
 MonoBehaviour:
@@ -83,6 +83,7 @@ MonoBehaviour:
   _particlesUseGravity: 0
   cubeSize: 0.05
   cubesInRow: 4
+  cubesInRowYdifferential: 2
   explosionForce: 10
   explosionRadius: 4
   explosionUpward: 0.1

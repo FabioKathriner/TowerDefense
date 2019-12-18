@@ -145,15 +145,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bb35abf71c3f1d4ebb2e84be4aa17b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _level: 0
+  _level: 1
   _maxLevel: 3
-  _buildPrice: 100
-  _upgradePrice: 50
+  _buildPrice: 150
+  _upgradePrice: 100
   LevelText: {fileID: 1570271481369897374}
   _healthUpgradeIncrement: 20
   _rateOfFire: 0.8
   _rateOfFireUpgradeIncrement: 0.1
-  _damageUpgradeIncrement: 5
+  _damageUpgradeIncrement: 10
 --- !u!114 &781216930756461645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,8 +166,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87ed5cad8bdcfbd4580c9a72ed575d34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 100
-  _currentHealth: 100
+  _maxHealth: 80
+  _currentHealth: 80
   _healthBar: {fileID: 1336112561253945118}
 --- !u!54 &8877067048122164034
 Rigidbody:
@@ -1465,11 +1465,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3759080451789721004}
     m_Modifications:
-    - target: {fileID: 6967983405962343952, guid: 30bd697564d1a3d488d6a1e2d059e71a,
-        type: 3}
-      propertyPath: m_Name
-      value: Tower Unit Canvas
-      objectReference: {fileID: 0}
     - target: {fileID: 6967983405962343948, guid: 30bd697564d1a3d488d6a1e2d059e71a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1574,6 +1569,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6967983405962343952, guid: 30bd697564d1a3d488d6a1e2d059e71a,
+        type: 3}
+      propertyPath: m_Name
+      value: Tower Unit Canvas
       objectReference: {fileID: 0}
     - target: {fileID: 7850801202827029163, guid: 30bd697564d1a3d488d6a1e2d059e71a,
         type: 3}
