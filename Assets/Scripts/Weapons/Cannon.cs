@@ -11,6 +11,7 @@ namespace Assets.Scripts.Weapons
                 return;
 
             transform.LookAt(target.transform);
+            PlayAnimation();
             var projectile = Instantiate(ProjectilePrefab, _spawnPointObject.transform.position, transform.rotation);
             var script = projectile.GetComponent<GuidedMissile>();
             if (script != null)
