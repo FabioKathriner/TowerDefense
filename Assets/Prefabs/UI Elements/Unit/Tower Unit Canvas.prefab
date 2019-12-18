@@ -1671,6 +1671,7 @@ MonoBehaviour:
   _lineRendererMaterial: {fileID: 2100000, guid: 66dc9a95e6bdebd4aa82370f2094f957,
     type: 2}
   _selectionContainer: {fileID: 5088281405631848970}
+  _targetPanel: {fileID: 2113758253870387710}
   _selectedTargetBehaviour: {fileID: 7070851294346689865}
 --- !u!1001 &8055316996821446293
 PrefabInstance:

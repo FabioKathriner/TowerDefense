@@ -20,6 +20,9 @@ namespace Assets.Scripts.UI_Elements.Unit
         private GameObject _selectionContainer;
 
         [SerializeField]
+        private GameObject _targetPanel;
+
+        [SerializeField]
         private Text _selectedTargetBehaviour;
 
         private TargetFinder _selectedTargetFinder;
@@ -50,6 +53,8 @@ namespace Assets.Scripts.UI_Elements.Unit
             _selectionContainer.SetActive(true);
             if (_selectedTargetFinder != null)
                 DrawTowerRadius();
+            else
+                _targetPanel.SetActive(false);
         }
 
         public void Hide()
