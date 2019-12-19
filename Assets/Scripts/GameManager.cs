@@ -27,22 +27,13 @@ namespace Assets.Scripts
 
         private void Awake()
         {
-            //if (Instance == null)
-            {
-                Instance = this;
-                BuildManager = GetComponent<BuildManager>();
-                PlayerStats = GetComponent<PlayerStats>();
-                WaveSpawner = GetComponent<WaveSpawner>();
-                UnitSelector = GetComponent<UnitSelector>();
-                TimeManager = GetComponent<TimeManager>();
-                MusicController = GetComponent<MusicController>();
-            }
-            //else if (Instance != this)
-            {
-                Debug.LogWarning($"There is more than one {nameof(GameManager)} in the current scene!");
-                //Destroy(gameObject);
-            }
-            //DontDestroyOnLoad(Instance);
+            Instance = this;
+            BuildManager = GetComponent<BuildManager>();
+            PlayerStats = GetComponent<PlayerStats>();
+            WaveSpawner = GetComponent<WaveSpawner>();
+            UnitSelector = GetComponent<UnitSelector>();
+            TimeManager = GetComponent<TimeManager>();
+            MusicController = GetComponent<MusicController>();
         }
 
         private void Update()
