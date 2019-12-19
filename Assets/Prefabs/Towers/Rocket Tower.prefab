@@ -330,7 +330,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: 31a43392a533d8b4c898122127afe284, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -711,7 +711,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: 31a43392a533d8b4c898122127afe284, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1465,6 +1465,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3759080451789721004}
     m_Modifications:
+    - target: {fileID: 6967983405962343952, guid: 30bd697564d1a3d488d6a1e2d059e71a,
+        type: 3}
+      propertyPath: m_Name
+      value: Tower Unit Canvas
+      objectReference: {fileID: 0}
     - target: {fileID: 6967983405962343948, guid: 30bd697564d1a3d488d6a1e2d059e71a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1569,11 +1574,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6967983405962343952, guid: 30bd697564d1a3d488d6a1e2d059e71a,
-        type: 3}
-      propertyPath: m_Name
-      value: Tower Unit Canvas
       objectReference: {fileID: 0}
     - target: {fileID: 7850801202827029163, guid: 30bd697564d1a3d488d6a1e2d059e71a,
         type: 3}
