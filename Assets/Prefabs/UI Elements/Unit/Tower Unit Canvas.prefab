@@ -1680,6 +1680,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9042213627228220830}
     m_Modifications:
+    - target: {fileID: 232386423041524800, guid: 95396b93cbf18e94cac73fe5a6abfe73,
+        type: 3}
+      propertyPath: m_Name
+      value: Tower Upgrade Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 232386423041524800, guid: 95396b93cbf18e94cac73fe5a6abfe73,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 232386423041524799, guid: 95396b93cbf18e94cac73fe5a6abfe73,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1810,16 +1820,6 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 232386423041524800, guid: 95396b93cbf18e94cac73fe5a6abfe73,
-        type: 3}
-      propertyPath: m_Name
-      value: Tower Upgrade Button
-      objectReference: {fileID: 0}
-    - target: {fileID: 232386423041524800, guid: 95396b93cbf18e94cac73fe5a6abfe73,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 232386422827586282, guid: 95396b93cbf18e94cac73fe5a6abfe73,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1874,6 +1874,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2261782069940029047, guid: bd243328be03bf54191c9b70b3453395,
+        type: 3}
+      propertyPath: m_Name
+      value: Tower Unit Canvas
+      objectReference: {fileID: 0}
     - target: {fileID: 2261782069940029035, guid: bd243328be03bf54191c9b70b3453395,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1979,10 +1984,20 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 2261782069940029047, guid: bd243328be03bf54191c9b70b3453395,
+    - target: {fileID: 2261782070137468470, guid: bd243328be03bf54191c9b70b3453395,
         type: 3}
-      propertyPath: m_Name
-      value: Tower Unit Canvas
+      propertyPath: m_Color.r
+      value: 0.051383477
+      objectReference: {fileID: 0}
+    - target: {fileID: 2261782070137468470, guid: bd243328be03bf54191c9b70b3453395,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2261782070137468470, guid: bd243328be03bf54191c9b70b3453395,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.4716981
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd243328be03bf54191c9b70b3453395, type: 3}
