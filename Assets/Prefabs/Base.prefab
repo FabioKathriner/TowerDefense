@@ -1826,6 +1826,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 877489671351620442}
     m_Modifications:
+    - target: {fileID: 2261782069940029047, guid: bd243328be03bf54191c9b70b3453395,
+        type: 3}
+      propertyPath: m_Name
+      value: UnitCanvas
+      objectReference: {fileID: 0}
     - target: {fileID: 2261782069940029035, guid: bd243328be03bf54191c9b70b3453395,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1931,10 +1936,20 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 2261782069940029047, guid: bd243328be03bf54191c9b70b3453395,
+    - target: {fileID: 2261782070137468470, guid: bd243328be03bf54191c9b70b3453395,
         type: 3}
-      propertyPath: m_Name
-      value: UnitCanvas
+      propertyPath: m_Color.r
+      value: 0.050980393
+      objectReference: {fileID: 0}
+    - target: {fileID: 2261782070137468470, guid: bd243328be03bf54191c9b70b3453395,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2261782070137468470, guid: bd243328be03bf54191c9b70b3453395,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.47058824
       objectReference: {fileID: 0}
     - target: {fileID: 3700582143482569178, guid: bd243328be03bf54191c9b70b3453395,
         type: 3}
