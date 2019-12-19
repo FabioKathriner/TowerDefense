@@ -8,10 +8,18 @@ namespace Assets.Scripts.Weapons
         [SerializeField]
         private int _attackDamage = 10;
 
+        private Animator _animator;
+
+        private void Awake()
+        {
+            _animator = GetComponentInChildren<Animator>();
+        }
+
         public void Fire(GameObject target)
         {
             if (target == null)
                 return;
+            _animator.SetTrigger("Fire");
             var health = target.GetComponentInParent<Health.Health>();
             if (health != null)
                 health.TakeDamage(AttackDamage);
