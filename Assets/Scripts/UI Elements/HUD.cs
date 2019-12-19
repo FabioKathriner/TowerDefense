@@ -30,6 +30,7 @@ public class HUD : MonoBehaviour
 
     public void OnRestartClick()
     {
+        GameManager.Instance.TimeManager.Resume();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 

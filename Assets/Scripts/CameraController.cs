@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Assets.Scripts
 {
@@ -20,6 +21,16 @@ namespace Assets.Scripts
         public void Start()
         {
             _currentDeltaTime = Time.deltaTime;
+            GameManager.Instance.OnGameOver += OnGameOver;
+        }
+
+        private void OnGameOver(object sender, EventArgs e)
+        {
+            var audioSources = GetComponentsInChildren<AudioSource>();
+            foreach (var audioSource in audioSources)
+            {
+                audioSource.Stop();
+            }
         }
 
         // Update is called once per frame
