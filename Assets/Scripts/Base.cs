@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using Assets.Scripts.Enemies;
-using Assets.Scripts.UI_Elements.Unit;
 using UnityEngine;
 
 namespace Assets.Scripts
@@ -10,13 +9,16 @@ namespace Assets.Scripts
     public class Base : MonoBehaviour, IUnit
     {
         private bool _isEnemyClose;
+        private AudioSource _deathSound;
         public Health.Health Health { get; private set; }
         public static Base Instance { get; private set; }
 
         private void Awake()
         {
+            _deathSound = GetComponent<AudioSource>();
             Health = GetComponent<Health.Health>();
             Health.OnDie += OnBaseDestroyed;
+            Health.OnDamage += (sender, args) => _deathSound.Play();
 
             if (Instance == null)
             {
