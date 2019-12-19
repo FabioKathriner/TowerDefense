@@ -1198,3 +1198,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _radius: 15
   _material: {fileID: 2100000, guid: 66dc9a95e6bdebd4aa82370f2094f957, type: 2}
+  _showInitially: 1

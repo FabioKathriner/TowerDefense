@@ -63,6 +63,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _radius: 7
   _material: {fileID: 2100000, guid: 66dc9a95e6bdebd4aa82370f2094f957, type: 2}
+  _showInitially: 1
 --- !u!1 &5243447262757541490
 GameObject:
   m_ObjectHideFlags: 0
