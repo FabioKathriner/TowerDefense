@@ -10,7 +10,7 @@ namespace Assets.Scripts
         // Start is called before the first frame update
         public void Load()
         {
-            SceneManager.LoadScene("Play");
+            SceneManager.LoadScene("Main Menu");
         }
 
         // Update is called once per frame
@@ -19,7 +19,7 @@ namespace Assets.Scripts
             timer -= Time.deltaTime;
 
             if (timer <= 0) {
-                SceneManager.LoadScene("Play");
+                SceneManager.LoadScene("Main Menu");
             }
         }
     }
