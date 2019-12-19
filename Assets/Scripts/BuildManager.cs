@@ -82,6 +82,7 @@ namespace Assets.Scripts
             _selectedTowerPreview = Instantiate(previewPrefab);
             _selectedTowerPrefab = actualPrefab;
             _isInBuildMode = true;
+            GameManager.Instance.MusicController.EnterBuildMode();
         }
 
         private void LeaveBuildMode()
@@ -89,6 +90,7 @@ namespace Assets.Scripts
             _isInBuildMode = false;
             _selectedTowerPrefab = null;
             _selectedTowerPreview = null;
+            GameManager.Instance.MusicController.ExitBuildMode();
         }
     }
 }

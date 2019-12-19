@@ -467,7 +467,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 8515071154103601804}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1778820893}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e5c4278e8c9c2b747b52f78a2056ddb1, type: 3}
@@ -671,7 +671,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 8515071154103601804}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1778820893}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 02ae7929d519b0446a0db0423fb33b9d, type: 3}
@@ -11704,6 +11704,37 @@ Transform:
   m_Father: {fileID: 1670261726}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1778820893 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8515071155832134593, guid: 7d0914cb4b08db44e8c2cd141479fc16,
+    type: 3}
+  m_PrefabInstance: {fileID: 8515071154103601804}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1778820898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778820893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37d95e47d9693c843bc3cddf8985cc93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outOfAction: {fileID: 24500006, guid: ed32a64a0fad6eb449d317b5dc64ef2c, type: 2}
+  inAction: {fileID: 711380827521390857, guid: ed32a64a0fad6eb449d317b5dc64ef2c, type: 2}
+  outOfBuildMode: {fileID: 24500006, guid: ed32a64a0fad6eb449d317b5dc64ef2c, type: 2}
+  inBuildMode: {fileID: -7021870257762147234, guid: ed32a64a0fad6eb449d317b5dc64ef2c,
+    type: 2}
+  outOfCloseAction: {fileID: 24500006, guid: ed32a64a0fad6eb449d317b5dc64ef2c, type: 2}
+  inCloseAction: {fileID: -5471312485727929253, guid: ed32a64a0fad6eb449d317b5dc64ef2c,
+    type: 2}
+  outOfActionBuildMode: {fileID: 711380827521390857, guid: ed32a64a0fad6eb449d317b5dc64ef2c,
+    type: 2}
+  inActionBuildMode: {fileID: -6316931312846882246, guid: ed32a64a0fad6eb449d317b5dc64ef2c,
+    type: 2}
+  bpm: 128
 --- !u!1001 &1781197158
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12925,7 +12956,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 8515071154103601804}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1778820893}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7b2c9a6d73af53b4abb8f18c8c827762, type: 3}

@@ -111,6 +111,7 @@ namespace Assets.Scripts.Towers
         private void OnDamage(object sender, EventArgs e)
         {
             RepairPrice = (int) (BuildPrice / (float)Health.MaxHealth * (Health.MaxHealth - Health.CurrentHealth) * 0.9);
+            GameManager.Instance.MusicController.EnterAction();
         }
 
         private void OnDie(object sender, EventArgs e)

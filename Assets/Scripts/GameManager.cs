@@ -9,6 +9,7 @@ namespace Assets.Scripts
     [RequireComponent(typeof(WaveSpawner))]
     [RequireComponent(typeof(UnitSelector))]
     [RequireComponent(typeof(TimeManager))]
+    [RequireComponent(typeof(MusicController))]
     public class GameManager : MonoBehaviour
     {
         public static GameManager Instance { get; private set; }
@@ -17,6 +18,7 @@ namespace Assets.Scripts
         public WaveSpawner WaveSpawner { get; private set; }
         public UnitSelector UnitSelector { get; private set; }
         public TimeManager TimeManager { get; private set; }
+        public MusicController MusicController { get; private set; }
 
         public event EventHandler OnGameOver;
         public event EventHandler OnStageCleared;
@@ -31,6 +33,7 @@ namespace Assets.Scripts
                 WaveSpawner = GetComponent<WaveSpawner>();
                 UnitSelector = GetComponent<UnitSelector>();
                 TimeManager = GetComponent<TimeManager>();
+                MusicController = GetComponent<MusicController>();
             }
             else if (Instance != this)
             {

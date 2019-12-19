@@ -38,6 +38,7 @@ namespace Assets.Scripts
 
             if (_countdown <= 0f)
             {
+                GameManager.Instance.MusicController.ExitAction();
                 StartCoroutine(SpawnWave());
                 _countdown = _timeBetweenWaves;
                 return;

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7321790370323833604}
   - component: {fileID: 4495906046461001248}
   - component: {fileID: 1039876595345393172}
+  - component: {fileID: 4773723176264995587}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -125,3 +126,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1ed8f7112d5dd948a9f8808ba5ab310, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4773723176264995587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8515071155832134593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37d95e47d9693c843bc3cddf8985cc93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outOfAction: {fileID: 24500006, guid: ed32a64a0fad6eb449d317b5dc64ef2c, type: 2}
+  inAction: {fileID: 711380827521390857, guid: ed32a64a0fad6eb449d317b5dc64ef2c, type: 2}
+  outOfBuildMode: {fileID: 24500006, guid: ed32a64a0fad6eb449d317b5dc64ef2c, type: 2}
+  inBuildMode: {fileID: -7021870257762147234, guid: ed32a64a0fad6eb449d317b5dc64ef2c,
+    type: 2}
+  outOfCloseAction: {fileID: 24500006, guid: ed32a64a0fad6eb449d317b5dc64ef2c, type: 2}
+  inCloseAction: {fileID: -5471312485727929253, guid: ed32a64a0fad6eb449d317b5dc64ef2c,
+    type: 2}
+  outOfActionBuildMode: {fileID: 711380827521390857, guid: ed32a64a0fad6eb449d317b5dc64ef2c,
+    type: 2}
+  inActionBuildMode: {fileID: -6316931312846882246, guid: ed32a64a0fad6eb449d317b5dc64ef2c,
+    type: 2}
+  bpm: 128

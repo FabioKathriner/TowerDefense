@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Assets.Scripts.Enemies;
 using Assets.Scripts.UI_Elements.Unit;
 using UnityEngine;
@@ -8,6 +9,7 @@ namespace Assets.Scripts
     [RequireComponent(typeof(Health.Health))]
     public class Base : MonoBehaviour, IUnit
     {
+        private bool _isEnemyClose;
         public Health.Health Health { get; private set; }
         public static Base Instance { get; private set; }
 
@@ -24,6 +26,24 @@ namespace Assets.Scripts
             {
                 Debug.LogWarning($"There is more than one {nameof(Base)} in the current scene!");
                 Destroy(gameObject);
+            }
+        }
+
+        private void Update()
+        {
+            var enemies = GameObject.FindGameObjectsWithTag(Tags.Enemy);
+            if (enemies.Any(x => Vector3.Distance(x.transform.position, transform.position) < 50))
+            {
+                if (!_isEnemyClose)
+                {
+                    GameManager.Instance.MusicController.EnterCloseAction();
+                    _isEnemyClose = true;
+                }
+            }
+            else
+            {
+                GameManager.Instance.MusicController.ExitCloseAction();
+                _isEnemyClose = false;
             }
         }
 
