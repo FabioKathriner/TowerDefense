@@ -16,11 +16,9 @@ namespace Assets.Scripts
         [SerializeField] private float rotateSpeed = 10; // mouse down rotation speed about x and y axess
 
         private Vector3 _lastMousePosition;
-        private float _currentDeltaTime;
 
         public void Start()
         {
-            _currentDeltaTime = Time.deltaTime;
             GameManager.Instance.OnGameOver += OnGameOver;
         }
 
@@ -38,22 +36,22 @@ namespace Assets.Scripts
         {
             if (Input.GetKey("w") || (Input.GetKey("up")))
             {
-                transform.Translate(Vector3.forward * panSpeed * _currentDeltaTime, Space.Self);
+                transform.Translate(Vector3.forward * panSpeed * Time.deltaTime, Space.Self);
             }
 
             if (Input.GetKey("s") || Input.GetKey("down"))
             {
-                transform.Translate(Vector3.back * panSpeed * _currentDeltaTime, Space.Self);
+                transform.Translate(Vector3.back * panSpeed * Time.deltaTime, Space.Self);
             }
 
             if (Input.GetKey("d") || Input.GetKey("right"))
             {
-                transform.Translate(Vector3.right * panSpeed * _currentDeltaTime, Space.Self);
+                transform.Translate(Vector3.right * panSpeed * Time.deltaTime, Space.Self);
             }
 
             if (Input.GetKey("a") || Input.GetKey("left"))
             {
-                transform.Translate(Vector3.left * panSpeed * _currentDeltaTime, Space.Self);
+                transform.Translate(Vector3.left * panSpeed * Time.deltaTime, Space.Self);
             }
 
             if (Input.GetMouseButton(1))
@@ -70,7 +68,7 @@ namespace Assets.Scripts
                 else
                     mouseDelta = Vector3.zero;
 
-                var rotation = Vector3.up * _currentDeltaTime * rotateSpeed * mouseDelta.x;
+                var rotation = Vector3.up * Time.deltaTime * rotateSpeed * mouseDelta.x;
                 rotation.x = 0;
                 rotation.z = 0;
                 transform.Rotate(rotation, Space.Self);
@@ -80,7 +78,7 @@ namespace Assets.Scripts
                 transform.rotation = Quaternion.Euler(rotation);
 
 
-                var cameraRotation = Vector3.left * _currentDeltaTime * rotateSpeed * mouseDelta.y;
+                var cameraRotation = Vector3.left * Time.deltaTime * rotateSpeed * mouseDelta.y;
                 cameraRotation.y = 0;
                 cameraRotation.z = 0;
                 Camera.main.transform.Rotate(cameraRotation, Space.Self);
@@ -94,7 +92,7 @@ namespace Assets.Scripts
             float scroll = Input.GetAxis("Mouse ScrollWheel");
 
             Vector3 pos = transform.position;
-            pos.y -= scroll * 500 * scrollSpeed * _currentDeltaTime;
+            pos.y -= scroll * 500 * scrollSpeed * Time.deltaTime;
             pos.y = Mathf.Clamp(pos.y, minY, maxY);
 
             transform.position = pos;
