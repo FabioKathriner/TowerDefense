@@ -83,7 +83,7 @@ namespace Assets.Scripts
             }
             else
             {
-                SceneManager.LoadScene(nextSceneBuildIndex + 1);
+                SceneManager.LoadScene(nextSceneBuildIndex);
             }
         }
 
