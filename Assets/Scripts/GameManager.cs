@@ -27,7 +27,7 @@ namespace Assets.Scripts
 
         private void Awake()
         {
-            if (Instance == null)
+            //if (Instance == null)
             {
                 Instance = this;
                 BuildManager = GetComponent<BuildManager>();
@@ -37,12 +37,12 @@ namespace Assets.Scripts
                 TimeManager = GetComponent<TimeManager>();
                 MusicController = GetComponent<MusicController>();
             }
-            else if (Instance != this)
+            //else if (Instance != this)
             {
                 Debug.LogWarning($"There is more than one {nameof(GameManager)} in the current scene!");
-                Destroy(gameObject);
+                //Destroy(gameObject);
             }
-            DontDestroyOnLoad(Instance);
+            //DontDestroyOnLoad(Instance);
         }
 
         private void Update()

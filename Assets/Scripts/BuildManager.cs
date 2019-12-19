@@ -54,10 +54,11 @@ namespace Assets.Scripts
             if (Input.GetMouseButton(0))
             {
                 var buildPrice = _selectedTowerPrefab.GetComponent<Tower>().BuildPrice;
-                if (PlayerStats.Money < buildPrice)
+                var currentMoney = GameManager.Instance.PlayerStats.Money;
+                if (currentMoney < buildPrice)
                 {
                     Debug.LogWarning("You don't have enough Money to build that turret!'");
-                    GameManager.Instance.Broadcast($"Insufficient funds! Missing {buildPrice - PlayerStats.Money}$");
+                    GameManager.Instance.Broadcast($"Insufficient funds! Missing {buildPrice - currentMoney}$");
                     return;
                 }
 
@@ -68,9 +69,9 @@ namespace Assets.Scripts
                 }
 
                 GameObject turret = Instantiate(_selectedTowerPrefab, hit.point, _selectedTowerPrefab.transform.rotation);
-                PlayerStats.Money -= buildPrice;
+                GameManager.Instance.PlayerStats.Money -= buildPrice;
                 Debug.Log("Tower Placed successfully");
-                Debug.Log("Tower built! Money left: " + PlayerStats.Money);
+                Debug.Log("Tower built! Money left: " + currentMoney);
                 EnterBuildMode(_selectedTowerPreview, _selectedTowerPrefab);
             }
         }

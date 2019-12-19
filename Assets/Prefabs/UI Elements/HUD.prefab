@@ -952,6 +952,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameoverPanel: {fileID: 7955456764641998224}
+  _moneyText: {fileID: 578478873282054282}
 --- !u!1 &2600000030954435064
 GameObject:
   m_ObjectHideFlags: 0

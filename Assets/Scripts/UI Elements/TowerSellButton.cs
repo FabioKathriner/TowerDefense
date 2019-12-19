@@ -19,7 +19,7 @@ namespace Assets.Scripts.UI_Elements
         protected override void OnClick(Tower tower)
         {
             tower.Health.Die();
-            PlayerStats.Money += GetSellValue(tower);
+            GameManager.Instance.PlayerStats.Money += GetSellValue(tower);
         }
 
         protected override int GetNewPrice(Tower tower) => GetSellValue(tower);

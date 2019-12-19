@@ -84,7 +84,7 @@ namespace Assets.Scripts
         {
             _enemyAliveCount--;
             var enemy = ((Enemy) sender);
-            PlayerStats.Money += enemy.LootValue; // TODO: Simplify enemy death
+            GameManager.Instance.PlayerStats.Money += enemy.LootValue; // TODO: Simplify enemy death
             enemy.OnDie -= OnEnemyDied;
         }
     }

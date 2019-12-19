@@ -6,12 +6,9 @@ namespace Assets.Scripts
 {
     public class PlayerStats : MonoBehaviour
     {
-        [SerializeField]
-        private Text _moneyText;
+        public event EventHandler OnMoneyChanged;
 
-        private static event EventHandler OnMoneyChanged;
-
-        public static int Money
+        public int Money
         {
             get => _money;
             set
@@ -23,18 +20,12 @@ namespace Assets.Scripts
 
         public int startMoney = 1000;
 
-        private static int _money;
+        private int _money;
 
         // Start is called before the first frame update
         void Start()
         {
-            OnMoneyChanged += MoneyChanged;
             Money = startMoney;
-        }
-
-        private void MoneyChanged(object sender, EventArgs e)
-        {
-            _moneyText.text = $"{_money.ToString()}$";
         }
     }
 }

@@ -6,9 +6,9 @@ namespace Assets.Scripts.UI_Elements
     {
         protected override void OnClick(Tower tower)
         {
-            if (PlayerStats.Money >= tower.UpgradePrice)
+            if (GameManager.Instance.PlayerStats.Money >= tower.UpgradePrice)
             {
-                PlayerStats.Money -= tower.UpgradePrice;
+                GameManager.Instance.PlayerStats.Money -= tower.UpgradePrice;
                 tower.Upgrade();
                 if (tower.Level >= tower.MaxLevel)
                 {
@@ -18,7 +18,7 @@ namespace Assets.Scripts.UI_Elements
             }
             else
             {
-                GameManager.Instance.Broadcast($"Insufficient funds! Missing {tower.UpgradePrice - PlayerStats.Money}$");
+                GameManager.Instance.Broadcast($"Insufficient funds! Missing {tower.UpgradePrice - GameManager.Instance.PlayerStats.Money}$");
             }
         }
 
