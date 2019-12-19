@@ -41,7 +41,7 @@ namespace Assets.Scripts
                 Pause();
         }
 
-        private void Resume()
+        public void Resume()
         {
             Time.timeScale = SpeedNormal;
             Time.fixedDeltaTime = this._fixedDeltaTime * Time.timeScale;
@@ -49,7 +49,7 @@ namespace Assets.Scripts
             _gameSpeed = GameSpeed.Normal;
         }
 
-        private void Pause()
+        public void Pause()
         {
             Time.timeScale = SpeedPaused;
             Time.fixedDeltaTime = this._fixedDeltaTime * Time.timeScale;

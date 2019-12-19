@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections;
 using Assets.Scripts.UI_Elements.Unit;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Assets.Scripts
 {
@@ -35,7 +37,7 @@ namespace Assets.Scripts
                 TimeManager = GetComponent<TimeManager>();
                 MusicController = GetComponent<MusicController>();
             }
-            else if (Instance != this)
+            //else if (Instance != this)
             {
                 Debug.LogWarning($"There is more than one {nameof(GameManager)} in the current scene!");
                 Destroy(gameObject);
@@ -43,9 +45,22 @@ namespace Assets.Scripts
             DontDestroyOnLoad(Instance);
         }
 
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.N))
+                StageCleared();
+        }
+
         public void GameOver()
         {
             OnGameOver?.Invoke(this, EventArgs.Empty);
+            var towers = GameObject.FindGameObjectsWithTag(Tags.Tower);
+            foreach (var tower in towers)
+            {
+                var hp = tower.GetComponent<Health.Health>();
+                hp.Die();
+            }
+            TimeManager.Pause();
             Broadcast("GAME OVER");
         }
 
@@ -53,6 +68,23 @@ namespace Assets.Scripts
         {
             OnStageCleared?.Invoke(this, EventArgs.Empty);
             Broadcast("Stage cleared!");
+            StartCoroutine(LoadNextLevel());
+        }
+
+        private IEnumerator LoadNextLevel()
+        {
+            yield return new WaitForSeconds(5f);
+
+            var nextSceneBuildIndex = SceneManager.GetActiveScene().buildIndex + 1;
+            if (nextSceneBuildIndex >= SceneManager.sceneCountInBuildSettings)
+            {
+                Broadcast("Victory");
+                SceneManager.LoadScene("Main Menu");
+            }
+            else
+            {
+                SceneManager.LoadScene(nextSceneBuildIndex + 1);
+            }
         }
 
         public event EventHandler<MessageEventArgs> OnMessage;

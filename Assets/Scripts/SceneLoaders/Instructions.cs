@@ -13,7 +13,7 @@ namespace Assets.Scripts.SceneLoaders
 
         public void LoadPlay()
         {
-            SceneManager.LoadScene("Play");
+            SceneManager.LoadScene("Main Menu");
         }
     }
 }

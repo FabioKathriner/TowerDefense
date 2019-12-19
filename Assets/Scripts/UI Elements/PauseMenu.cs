@@ -19,22 +19,28 @@ namespace Assets.Scripts.UI_Elements
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                _timeManager.PauseResume();
-                _pauseMenuUi.SetActive(_timeManager.GameSpeed == GameSpeed.Paused);
+                _timeManager.Pause();
+                _pauseMenuUi.SetActive(true);
             }
         
         }
 
         public void OnSettingsClick()
         {
-            _timeManager.PauseResume();
-            _pauseMenuUi.SetActive(_timeManager.GameSpeed == GameSpeed.Paused);
+            _timeManager.Pause();
+            _pauseMenuUi.SetActive(true);
+        }
+        public void OnContinueClick()
+        {
+            _timeManager.Resume();
+            _pauseMenuUi.SetActive(false);
         }
 
         public void OnLoadMenuClick()
         {
-            _timeManager.PauseResume();
-            SceneManager.LoadScene("Play");
+            _timeManager.Resume();
+            _pauseMenuUi.SetActive(false);
+            SceneManager.LoadScene("Main Menu");
         }
 
         public void OnQuitGameClick()
