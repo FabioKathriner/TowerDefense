@@ -37,7 +37,7 @@ namespace Assets.Scripts
                 TimeManager = GetComponent<TimeManager>();
                 MusicController = GetComponent<MusicController>();
             }
-            //else if (Instance != this)
+            else if (Instance != this)
             {
                 Debug.LogWarning($"There is more than one {nameof(GameManager)} in the current scene!");
                 Destroy(gameObject);
