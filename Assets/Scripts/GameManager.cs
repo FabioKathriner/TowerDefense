@@ -40,6 +40,8 @@ namespace Assets.Scripts
         {
             if (Input.GetKeyDown(KeyCode.N))
                 StageCleared();
+            if (Input.GetKey(KeyCode.M))
+                PlayerStats.Money += 1;
         }
 
         public void GameOver()
