@@ -70,12 +70,18 @@ namespace Assets.Scripts
             if (nextSceneBuildIndex >= SceneManager.sceneCountInBuildSettings)
             {
                 Broadcast("Victory");
-                SceneManager.LoadScene("Main Menu");
+                StartCoroutine(Victory());
             }
             else
             {
                 SceneManager.LoadScene(nextSceneBuildIndex);
             }
+        }
+
+        private static IEnumerator Victory()
+        {
+            yield return new WaitForSeconds(5f);
+            SceneManager.LoadScene("Main Menu");
         }
 
         public event EventHandler<MessageEventArgs> OnMessage;
